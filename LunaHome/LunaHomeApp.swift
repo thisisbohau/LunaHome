@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct LunaHomeApp: App {
+    @StateObject var fetcher = Fetcher()
+    
     var body: some Scene {
         WindowGroup {
             Root()
+                .preferredColorScheme(.light)
+                .environmentObject(fetcher)
         }
     }
 }

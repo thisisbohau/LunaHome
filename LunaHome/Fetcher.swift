@@ -34,11 +34,13 @@ struct Home: Codable{
     var robots: [Robot]
     var cameras: [Camera]
     var mediaDevices: [MediaDevice]
+    var predictions: [Prediction]
+    var recommendations: [LunaEntry]
 }
 
 @MainActor
 class Fetcher: ObservableObject{
-    @Published var data: Home = Home(rooms: [Room(id: "test", name: "Test", floor: 0, lights: [LightGroup(id: "testLamp", single: true, lights: [Light(id: "testLampLamp", state: true, hue: 360, saturation: 255, brightness: 100, type: "Stripe", name: "Ambient")])], blinds: [BlindGroup(id: "testBlind", single: true, blinds: [Blind(id: "testBlind", name: "Blind", position: 78, closed: false)])], thermostats: [Thermostat(id: "testThermo", name: "Tado", setTemp: 22.5, currentTemp: 20, coolingDevice: false, performance: 80)], sensors: [Sensor(id: "testSensor", name: "Türsensor", triggered: true, type: 2, triggeredAt: "123456")])], dryer: Dryer(state: false, runTime: 0, programm: "", health: [String]()), oven:  Oven(state: false, preHeat: false, setTemp: 0, timer: 0, mode: "", recipe: ""), microwave: Microwave(state: false, programm: "", watt: 0, timer: 0), dishwasher: Dishwasher(state: false, runTime: 0, programm: "", health: [String]()), washer: Washer(state: false, runTime: 0, programm: "", health: [String]()), doorLocks: [DoorLock(id: "testLock", name: "Nuki", battery: 98, doorAjar: false, doorOpen: true, doorError: false)], weatherStation: WeatherStation(outsideTemp: 0, windSpeed: 0, humidity: 0, co2: 0, weatherWarning: [String](), rainAmount: 0, rain: false), robots: [Robot(id: "testRobot", name: "Bernd", type: 1, state: true, error: "", timeRemaining: 16, currentJob: ["Wohnzimmer, Küche", "Bad"])], cameras: [Camera(id: "testCam", name: "Haustüre", feedName: "feed", detectedObjects: ["David", "Paket"])], mediaDevices:  [MediaDevice(id: "testMedia", name: "HomePod Küche", state: true, volume: 70, content: "Song: Daydreamer")])
+    @Published var data: Home = Home(rooms: [Room(id: "test", name: "Test", floor: 0, lights: [LightGroup(id: "testLamp", single: true, lights: [Light(id: "testLampLamp", state: true, hue: 360, saturation: 255, brightness: 100, type: "Stripe", name: "Ambient")])], blinds: [BlindGroup(id: "testBlind", single: true, blinds: [Blind(id: "testBlind", name: "Blind", position: 78, closed: false)])], thermostats: [Thermostat(id: "testThermo", name: "Tado", setTemp: 22.5, currentTemp: 20, coolingDevice: false, performance: 80)], sensors: [Sensor(id: "testSensor", name: "Türsensor", triggered: true, type: 2, triggeredAt: "123456")])], dryer: Dryer(state: false, runTime: 0, programm: "", health: [String]()), oven:  Oven(state: false, preHeat: false, setTemp: 0, timer: 0, mode: "", recipe: ""), microwave: Microwave(state: false, programm: "", watt: 0, timer: 0), dishwasher: Dishwasher(state: false, runTime: 0, programm: "", health: [String]()), washer: Washer(state: false, runTime: 0, programm: "", health: [String]()), doorLocks: [DoorLock(id: "testLock", name: "Nuki", battery: 98, doorAjar: false, doorOpen: true, doorError: false)], weatherStation: WeatherStation(outsideTemp: 0, windSpeed: 0, humidity: 0, co2: 0, weatherWarning: [String](), rainAmount: 0, rain: false), robots: [Robot(id: "testRobot", name: "Bernd", type: 1, state: true, error: "", timeRemaining: 16, currentJob: ["Wohnzimmer, Küche", "Bad"])], cameras: [Camera(id: "testCam", name: "Haustüre", feedName: "feed", detectedObjects: ["David", "Paket"])], mediaDevices:  [MediaDevice(id: "testMedia", name: "HomePod Küche", state: true, volume: 70, content: "Song: Daydreamer")], predictions: [Prediction](), recommendations: [LunaEntry]())
     private let store = Store()
     
     func logTemplate(){
@@ -82,7 +84,9 @@ extension Fetcher{
             }catch CocoaError.fileReadNoSuchFile{
                 return nil
             }catch{
-                fatalError("Fatal Error while fetching data")
+                print("error while decoding home")
+                return nil
+//                fatalError("Fatal Error while fetching data")
             }
         }
     }

@@ -42,6 +42,11 @@
 		C9761FF128BA2DB400BF9C31 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9761FD528BA2DB400BF9C31 /* Home.swift */; };
 		C9761FF228BA2DB400BF9C31 /* DeviceTemplates.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9761FD628BA2DB400BF9C31 /* DeviceTemplates.swift */; };
 		C9761FF428BA2E4B00BF9C31 /* Fetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9761FF328BA2E4B00BF9C31 /* Fetcher.swift */; };
+		C9761FFA28BA32EB00BF9C31 /* LunaHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9761FF928BA32EB00BF9C31 /* LunaHelpers.swift */; };
+		C9761FFC28BA345100BF9C31 /* LunaMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9761FFB28BA345100BF9C31 /* LunaMain.swift */; };
+		C9761FFE28BA5AC800BF9C31 /* LunaTips.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9761FFD28BA5AC800BF9C31 /* LunaTips.swift */; };
+		C976200028BA5ADF00BF9C31 /* LunaPredictions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9761FFF28BA5ADF00BF9C31 /* LunaPredictions.swift */; };
+		C976200228BA6F5800BF9C31 /* Home.json in Resources */ = {isa = PBXBuildFile; fileRef = C976200128BA6F5800BF9C31 /* Home.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +105,12 @@
 		C9761FD528BA2DB400BF9C31 /* Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		C9761FD628BA2DB400BF9C31 /* DeviceTemplates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceTemplates.swift; sourceTree = "<group>"; };
 		C9761FF328BA2E4B00BF9C31 /* Fetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fetcher.swift; sourceTree = "<group>"; };
+		C9761FF728BA326E00BF9C31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C9761FF928BA32EB00BF9C31 /* LunaHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunaHelpers.swift; sourceTree = "<group>"; };
+		C9761FFB28BA345100BF9C31 /* LunaMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunaMain.swift; sourceTree = "<group>"; };
+		C9761FFD28BA5AC800BF9C31 /* LunaTips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunaTips.swift; sourceTree = "<group>"; };
+		C9761FFF28BA5ADF00BF9C31 /* LunaPredictions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunaPredictions.swift; sourceTree = "<group>"; };
+		C976200128BA6F5800BF9C31 /* Home.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Home.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +161,7 @@
 		C9761F8828BA251200BF9C31 /* LunaHome */ = {
 			isa = PBXGroup;
 			children = (
+				C9761FF728BA326E00BF9C31 /* Info.plist */,
 				C9761F8D28BA251300BF9C31 /* Assets.xcassets */,
 				C9761F8928BA251200BF9C31 /* LunaHomeApp.swift */,
 				C9761FF328BA2E4B00BF9C31 /* Fetcher.swift */,
@@ -197,6 +209,7 @@
 		C9761FB628BA2DB400BF9C31 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C9761FF828BA32DD00BF9C31 /* Luna */,
 				C9761FB728BA2DB400BF9C31 /* Root.swift */,
 				C9761FB828BA2DB400BF9C31 /* TemplateComponents */,
 				C9761FBD28BA2DB400BF9C31 /* DeviceControls */,
@@ -253,10 +266,22 @@
 		C9761FD428BA2DB400BF9C31 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C976200128BA6F5800BF9C31 /* Home.json */,
 				C9761FD528BA2DB400BF9C31 /* Home.swift */,
 				C9761FD628BA2DB400BF9C31 /* DeviceTemplates.swift */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		C9761FF828BA32DD00BF9C31 /* Luna */ = {
+			isa = PBXGroup;
+			children = (
+				C9761FF928BA32EB00BF9C31 /* LunaHelpers.swift */,
+				C9761FFB28BA345100BF9C31 /* LunaMain.swift */,
+				C9761FFD28BA5AC800BF9C31 /* LunaTips.swift */,
+				C9761FFF28BA5ADF00BF9C31 /* LunaPredictions.swift */,
+			);
+			path = Luna;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -365,6 +390,7 @@
 			files = (
 				C9761F9128BA251300BF9C31 /* Preview Assets.xcassets in Resources */,
 				C9761F8E28BA251300BF9C31 /* Assets.xcassets in Resources */,
+				C976200228BA6F5800BF9C31 /* Home.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +419,7 @@
 				C9761FE828BA2DB400BF9C31 /* OvenControl.swift in Sources */,
 				C9761FE728BA2DB400BF9C31 /* MediaDeviceControl.swift in Sources */,
 				C9761FED28BA2DB400BF9C31 /* LightShadeTile.swift in Sources */,
+				C976200028BA5ADF00BF9C31 /* LunaPredictions.swift in Sources */,
 				C9761FE528BA2DB400BF9C31 /* DishwasherControl.swift in Sources */,
 				C9761FE028BA2DB400BF9C31 /* MicrowaveControl.swift in Sources */,
 				C9761FD728BA2DB400BF9C31 /* Root.swift in Sources */,
@@ -403,6 +430,7 @@
 				C9761FDD28BA2DB400BF9C31 /* BlindControl.swift in Sources */,
 				C9761FEF28BA2DB400BF9C31 /* SolarTile.swift in Sources */,
 				C9761FB528BA2D9800BF9C31 /* DevicePreviewer.swift in Sources */,
+				C9761FFA28BA32EB00BF9C31 /* LunaHelpers.swift in Sources */,
 				C9761FE628BA2DB400BF9C31 /* DoorbellControl.swift in Sources */,
 				C9761FEB28BA2DB400BF9C31 /* ThermostatControl.swift in Sources */,
 				C9761FEC28BA2DB400BF9C31 /* OverviewMain.swift in Sources */,
@@ -418,6 +446,8 @@
 				C9761FD928BA2DB400BF9C31 /* TemplateHelpers.swift in Sources */,
 				C9761FEE28BA2DB400BF9C31 /* NukiTile.swift in Sources */,
 				C9761FE928BA2DB400BF9C31 /* CameraControl.swift in Sources */,
+				C9761FFC28BA345100BF9C31 /* LunaMain.swift in Sources */,
+				C9761FFE28BA5AC800BF9C31 /* LunaTips.swift in Sources */,
 				C9761FDC28BA2DB400BF9C31 /* DoorLockControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -580,11 +610,13 @@
 				DEVELOPMENT_TEAM = YWD3GLUA8L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LunaHome/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Luna Home";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -592,9 +624,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = versadoSolutions.LunaHome;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -609,11 +644,13 @@
 				DEVELOPMENT_TEAM = YWD3GLUA8L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LunaHome/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Luna Home";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -621,9 +658,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = versadoSolutions.LunaHome;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
