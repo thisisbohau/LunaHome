@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C9761F8A28BA251200BF9C31 /* LunaHomeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9761F8928BA251200BF9C31 /* LunaHomeApp.swift */; };
+		C9761F8C28BA251200BF9C31 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9761F8B28BA251200BF9C31 /* ContentView.swift */; };
+		C9761F8E28BA251300BF9C31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9761F8D28BA251300BF9C31 /* Assets.xcassets */; };
+		C9761F9128BA251300BF9C31 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9761F9028BA251300BF9C31 /* Preview Assets.xcassets */; };
+		C9761F9B28BA251300BF9C31 /* LunaHomeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9761F9A28BA251300BF9C31 /* LunaHomeTests.swift */; };
+		C9761FA528BA251300BF9C31 /* LunaHomeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9761FA428BA251300BF9C31 /* LunaHomeUITests.swift */; };
+		C9761FA728BA251300BF9C31 /* LunaHomeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9761FA628BA251300BF9C31 /* LunaHomeUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C9761F9728BA251300BF9C31 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9761F7E28BA251200BF9C31 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9761F8528BA251200BF9C31;
+			remoteInfo = LunaHome;
+		};
+		C9761FA128BA251300BF9C31 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9761F7E28BA251200BF9C31 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9761F8528BA251200BF9C31;
+			remoteInfo = LunaHome;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C9761F8628BA251200BF9C31 /* LunaHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LunaHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9761F8928BA251200BF9C31 /* LunaHomeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunaHomeApp.swift; sourceTree = "<group>"; };
+		C9761F8B28BA251200BF9C31 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C9761F8D28BA251300BF9C31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C9761F9028BA251300BF9C31 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C9761F9628BA251300BF9C31 /* LunaHomeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LunaHomeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9761F9A28BA251300BF9C31 /* LunaHomeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunaHomeTests.swift; sourceTree = "<group>"; };
+		C9761FA028BA251300BF9C31 /* LunaHomeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LunaHomeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9761FA428BA251300BF9C31 /* LunaHomeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunaHomeUITests.swift; sourceTree = "<group>"; };
+		C9761FA628BA251300BF9C31 /* LunaHomeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunaHomeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C9761F8328BA251200BF9C31 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9761F9328BA251300BF9C31 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9761F9D28BA251300BF9C31 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C9761F7D28BA251200BF9C31 = {
+			isa = PBXGroup;
+			children = (
+				C9761F8828BA251200BF9C31 /* LunaHome */,
+				C9761F9928BA251300BF9C31 /* LunaHomeTests */,
+				C9761FA328BA251300BF9C31 /* LunaHomeUITests */,
+				C9761F8728BA251200BF9C31 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C9761F8728BA251200BF9C31 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C9761F8628BA251200BF9C31 /* LunaHome.app */,
+				C9761F9628BA251300BF9C31 /* LunaHomeTests.xctest */,
+				C9761FA028BA251300BF9C31 /* LunaHomeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C9761F8828BA251200BF9C31 /* LunaHome */ = {
+			isa = PBXGroup;
+			children = (
+				C9761F8928BA251200BF9C31 /* LunaHomeApp.swift */,
+				C9761F8B28BA251200BF9C31 /* ContentView.swift */,
+				C9761F8D28BA251300BF9C31 /* Assets.xcassets */,
+				C9761F8F28BA251300BF9C31 /* Preview Content */,
+			);
+			path = LunaHome;
+			sourceTree = "<group>";
+		};
+		C9761F8F28BA251300BF9C31 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				C9761F9028BA251300BF9C31 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C9761F9928BA251300BF9C31 /* LunaHomeTests */ = {
+			isa = PBXGroup;
+			children = (
+				C9761F9A28BA251300BF9C31 /* LunaHomeTests.swift */,
+			);
+			path = LunaHomeTests;
+			sourceTree = "<group>";
+		};
+		C9761FA328BA251300BF9C31 /* LunaHomeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C9761FA428BA251300BF9C31 /* LunaHomeUITests.swift */,
+				C9761FA628BA251300BF9C31 /* LunaHomeUITestsLaunchTests.swift */,
+			);
+			path = LunaHomeUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C9761F8528BA251200BF9C31 /* LunaHome */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9761FAA28BA251300BF9C31 /* Build configuration list for PBXNativeTarget "LunaHome" */;
+			buildPhases = (
+				C9761F8228BA251200BF9C31 /* Sources */,
+				C9761F8328BA251200BF9C31 /* Frameworks */,
+				C9761F8428BA251200BF9C31 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LunaHome;
+			productName = LunaHome;
+			productReference = C9761F8628BA251200BF9C31 /* LunaHome.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C9761F9528BA251300BF9C31 /* LunaHomeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9761FAD28BA251300BF9C31 /* Build configuration list for PBXNativeTarget "LunaHomeTests" */;
+			buildPhases = (
+				C9761F9228BA251300BF9C31 /* Sources */,
+				C9761F9328BA251300BF9C31 /* Frameworks */,
+				C9761F9428BA251300BF9C31 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C9761F9828BA251300BF9C31 /* PBXTargetDependency */,
+			);
+			name = LunaHomeTests;
+			productName = LunaHomeTests;
+			productReference = C9761F9628BA251300BF9C31 /* LunaHomeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C9761F9F28BA251300BF9C31 /* LunaHomeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9761FB028BA251300BF9C31 /* Build configuration list for PBXNativeTarget "LunaHomeUITests" */;
+			buildPhases = (
+				C9761F9C28BA251300BF9C31 /* Sources */,
+				C9761F9D28BA251300BF9C31 /* Frameworks */,
+				C9761F9E28BA251300BF9C31 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C9761FA228BA251300BF9C31 /* PBXTargetDependency */,
+			);
+			name = LunaHomeUITests;
+			productName = LunaHomeUITests;
+			productReference = C9761FA028BA251300BF9C31 /* LunaHomeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C9761F7E28BA251200BF9C31 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					C9761F8528BA251200BF9C31 = {
+						CreatedOnToolsVersion = 14.0;
+					};
+					C9761F9528BA251300BF9C31 = {
+						CreatedOnToolsVersion = 14.0;
+						TestTargetID = C9761F8528BA251200BF9C31;
+					};
+					C9761F9F28BA251300BF9C31 = {
+						CreatedOnToolsVersion = 14.0;
+						TestTargetID = C9761F8528BA251200BF9C31;
+					};
+				};
+			};
+			buildConfigurationList = C9761F8128BA251200BF9C31 /* Build configuration list for PBXProject "LunaHome" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C9761F7D28BA251200BF9C31;
+			productRefGroup = C9761F8728BA251200BF9C31 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C9761F8528BA251200BF9C31 /* LunaHome */,
+				C9761F9528BA251300BF9C31 /* LunaHomeTests */,
+				C9761F9F28BA251300BF9C31 /* LunaHomeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C9761F8428BA251200BF9C31 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9761F9128BA251300BF9C31 /* Preview Assets.xcassets in Resources */,
+				C9761F8E28BA251300BF9C31 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9761F9428BA251300BF9C31 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9761F9E28BA251300BF9C31 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C9761F8228BA251200BF9C31 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9761F8C28BA251200BF9C31 /* ContentView.swift in Sources */,
+				C9761F8A28BA251200BF9C31 /* LunaHomeApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9761F9228BA251300BF9C31 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9761F9B28BA251300BF9C31 /* LunaHomeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9761F9C28BA251300BF9C31 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9761FA728BA251300BF9C31 /* LunaHomeUITestsLaunchTests.swift in Sources */,
+				C9761FA528BA251300BF9C31 /* LunaHomeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C9761F9828BA251300BF9C31 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9761F8528BA251200BF9C31 /* LunaHome */;
+			targetProxy = C9761F9728BA251300BF9C31 /* PBXContainerItemProxy */;
+		};
+		C9761FA228BA251300BF9C31 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9761F8528BA251200BF9C31 /* LunaHome */;
+			targetProxy = C9761FA128BA251300BF9C31 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		C9761FA828BA251300BF9C31 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C9761FA928BA251300BF9C31 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C9761FAB28BA251300BF9C31 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"LunaHome/Preview Content\"";
+				DEVELOPMENT_TEAM = YWD3GLUA8L;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = versadoSolutions.LunaHome;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C9761FAC28BA251300BF9C31 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"LunaHome/Preview Content\"";
+				DEVELOPMENT_TEAM = YWD3GLUA8L;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = versadoSolutions.LunaHome;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C9761FAE28BA251300BF9C31 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YWD3GLUA8L;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = versadoSolutions.LunaHomeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LunaHome.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/LunaHome";
+			};
+			name = Debug;
+		};
+		C9761FAF28BA251300BF9C31 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YWD3GLUA8L;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = versadoSolutions.LunaHomeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LunaHome.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/LunaHome";
+			};
+			name = Release;
+		};
+		C9761FB128BA251300BF9C31 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YWD3GLUA8L;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = versadoSolutions.LunaHomeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LunaHome;
+			};
+			name = Debug;
+		};
+		C9761FB228BA251300BF9C31 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YWD3GLUA8L;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = versadoSolutions.LunaHomeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LunaHome;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C9761F8128BA251200BF9C31 /* Build configuration list for PBXProject "LunaHome" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9761FA828BA251300BF9C31 /* Debug */,
+				C9761FA928BA251300BF9C31 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9761FAA28BA251300BF9C31 /* Build configuration list for PBXNativeTarget "LunaHome" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9761FAB28BA251300BF9C31 /* Debug */,
+				C9761FAC28BA251300BF9C31 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9761FAD28BA251300BF9C31 /* Build configuration list for PBXNativeTarget "LunaHomeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9761FAE28BA251300BF9C31 /* Debug */,
+				C9761FAF28BA251300BF9C31 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9761FB028BA251300BF9C31 /* Build configuration list for PBXNativeTarget "LunaHomeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9761FB128BA251300BF9C31 /* Debug */,
+				C9761FB228BA251300BF9C31 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C9761F7E28BA251200BF9C31 /* Project object */;
+}
