@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DishwasherControl: View {
     @Binding var dishwasher: Dishwasher
-    
+//    hallo
     var body: some View {
         Text(String(describing: dishwasher))
     }
