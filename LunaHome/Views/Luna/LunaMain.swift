@@ -8,9 +8,36 @@
 import SwiftUI
 
 struct LunaMain: View {
+    @EnvironmentObject var fetcher: Fetcher
     @State var animateGradient: Bool = false
+    @State var showPrivacy: Bool = false
     
+    var predictions: some View{
+        VStack{
+            HStack{
+                Text("Prognosen und Statistik")
+                    .font(.title3.bold())
+                    .foregroundColor(.secondary)
+                Spacer()
+            }
+            .padding(.top)
+            ForEach(fetcher.data.predictions){prediction in
+                LunaPredictions(prediction: prediction)
+            }
+        }
+    }
     
+    var suggestions: some View{
+        VStack{
+            HStack{
+                Text("Meine Tipps")
+                    .font(.title3.bold())
+                    .foregroundColor(.secondary)
+                Spacer()
+            }
+            LunaTips()
+        }
+    }
     var lunaWelcome: some View{
         VStack(alignment: .leading){
             
@@ -71,23 +98,35 @@ struct LunaMain: View {
                 ScrollView{
                     lunaWelcome
                         .padding(.bottom)
-                        .padding(.top, 80)
-                    HStack{
-                        Text("Meine Tipps")
-                            .font(.title3.bold())
-                            .foregroundColor(.secondary)
-                        Spacer()
+                        .padding(.top)
+                    
+                    Button(action: {showPrivacy.toggle()}){
+                        VStack(alignment: .leading){
+                            HStack{
+                                Image(systemName: "hand.raised.slash")
+                                Text("Datenschutz Bei Luna")
+                                Spacer()
+                            }
+                        }
+                        .padding(22)
+                        .background(Color("fill"))
+                        .cornerRadius(30)
                     }
-                    LunaTips()
+                   suggestions
+                    
+                    predictions
                 }
             }
             .padding()
+            .sheet(isPresented: $showPrivacy){
+                LunaPrivacy()
+            }
         }
     }
-
-
-struct LunaMain_Previews: PreviewProvider {
-    static var previews: some View {
-        LunaMain()
-    }
-}
+//
+//
+//struct LunaMain_Previews: PreviewProvider {
+//    static var previews: some View {
+//        LunaMain()
+//    }
+//}

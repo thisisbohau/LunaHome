@@ -1,5 +1,5 @@
 //
-//  SolarTile.swift
+//  WeatherTile.swift
 //  Home
 //
 //  Created by David Bohaumilitzky on 30.06.22.
@@ -7,9 +7,18 @@
 
 import SwiftUI
 
-struct WeatherTile: View {
+extension View {
+    func glow(color: Color = .red, radius: CGFloat = 20) -> some View {
+        self
+            .shadow(color: color, radius: radius / 3)
+            .shadow(color: color, radius: radius / 3)
+            .shadow(color: color, radius: radius / 3)
+    }
+}
+
+struct WeatherTilefder: View {
     var proxy: CGSize
-    @State var animate: Bool = false
+    
     var indicatorWidth: CGFloat = 45
     var indicatorHeight: CGFloat = 10
     @State var icon: Image = Image(systemName: "checkmark")
@@ -17,6 +26,13 @@ struct WeatherTile: View {
     @State var description: String = ""
     
     func update(){
+        Task{
+//            icon = await WeatherKit().getIcon(weather: Weather(currentTemp: 0, low: 0, hight: 0, humidity: 0, condition: 3, rainCurrent: 0, rainToday: 0, lastUpdate: "", rain: true, heavyRain: true, weatherAdaption: Switch(id: 0, state: false, name: "", description: "")))
+//            let conditions = await WeatherKit().getCondition(weather: Weather(currentTemp: 0, low: 0, hight: 0, humidity: 0, condition: 2, rainCurrent: 0, rainToday: 0, lastUpdate: "", rain: true, heavyRain: true, weatherAdaption: Switch(id: 0, state: false, name: "", description: "")))
+                                                             
+//            condition = conditions.0
+//            description = conditions.1
+        }
     }
     
     var indicator: some View{
@@ -41,37 +57,39 @@ struct WeatherTile: View {
         MediumTemplate(proxy: proxy, type: .overlay, device: Blind(id: "", name: "", position: 0, closed: false))
             .overlay(
                 ZStack{
-                    if condition == 1{
-                        //regen
+                    if condition == 3 || condition == 5{
 //                        RainEffect().cornerRadius(19)
                     }else if condition == 2{
-                        //wolken
                         HStack{
                             Circle()
                                 .frame(width: 30, height: 30)
                                 .blur(radius: 10)
                         }
-                    }else if condition == 3{
-                        //sonne
-                        VStack{
+                    }else if condition == 4{
+                        
+                    }else if condition == 1{
+                        HStack{
                             Spacer()
-                            Image(systemName: animate ? "sun.max.fill" :  "sun.min.fill")
-                                    .font(.system(size: 40))
-                                    .foregroundColor(.orange)
-                                    .rotationEffect(Angle(degrees: animate ? 180 : 0))
-                            Spacer()
-                            Text("Sonne")
-                                .font(.headline)
-                           
-                            Spacer()
-                        }
-                        .onAppear(perform: {
-                            withAnimation(.easeInOut.speed(0.2).delay(3).repeatForever()){
-                                animate.toggle()
+                            VStack{
+                                Spacer()
+                                Circle()
+                                    .frame(width: 50, height: 50)
+                                    .foregroundColor(Color("tadoNormal"))
+                                    .blur(radius: 15)
+                                    .overlay(
+                                        Circle()
+                                        .frame(width: 20, height: 20)
+                                        .foregroundColor(Color("tadoMax"))
+                                        .blur(radius: 10)
+                                    )
+                                Spacer()
                             }
-                        })
+                            .padding(.trailing, 30)
+                        }
                     }
-                
+                   
+
+                    
                     HStack{
                         VStack(alignment: .leading, spacing: 0){
                             HStack(spacing: 0){

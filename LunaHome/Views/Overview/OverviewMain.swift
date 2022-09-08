@@ -19,7 +19,7 @@ struct OverviewMain: View {
     @EnvironmentObject var data: Fetcher
 
     @State var geofenceItems: [GeofenceItem] = [GeofenceItem]()
-    
+    @State var animateGradient: Bool = false
     @State var animate: Bool = false
     @State var animateUpdate: Bool = false
     @State var room: Room = Fetcher().data.rooms.first!
@@ -59,14 +59,21 @@ struct OverviewMain: View {
     
     var background: some View{
         ZStack{
-           Image("IMG_0170")
+            LinearGradient(colors: [.purple, .blue], startPoint: .topLeading, endPoint: .bottomTrailing)
+                .hueRotation(.degrees(animateGradient ? 45 : 0))
+                .ignoresSafeArea()
+                .onAppear {
+                    withAnimation(.easeInOut(duration: 3).repeatForever(autoreverses: true)) {
+                        animateGradient.toggle()
+                    }
+                }
         }
     }
 
     
     var topBar: some View{
         HStack{
-            Text("Hallo John")
+            Text("Hallo David")
                 .font(.largeTitle)
                 .bold()
             Spacer()
@@ -83,45 +90,45 @@ struct OverviewMain: View {
                     
                     HStack(spacing: 0){
                         VStack(spacing: 0){
-                            
-                            SmallTemplate(proxy: proxy.size, type: .overlay, device: Blind(id: "", name: "", position: 0, closed: false))
-                                .overlay(
-                                    HStack{
-                                        Circle()
-                                            .stroke(style: StrokeStyle(lineWidth: 5))
-                                            .padding(13)
-                                            .foregroundColor(.green)
-                                            .overlay(Image(systemName: "bolt.fill")
-                                               
-                                                .foregroundStyle(.secondary)
-                                                .foregroundColor(.primary)
-                                            )
-                                        VStack(alignment: .leading){
-                                            Text("Battery")
-                                                .font(.headline)
-                                            Text("2kW - now")
-                                                .font(.caption)
-                                                .foregroundStyle(.secondary)
-                                        }
-                                        
-                                        Spacer()
-                                    }
-                                )
-                                .padding(.bottom, DeviceItemCalculator().spacer)
-                            LightShadeTile(proxy: proxy.size)
+
+//                            SmallTemplate(proxy: proxy.size, type: .overlay, device: Blind(id: "", name: "", position: 0, closed: false))
+//                                .overlay(
+//                                    HStack{
+//                                        Circle()
+//                                            .stroke(style: StrokeStyle(lineWidth: 5))
+//                                            .padding(13)
+//                                            .foregroundColor(.green)
+//                                            .overlay(Image(systemName: "bolt.fill")
+//
+//                                                .foregroundStyle(.secondary)
+//                                                .foregroundColor(.primary)
+//                                            )
+//                                        VStack(alignment: .leading){
+//                                            Text("Battery")
+//                                                .font(.headline)
+//                                            Text("2kW - now")
+//                                                .font(.caption)
+//                                                .foregroundStyle(.secondary)
+//                                        }
+//
+//                                        Spacer()
+//                                    }
+//                                )
+//                                .padding(.bottom, DeviceItemCalculator().spacer)
+//                            LightShadeTile(proxy: proxy.size)
                             NukiTile(proxy: proxy.size)
-                            
-                         
+
+
                             Spacer()
                         }
                         .padding(.trailing, DeviceItemCalculator().spacer)
-                        
+
                         VStack(spacing: 0){
-                            SolarTile(proxy: proxy.size, animate: false)
-                            WeatherTile(proxy: proxy.size, indicatorWidth: 40, indicatorHeight: 5)
-                            SmallTemplate(proxy: proxy.size, type: .overlay, device: Blind(id: "", name: "", position: 0, closed: false))
-                                .padding(.bottom, DeviceItemCalculator().spacer)
+                            WeatherTile(proxy: proxy.size, animate: false)
                             
+//                            SmallTemplate(proxy: proxy.size, type: .overlay, device: Blind(id: "", name: "", position: 0, closed: false))
+//                                .padding(.bottom, DeviceItemCalculator().spacer)
+
                             Spacer()
                         }
                     }

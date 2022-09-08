@@ -10,6 +10,7 @@ import SwiftUI
 struct Root: View {
     @EnvironmentObject var fetcher: Fetcher
     
+    
     var body: some View {
         TabView{
             OverviewMain()
@@ -43,5 +44,6 @@ struct Root_Previews: PreviewProvider {
     static var previews: some View {
         Root()
             .preferredColorScheme(.light)
+            .environmentObject(Fetcher())
     }
 }

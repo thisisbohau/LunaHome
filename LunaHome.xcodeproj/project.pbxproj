@@ -37,8 +37,7 @@
 		C9761FEC28BA2DB400BF9C31 /* OverviewMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9761FCF28BA2DB400BF9C31 /* OverviewMain.swift */; };
 		C9761FED28BA2DB400BF9C31 /* LightShadeTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9761FD028BA2DB400BF9C31 /* LightShadeTile.swift */; };
 		C9761FEE28BA2DB400BF9C31 /* NukiTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9761FD128BA2DB400BF9C31 /* NukiTile.swift */; };
-		C9761FEF28BA2DB400BF9C31 /* SolarTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9761FD228BA2DB400BF9C31 /* SolarTile.swift */; };
-		C9761FF028BA2DB400BF9C31 /* WeatherTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9761FD328BA2DB400BF9C31 /* WeatherTile.swift */; };
+		C9761FEF28BA2DB400BF9C31 /* WeatherTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9761FD228BA2DB400BF9C31 /* WeatherTile.swift */; };
 		C9761FF128BA2DB400BF9C31 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9761FD528BA2DB400BF9C31 /* Home.swift */; };
 		C9761FF228BA2DB400BF9C31 /* DeviceTemplates.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9761FD628BA2DB400BF9C31 /* DeviceTemplates.swift */; };
 		C9761FF428BA2E4B00BF9C31 /* Fetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9761FF328BA2E4B00BF9C31 /* Fetcher.swift */; };
@@ -47,6 +46,7 @@
 		C9761FFE28BA5AC800BF9C31 /* LunaTips.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9761FFD28BA5AC800BF9C31 /* LunaTips.swift */; };
 		C976200028BA5ADF00BF9C31 /* LunaPredictions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9761FFF28BA5ADF00BF9C31 /* LunaPredictions.swift */; };
 		C976200228BA6F5800BF9C31 /* Home.json in Resources */ = {isa = PBXBuildFile; fileRef = C976200128BA6F5800BF9C31 /* Home.json */; };
+		C976202628CA2DF700BF9C31 /* LunaPrivacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C976202528CA2DF700BF9C31 /* LunaPrivacy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,8 +100,7 @@
 		C9761FCF28BA2DB400BF9C31 /* OverviewMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewMain.swift; sourceTree = "<group>"; };
 		C9761FD028BA2DB400BF9C31 /* LightShadeTile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightShadeTile.swift; sourceTree = "<group>"; };
 		C9761FD128BA2DB400BF9C31 /* NukiTile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NukiTile.swift; sourceTree = "<group>"; };
-		C9761FD228BA2DB400BF9C31 /* SolarTile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SolarTile.swift; sourceTree = "<group>"; };
-		C9761FD328BA2DB400BF9C31 /* WeatherTile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherTile.swift; sourceTree = "<group>"; };
+		C9761FD228BA2DB400BF9C31 /* WeatherTile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherTile.swift; sourceTree = "<group>"; };
 		C9761FD528BA2DB400BF9C31 /* Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		C9761FD628BA2DB400BF9C31 /* DeviceTemplates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceTemplates.swift; sourceTree = "<group>"; };
 		C9761FF328BA2E4B00BF9C31 /* Fetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fetcher.swift; sourceTree = "<group>"; };
@@ -111,6 +110,7 @@
 		C9761FFD28BA5AC800BF9C31 /* LunaTips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunaTips.swift; sourceTree = "<group>"; };
 		C9761FFF28BA5ADF00BF9C31 /* LunaPredictions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunaPredictions.swift; sourceTree = "<group>"; };
 		C976200128BA6F5800BF9C31 /* Home.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Home.json; sourceTree = "<group>"; };
+		C976202528CA2DF700BF9C31 /* LunaPrivacy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunaPrivacy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,8 +257,7 @@
 				C9761FCF28BA2DB400BF9C31 /* OverviewMain.swift */,
 				C9761FD028BA2DB400BF9C31 /* LightShadeTile.swift */,
 				C9761FD128BA2DB400BF9C31 /* NukiTile.swift */,
-				C9761FD228BA2DB400BF9C31 /* SolarTile.swift */,
-				C9761FD328BA2DB400BF9C31 /* WeatherTile.swift */,
+				C9761FD228BA2DB400BF9C31 /* WeatherTile.swift */,
 			);
 			path = Overview;
 			sourceTree = "<group>";
@@ -280,6 +279,7 @@
 				C9761FFB28BA345100BF9C31 /* LunaMain.swift */,
 				C9761FFD28BA5AC800BF9C31 /* LunaTips.swift */,
 				C9761FFF28BA5ADF00BF9C31 /* LunaPredictions.swift */,
+				C976202528CA2DF700BF9C31 /* LunaPrivacy.swift */,
 			);
 			path = Luna;
 			sourceTree = "<group>";
@@ -427,14 +427,14 @@
 				C9761FF428BA2E4B00BF9C31 /* Fetcher.swift in Sources */,
 				C9761FE228BA2DB400BF9C31 /* DryerControl.swift in Sources */,
 				C9761F8A28BA251200BF9C31 /* LunaHomeApp.swift in Sources */,
+				C976202628CA2DF700BF9C31 /* LunaPrivacy.swift in Sources */,
 				C9761FDD28BA2DB400BF9C31 /* BlindControl.swift in Sources */,
-				C9761FEF28BA2DB400BF9C31 /* SolarTile.swift in Sources */,
+				C9761FEF28BA2DB400BF9C31 /* WeatherTile.swift in Sources */,
 				C9761FB528BA2D9800BF9C31 /* DevicePreviewer.swift in Sources */,
 				C9761FFA28BA32EB00BF9C31 /* LunaHelpers.swift in Sources */,
 				C9761FE628BA2DB400BF9C31 /* DoorbellControl.swift in Sources */,
 				C9761FEB28BA2DB400BF9C31 /* ThermostatControl.swift in Sources */,
 				C9761FEC28BA2DB400BF9C31 /* OverviewMain.swift in Sources */,
-				C9761FF028BA2DB400BF9C31 /* WeatherTile.swift in Sources */,
 				C9761FF228BA2DB400BF9C31 /* DeviceTemplates.swift in Sources */,
 				C9761FDE28BA2DB400BF9C31 /* WasherControl.swift in Sources */,
 				C9761FE328BA2DB400BF9C31 /* SensorControl.swift in Sources */,
