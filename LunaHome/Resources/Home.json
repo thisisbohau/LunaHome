@@ -1,0 +1,152 @@
+{
+  "washer" : {
+    "state" : false,
+    "runTime" : 0,
+    "health" : [
+
+    ],
+    "programm" : ""
+  },
+  "robots" : [
+    {
+      "timeRemaining" : 16,
+      "id" : "testRobot",
+      "currentJob" : [
+        "Wohnzimmer, Küche",
+        "Bad"
+      ],
+      "type" : 1,
+      "error" : "",
+      "state" : true,
+      "name" : "Bernd"
+    }
+  ],
+  "mediaDevices" : [
+    {
+      "id" : "testMedia",
+      "state" : true,
+      "volume" : 70,
+      "name" : "HomePod Küche",
+      "content" : "Song: Daydreamer"
+    }
+  ],
+  "dryer" : {
+    "state" : false,
+    "runTime" : 0,
+    "health" : [
+
+    ],
+    "programm" : ""
+  },
+  "doorLocks" : [
+    {
+      "doorOpen" : true,
+      "id" : "testLock",
+      "doorAjar" : false,
+      "name" : "Nuki",
+      "battery" : 98,
+      "doorError" : false
+    }
+  ],
+  "cameras" : [
+    {
+      "id" : "testCam",
+      "feedName" : "feed",
+      "name" : "Haustüre",
+      "detectedObjects" : [
+        "David",
+        "Paket"
+      ]
+    }
+  ],
+  "dishwasher" : {
+    "state" : false,
+    "runTime" : 0,
+    "health" : [
+
+    ],
+    "programm" : ""
+  },
+  "rooms" : [
+    {
+      "lights" : [
+        {
+          "id" : "testLamp",
+          "single" : true,
+          "lights" : [
+            {
+              "name" : "Ambient",
+              "id" : "testLampLamp",
+              "brightness" : 100,
+              "saturation" : 255,
+              "type" : "Stripe",
+              "hue" : 360,
+              "state" : true
+            }
+          ]
+        }
+      ],
+      "blinds" : [
+        {
+          "id" : "testBlind",
+          "single" : true,
+          "blinds" : [
+            {
+              "id" : "testBlind",
+              "closed" : false,
+              "name" : "Blind",
+              "position" : 78
+            }
+          ]
+        }
+      ],
+      "floor" : 0,
+      "id" : "test",
+      "thermostats" : [
+        {
+          "id" : "testThermo",
+          "setTemp" : 22.5,
+          "currentTemp" : 20,
+          "name" : "Tado",
+          "coolingDevice" : false,
+          "performance" : 80
+        }
+      ],
+      "name" : "Test",
+      "sensors" : [
+        {
+          "id" : "testSensor",
+          "triggeredAt" : "123456",
+          "name" : "Türsensor",
+          "type" : 2,
+          "triggered" : true
+        }
+      ]
+    }
+  ],
+  "weatherStation" : {
+    "humidity" : 0,
+    "rain" : false,
+    "rainAmount" : 0,
+    "outsideTemp" : 0,
+    "windSpeed" : 0,
+    "co2" : 0,
+    "weatherWarning" : [
+
+    ]
+  },
+  "microwave" : {
+    "watt" : 0,
+    "state" : false,
+    "timer" : 0,
+    "programm" : ""
+  },
+  "oven" : {
+    "preHeat" : false,
+    "state" : false,
+    "setTemp" : 0,
+    "timer" : 0,
+    "mode" : "",
+    "recipe" : ""
+  }
+}

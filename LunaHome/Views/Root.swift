@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct Root: View {
+    @EnvironmentObject var fetcher: Fetcher
+    
+    
     var body: some View {
         TabView{
             OverviewMain()
@@ -16,23 +19,31 @@ struct Root: View {
                 }
                 .tag(1)
             
-            Text("Räume")
-                .tabItem {
-                    Label("Räume", systemImage: "square.on.square")
-                }
-                .tag(2)
-            
-            Text("Luna")
+            LunaMain()
                 .tabItem {
                     Label("Luna", systemImage: "target")
                 }
                 .tag(2)
+            
+            Text("Räume")
+                .tabItem {
+                    Label("Räume", systemImage: "square.on.square")
+                }
+                .tag(23)
+            
         }
+        .onAppear(perform: {
+            fetcher.load()
+            fetcher.logTemplate()
+            
+        })
     }
 }
 
 struct Root_Previews: PreviewProvider {
     static var previews: some View {
         Root()
+            .preferredColorScheme(.light)
+            .environmentObject(Fetcher())
     }
 }

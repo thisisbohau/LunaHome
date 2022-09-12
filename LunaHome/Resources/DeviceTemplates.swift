@@ -7,6 +7,22 @@
 
 import Foundation
 
+struct Prediction: Identifiable, Codable{
+    var id: String
+    var title: String
+    var predictable: Bool
+    var data: [DataPoint]
+    var description: String
+    var averageUnit: String
+    var diagramType: Int
+}
+
+struct DataPoint: Identifiable, Codable{
+    var id: String
+    var value: Float
+    var title: String
+}
+
 struct Room: Identifiable, Codable{
     var id: String
     var name: String

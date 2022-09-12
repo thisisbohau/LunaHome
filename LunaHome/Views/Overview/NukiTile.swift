@@ -9,17 +9,18 @@ import SwiftUI
 
 struct NukiTile: View {
     var proxy: CGSize
-    
+    @EnvironmentObject var fetcher: Fetcher
     var body: some View {
         
-        if false{
+        if fetcher.data.doorLocks.first(where: {$0.name == "Haustüre"})?.doorOpen ?? false{
             MediumTemplate(proxy: proxy, type: .overlay, device: "")
                 .overlay(
                     VStack{
                         Image(systemName: "lock.open.fill")
                             .font(.largeTitle)
                             .foregroundColor(.orange)
-                        Text("Unlocked")
+                        Text("Entsperrt")
+                            .bold()
                             .padding(.top)
                             .foregroundStyle(.primary)
                     }
@@ -32,7 +33,7 @@ struct NukiTile: View {
                         Image(systemName: "lock.fill")
                             .font(.title2)
                             .foregroundColor(.secondary)
-                        Text("Locked")
+                        Text("Gesperrt")
                             .foregroundStyle(.secondary)
                             .padding(.leading)
                             .font(.headline)
