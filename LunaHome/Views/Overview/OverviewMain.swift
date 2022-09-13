@@ -115,7 +115,7 @@ struct OverviewMain: View {
 //                                    }
 //                                )
 //                                .padding(.bottom, DeviceItemCalculator().spacer)
-//                            LightShadeTile(proxy: proxy.size)
+                            LightShadeTile(proxy: proxy.size)
                             NukiTile(proxy: proxy.size)
 
 

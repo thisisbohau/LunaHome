@@ -14,7 +14,7 @@ struct LunaHomeApp: App {
     var body: some Scene {
         WindowGroup {
             Root()
-                .preferredColorScheme(.light)
+//                .preferredColorScheme(.light)
                 .environmentObject(fetcher)
         }
     }

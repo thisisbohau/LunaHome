@@ -10,10 +10,10 @@ import SwiftUI
 struct Root: View {
     @EnvironmentObject var fetcher: Fetcher
     
-    
     var body: some View {
         TabView{
             OverviewMain()
+//                .preferredColorScheme(.dark)
                 .tabItem {
                     Label("Überblick", image: "homeIcon")
                 }
