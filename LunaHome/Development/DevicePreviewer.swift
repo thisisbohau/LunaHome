@@ -11,7 +11,7 @@ struct DevicePreviewer: View {
     @ObservedObject var fetcher: Fetcher = Fetcher()
     
     var body: some View {
-        WasherControl(washer: $fetcher.data.washer)
+//        WasherControl(washer: $fetcher.data.washer)
 //        DryerControl(dryer: $fetcher.data.dryer)
 //        DishwasherControl(dishwasher: $fetcher.data.dishwasher)
 //        OvenControl(oven: $fetcher.data.oven)

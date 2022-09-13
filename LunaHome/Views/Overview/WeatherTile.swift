@@ -9,11 +9,12 @@ import SwiftUI
 
 struct WeatherTile: View {
     var proxy: CGSize
+    @EnvironmentObject var fetcher: Fetcher
     @State var animate: Bool = false
     var indicatorWidth: CGFloat = 45
     var indicatorHeight: CGFloat = 10
-    @State var icon: Image = Image(systemName: "checkmark")
-    @State var condition: Int = 0
+    @State var icon: Image = Image(systemName: "cloud.rain.fill")
+    @State var condition: Int = 1
     @State var description: String = ""
     
     func update(){
@@ -41,9 +42,10 @@ struct WeatherTile: View {
         MediumTemplate(proxy: proxy, type: .overlay, device: Blind(id: "", name: "", position: 0, closed: false))
             .overlay(
                 ZStack{
-                    if condition == 1{
+//                    Color.teal
+                    if fetcher.data.weatherStation.rain{
                         //regen
-//                        RainEffect().cornerRadius(19)
+                        RainEffect().cornerRadius(19)
                     }else if condition == 2{
                         //wolken
                         HStack{
@@ -75,23 +77,30 @@ struct WeatherTile: View {
                     HStack{
                         VStack(alignment: .leading, spacing: 0){
                             HStack(spacing: 0){
-                                Text("15°")
+                                Text("\(Text(String(format: "%.1f", (fetcher.data.weatherStation.outsideTemp - 6))))°")
                                     .padding(.trailing, 3)
                                 indicator
-                                Text("28°")
+                                Text("\(Text(String(format: "%.1f", (fetcher.data.weatherStation.outsideTemp + 10))))°")
                                     .padding(.leading, 3)
                             }.font(.system(size: 8))
                                 
                            
-                            Text("21°")
+                            Text("\(Text(String(format: "%.1f", (fetcher.data.weatherStation.outsideTemp))))°")
                                 .font(.largeTitle)
                                 .padding(.top, 2)
-                            icon
-                                .symbolRenderingMode(.multicolor)
-                                .font(.callout)
+                            HStack{
+                                icon
+                                    .symbolRenderingMode(.multicolor)
+                                    .font(.callout)
+                                if fetcher.data.weatherStation.rain{
+                                    Text("Regen: \(String(format: "%.1f", fetcher.data.weatherStation.rainAmount))mm")
+                                        .foregroundStyle(.secondary)
+                                        .font(.caption)
+                                }
+                            }
                             Spacer()
                             
-                            Text("Last Updated \("now")")
+                            Text("Last Updated: \("now")")
                                 .font(.system(size: 8))
                                 .foregroundStyle(.secondary)
                                 .offset(y: 3)

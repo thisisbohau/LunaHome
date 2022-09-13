@@ -47,6 +47,10 @@
 		C976200028BA5ADF00BF9C31 /* LunaPredictions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9761FFF28BA5ADF00BF9C31 /* LunaPredictions.swift */; };
 		C976200228BA6F5800BF9C31 /* Home.json in Resources */ = {isa = PBXBuildFile; fileRef = C976200128BA6F5800BF9C31 /* Home.json */; };
 		C976202628CA2DF700BF9C31 /* LunaPrivacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C976202528CA2DF700BF9C31 /* LunaPrivacy.swift */; };
+		C9AC929E28CB5AB0003588CF /* Rain.sks in Resources */ = {isa = PBXBuildFile; fileRef = C9AC929B28CB5AB0003588CF /* Rain.sks */; };
+		C9AC929F28CB5AB0003588CF /* Snow.sks in Resources */ = {isa = PBXBuildFile; fileRef = C9AC929C28CB5AB0003588CF /* Snow.sks */; };
+		C9AC92A028CB5AB0003588CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9AC929D28CB5AB0003588CF /* Assets.xcassets */; };
+		C9AC92A228CB5CD5003588CF /* RainEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AC92A128CB5CD5003588CF /* RainEffect.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +115,10 @@
 		C9761FFF28BA5ADF00BF9C31 /* LunaPredictions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunaPredictions.swift; sourceTree = "<group>"; };
 		C976200128BA6F5800BF9C31 /* Home.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Home.json; sourceTree = "<group>"; };
 		C976202528CA2DF700BF9C31 /* LunaPrivacy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunaPrivacy.swift; sourceTree = "<group>"; };
+		C9AC929B28CB5AB0003588CF /* Rain.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Rain.sks; sourceTree = "<group>"; };
+		C9AC929C28CB5AB0003588CF /* Snow.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Snow.sks; sourceTree = "<group>"; };
+		C9AC929D28CB5AB0003588CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C9AC92A128CB5CD5003588CF /* RainEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainEffect.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +169,7 @@
 		C9761F8828BA251200BF9C31 /* LunaHome */ = {
 			isa = PBXGroup;
 			children = (
+				C9AC929A28CB5A6E003588CF /* Animations */,
 				C9761FF728BA326E00BF9C31 /* Info.plist */,
 				C9761F8D28BA251300BF9C31 /* Assets.xcassets */,
 				C9761F8928BA251200BF9C31 /* LunaHomeApp.swift */,
@@ -284,6 +293,17 @@
 			path = Luna;
 			sourceTree = "<group>";
 		};
+		C9AC929A28CB5A6E003588CF /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				C9AC929D28CB5AB0003588CF /* Assets.xcassets */,
+				C9AC929B28CB5AB0003588CF /* Rain.sks */,
+				C9AC929C28CB5AB0003588CF /* Snow.sks */,
+				C9AC92A128CB5CD5003588CF /* RainEffect.swift */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -389,7 +409,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9761F9128BA251300BF9C31 /* Preview Assets.xcassets in Resources */,
+				C9AC929E28CB5AB0003588CF /* Rain.sks in Resources */,
 				C9761F8E28BA251300BF9C31 /* Assets.xcassets in Resources */,
+				C9AC929F28CB5AB0003588CF /* Snow.sks in Resources */,
+				C9AC92A028CB5AB0003588CF /* Assets.xcassets in Resources */,
 				C976200228BA6F5800BF9C31 /* Home.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -437,6 +460,7 @@
 				C9761FEC28BA2DB400BF9C31 /* OverviewMain.swift in Sources */,
 				C9761FF228BA2DB400BF9C31 /* DeviceTemplates.swift in Sources */,
 				C9761FDE28BA2DB400BF9C31 /* WasherControl.swift in Sources */,
+				C9AC92A228CB5CD5003588CF /* RainEffect.swift in Sources */,
 				C9761FE328BA2DB400BF9C31 /* SensorControl.swift in Sources */,
 				C9761FE128BA2DB400BF9C31 /* RobotControl.swift in Sources */,
 				C9761FF128BA2DB400BF9C31 /* Home.swift in Sources */,
