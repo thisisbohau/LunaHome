@@ -11,7 +11,10 @@ struct ThermostatControl: View {
     @Binding var thermostat: Thermostat
     
     var body: some View {
-        Text(String(describing: thermostat))
+        VStack{
+            Text(String(describing: thermostat))
+            Text("helloooo")
+        }
     }
 }
 
