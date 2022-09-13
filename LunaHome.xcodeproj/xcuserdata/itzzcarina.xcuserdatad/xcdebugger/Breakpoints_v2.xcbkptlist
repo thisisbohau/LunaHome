@@ -8,7 +8,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "8DE8C305-B27A-4BCE-9069-3B318ED29A8D"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LunaHome/Fetcher.swift"
@@ -18,6 +18,158 @@
             endingLineNumber = "43"
             landmarkName = "Fetcher"
             landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "8DE8C305-B27A-4BCE-9069-3B318ED29A8D - adfdbcddb04abd6c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "property wrapper backing initializer of LunaHome.Fetcher.data : LunaHome.Home"
+                  moduleName = "LunaHome"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itzzcarina/Library/Mobile%20Documents/com~apple~CloudDocs/Schule/4bHLW/LunaHome/LunaHome/Fetcher.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "37">
+               </Location>
+               <Location
+                  uuid = "8DE8C305-B27A-4BCE-9069-3B318ED29A8D - 4d998493d19ff546"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LunaHome.Fetcher.data.getter : LunaHome.Home"
+                  moduleName = "LunaHome"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itzzcarina/Library/Mobile%20Documents/com~apple~CloudDocs/Schule/4bHLW/LunaHome/LunaHome/Fetcher.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "792">
+               </Location>
+               <Location
+                  uuid = "8DE8C305-B27A-4BCE-9069-3B318ED29A8D - c899da382005b0b2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LunaHome.Fetcher.data.setter : LunaHome.Home"
+                  moduleName = "LunaHome"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itzzcarina/Library/Mobile%20Documents/com~apple~CloudDocs/Schule/4bHLW/LunaHome/LunaHome/Fetcher.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "185">
+               </Location>
+               <Location
+                  uuid = "8DE8C305-B27A-4BCE-9069-3B318ED29A8D - 75d07d1789a89445"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LunaHome.Fetcher.data.modify : LunaHome.Home"
+                  moduleName = "LunaHome"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itzzcarina/Library/Mobile%20Documents/com~apple~CloudDocs/Schule/4bHLW/LunaHome/LunaHome/Fetcher.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "8DE8C305-B27A-4BCE-9069-3B318ED29A8D - d6ad767101460bb2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LunaHome.Fetcher.data.modify : LunaHome.Home with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "LunaHome"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itzzcarina/Library/Mobile%20Documents/com~apple~CloudDocs/Schule/4bHLW/LunaHome/LunaHome/Fetcher.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  uuid = "8DE8C305-B27A-4BCE-9069-3B318ED29A8D - fff29173ec26769b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LunaHome.Fetcher.$data.getter : Combine.Published&lt;LunaHome.Home&gt;.Publisher"
+                  moduleName = "LunaHome"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itzzcarina/Library/Mobile%20Documents/com~apple~CloudDocs/Schule/4bHLW/LunaHome/LunaHome/Fetcher.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "94">
+               </Location>
+               <Location
+                  uuid = "8DE8C305-B27A-4BCE-9069-3B318ED29A8D - fed31aaf39590e97"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LunaHome.Fetcher.$data.setter : Combine.Published&lt;LunaHome.Home&gt;.Publisher"
+                  moduleName = "LunaHome"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itzzcarina/Library/Mobile%20Documents/com~apple~CloudDocs/Schule/4bHLW/LunaHome/LunaHome/Fetcher.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "180">
+               </Location>
+               <Location
+                  uuid = "8DE8C305-B27A-4BCE-9069-3B318ED29A8D - df7115a6eeecf37d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LunaHome.Fetcher.$data.modify : Combine.Published&lt;LunaHome.Home&gt;.Publisher"
+                  moduleName = "LunaHome"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itzzcarina/Library/Mobile%20Documents/com~apple~CloudDocs/Schule/4bHLW/LunaHome/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "8DE8C305-B27A-4BCE-9069-3B318ED29A8D - 85419cc27ae5de34"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LunaHome.Fetcher.$data.modify : Combine.Published&lt;LunaHome.Home&gt;.Publisher with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "LunaHome"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itzzcarina/Library/Mobile%20Documents/com~apple~CloudDocs/Schule/4bHLW/LunaHome/LunaHome/Fetcher.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "8DE8C305-B27A-4BCE-9069-3B318ED29A8D - 21a0ce754cf111a0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LunaHome.Fetcher.init() -&gt; LunaHome.Fetcher"
+                  moduleName = "LunaHome"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itzzcarina/Library/Mobile%20Documents/com~apple~CloudDocs/Schule/4bHLW/LunaHome/LunaHome/Fetcher.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "103">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
