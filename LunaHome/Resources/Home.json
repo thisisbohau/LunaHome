@@ -1,10 +1,8 @@
 {
-  "washer" : {
+  "microwave" : {
+    "watt" : 0,
     "state" : false,
-    "runTime" : 0,
-    "health" : [
-
-    ],
+    "timer" : 0,
     "programm" : ""
   },
   "robots" : [
@@ -21,13 +19,17 @@
       "name" : "Bernd"
     }
   ],
-  "mediaDevices" : [
+  "recommendations" : [
+
+  ],
+  "doorLocks" : [
     {
-      "id" : "testMedia",
-      "state" : true,
-      "volume" : 70,
-      "name" : "HomePod Küche",
-      "content" : "Song: Daydreamer"
+      "doorOpen" : true,
+      "id" : "testLock",
+      "doorAjar" : false,
+      "name" : "Haustüre",
+      "battery" : 98,
+      "doorError" : false
     }
   ],
   "dryer" : {
@@ -38,14 +40,105 @@
     ],
     "programm" : ""
   },
-  "doorLocks" : [
+  "weatherStation" : {
+    "humidity" : 35,
+    "rain" : true,
+    "rainAmount" : 4,
+    "outsideTemp" : 18.600000381469727,
+    "windSpeed" : 5,
+    "co2" : 600,
+    "weatherWarning" : [
+
+    ]
+  },
+  "dishwasher" : {
+    "state" : false,
+    "runTime" : 0,
+    "health" : [
+
+    ],
+    "programm" : ""
+  },
+  "predictions" : [
     {
-      "doorOpen" : true,
-      "id" : "testLock",
-      "doorAjar" : false,
-      "name" : "Nuki",
-      "battery" : 98,
-      "doorError" : false
+      "predictable" : true,
+      "id" : "1",
+      "data" : [
+        {
+          "id" : "1",
+          "value" : 3,
+          "title" : "mo"
+        },
+        {
+          "id" : "2",
+          "value" : 4,
+          "title" : "di"
+        },
+        {
+          "id" : "3",
+          "value" : 8,
+          "title" : "mi"
+        },
+        {
+          "id" : "4",
+          "value" : 2,
+          "title" : "do"
+        },
+        {
+          "id" : "5",
+          "value" : 6,
+          "title" : "fr"
+        },
+        {
+          "id" : "6",
+          "value" : 11,
+          "title" : "sa"
+        },
+        {
+          "id" : "7",
+          "value" : 4,
+          "title" : "so"
+        }
+      ],
+      "title" : "Haustüre",
+      "averageUnit" : "Öffnungen/Tag",
+      "diagramType" : 1,
+      "description" : "Laut meinen Berechnungen sollte die Batterie am 5. Oktober ausgetauscht werden."
+    },
+    {
+      "predictable" : false,
+      "id" : "2",
+      "data" : [
+      ],
+      "title" : "Solar Produktion",
+      "averageUnit" : "Öffnungen/Tag",
+      "diagramType" : 1,
+      "description" : "Laut meinen Berechnungen sollte die Batterie am 5. Oktober ausgetauscht werden."
+    }
+  ],
+  "oven" : {
+    "preHeat" : false,
+    "state" : false,
+    "setTemp" : 0,
+    "timer" : 0,
+    "mode" : "",
+    "recipe" : ""
+  },
+  "washer" : {
+    "state" : false,
+    "runTime" : 0,
+    "health" : [
+
+    ],
+    "programm" : ""
+  },
+  "mediaDevices" : [
+    {
+      "id" : "testMedia",
+      "state" : true,
+      "volume" : 70,
+      "name" : "HomePod Küche",
+      "content" : "Song: Daydreamer"
     }
   ],
   "cameras" : [
@@ -59,14 +152,6 @@
       ]
     }
   ],
-  "dishwasher" : {
-    "state" : false,
-    "runTime" : 0,
-    "health" : [
-
-    ],
-    "programm" : ""
-  },
   "rooms" : [
     {
       "lights" : [
@@ -81,7 +166,7 @@
               "saturation" : 255,
               "type" : "Stripe",
               "hue" : 360,
-              "state" : true
+              "state" : false
             }
           ]
         }
@@ -123,30 +208,5 @@
         }
       ]
     }
-  ],
-  "weatherStation" : {
-    "humidity" : 0,
-    "rain" : false,
-    "rainAmount" : 0,
-    "outsideTemp" : 0,
-    "windSpeed" : 0,
-    "co2" : 0,
-    "weatherWarning" : [
-
-    ]
-  },
-  "microwave" : {
-    "watt" : 0,
-    "state" : false,
-    "timer" : 0,
-    "programm" : ""
-  },
-  "oven" : {
-    "preHeat" : false,
-    "state" : false,
-    "setTemp" : 0,
-    "timer" : 0,
-    "mode" : "",
-    "recipe" : ""
-  }
+  ]
 }

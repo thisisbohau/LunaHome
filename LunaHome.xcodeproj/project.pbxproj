@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C963ADF928D06FF0000647D1 /* DoorbellTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C963ADF828D06FF0000647D1 /* DoorbellTile.swift */; };
+		C963ADFC28D2F9C3000647D1 /* RoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C963ADFB28D2F9C3000647D1 /* RoomView.swift */; };
+		C963ADFE28D2FA17000647D1 /* RoomHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C963ADFD28D2FA17000647D1 /* RoomHelpers.swift */; };
+		C963AE0028D30044000647D1 /* LightHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C963ADFF28D30044000647D1 /* LightHelpers.swift */; };
 		C9761F8A28BA251200BF9C31 /* LunaHomeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9761F8928BA251200BF9C31 /* LunaHomeApp.swift */; };
 		C9761F8E28BA251300BF9C31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9761F8D28BA251300BF9C31 /* Assets.xcassets */; };
 		C9761F9128BA251300BF9C31 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9761F9028BA251300BF9C31 /* Preview Assets.xcassets */; };
@@ -71,6 +75,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C963ADF828D06FF0000647D1 /* DoorbellTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorbellTile.swift; sourceTree = "<group>"; };
+		C963ADFB28D2F9C3000647D1 /* RoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomView.swift; sourceTree = "<group>"; };
+		C963ADFD28D2FA17000647D1 /* RoomHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomHelpers.swift; sourceTree = "<group>"; };
+		C963ADFF28D30044000647D1 /* LightHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightHelpers.swift; sourceTree = "<group>"; };
 		C9761F8628BA251200BF9C31 /* LunaHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LunaHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9761F8928BA251200BF9C31 /* LunaHomeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunaHomeApp.swift; sourceTree = "<group>"; };
 		C9761F8D28BA251300BF9C31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -146,6 +154,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C963ADFA28D2F80A000647D1 /* Rooms */ = {
+			isa = PBXGroup;
+			children = (
+				C963ADFB28D2F9C3000647D1 /* RoomView.swift */,
+				C963ADFD28D2FA17000647D1 /* RoomHelpers.swift */,
+			);
+			path = Rooms;
+			sourceTree = "<group>";
+		};
 		C9761F7D28BA251200BF9C31 = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +235,7 @@
 		C9761FB628BA2DB400BF9C31 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C963ADFA28D2F80A000647D1 /* Rooms */,
 				C9761FF828BA32DD00BF9C31 /* Luna */,
 				C9761FB728BA2DB400BF9C31 /* Root.swift */,
 				C9761FB828BA2DB400BF9C31 /* TemplateComponents */,
@@ -256,6 +274,7 @@
 				C9761FCB28BA2DB400BF9C31 /* CameraControl.swift */,
 				C9761FCC28BA2DB400BF9C31 /* LightControl.swift */,
 				C9761FCD28BA2DB400BF9C31 /* ThermostatControl.swift */,
+				C963ADFF28D30044000647D1 /* LightHelpers.swift */,
 			);
 			path = DeviceControls;
 			sourceTree = "<group>";
@@ -267,6 +286,7 @@
 				C9761FD028BA2DB400BF9C31 /* LightShadeTile.swift */,
 				C9761FD128BA2DB400BF9C31 /* NukiTile.swift */,
 				C9761FD228BA2DB400BF9C31 /* WeatherTile.swift */,
+				C963ADF828D06FF0000647D1 /* DoorbellTile.swift */,
 			);
 			path = Overview;
 			sourceTree = "<group>";
@@ -460,12 +480,16 @@
 				C9761FEC28BA2DB400BF9C31 /* OverviewMain.swift in Sources */,
 				C9761FF228BA2DB400BF9C31 /* DeviceTemplates.swift in Sources */,
 				C9761FDE28BA2DB400BF9C31 /* WasherControl.swift in Sources */,
+				C963ADFE28D2FA17000647D1 /* RoomHelpers.swift in Sources */,
 				C9AC92A228CB5CD5003588CF /* RainEffect.swift in Sources */,
 				C9761FE328BA2DB400BF9C31 /* SensorControl.swift in Sources */,
 				C9761FE128BA2DB400BF9C31 /* RobotControl.swift in Sources */,
+				C963AE0028D30044000647D1 /* LightHelpers.swift in Sources */,
 				C9761FF128BA2DB400BF9C31 /* Home.swift in Sources */,
+				C963ADF928D06FF0000647D1 /* DoorbellTile.swift in Sources */,
 				C9761FDB28BA2DB400BF9C31 /* MediumTemplate.swift in Sources */,
 				C9761FD828BA2DB400BF9C31 /* SmallTemplate.swift in Sources */,
+				C963ADFC28D2F9C3000647D1 /* RoomView.swift in Sources */,
 				C9761FDA28BA2DB400BF9C31 /* LargeTemplate.swift in Sources */,
 				C9761FD928BA2DB400BF9C31 /* TemplateHelpers.swift in Sources */,
 				C9761FEE28BA2DB400BF9C31 /* NukiTile.swift in Sources */,

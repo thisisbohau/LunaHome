@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Root: View {
     @EnvironmentObject var fetcher: Fetcher
+    @EnvironmentObject var states: DeviceStates
     
     var body: some View {
         TabView{
@@ -25,11 +26,12 @@ struct Root: View {
                 }
                 .tag(2)
             
-            Text("Räume")
+            RoomView(room: $states.activeRoom)
                 .tabItem {
                     Label("Räume", systemImage: "square.on.square")
                 }
                 .tag(23)
+                
             
         }
         .onAppear(perform: {

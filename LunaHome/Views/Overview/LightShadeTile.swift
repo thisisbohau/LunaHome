@@ -12,14 +12,14 @@ struct LightShadeTile: View {
     var proxy: CGSize
     
     func lightsActive() -> (Bool, Int){
-        let count = fetcher.data.rooms.flatMap({$0.lights}).flatMap({$0.lights}).filter({$0.state}).count
+        let count = fetcher.data.rooms.flatMap({$0.lights}).filter({$0.state}).count
         
         return (count > 0, count)
         
     }
     
     func blindsActive() -> (Bool, Int){
-        let count = fetcher.data.rooms.flatMap({$0.blinds}).flatMap({$0.blinds}).filter({!$0.closed}).count
+        let count = fetcher.data.rooms.flatMap({$0.blinds}).filter({!$0.closed}).count
         
         return (count > 0, count)
         

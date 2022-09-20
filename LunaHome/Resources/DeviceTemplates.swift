@@ -27,8 +27,8 @@ struct Room: Identifiable, Codable{
     var id: String
     var name: String
     var floor: Int
-    var lights: [LightGroup]
-    var blinds: [BlindGroup]
+    var lights: [Light]
+    var blinds: [Blind]
     var thermostats: [Thermostat]
     var sensors: [Sensor]
 }

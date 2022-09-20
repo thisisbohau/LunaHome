@@ -18,7 +18,7 @@ struct DevicePreviewer: View {
         }){
             Text("toggle")
         }.sheet(isPresented: $showDetail)
-        {BlindControl(blind: $fetcher.data.rooms.first!.blinds.first!.blinds.first!)}
+        {BlindControl(blind: $fetcher.data.rooms.first!.blinds.first!)}
 //        WasherControl(washer: $fetcher.data.washer)
 //        DryerControl(dryer: $fetcher.data.dryer)
 //        DishwasherControl(dishwasher: $fetcher.data.dishwasher)
