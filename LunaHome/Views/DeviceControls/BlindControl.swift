@@ -57,10 +57,6 @@ struct BlindControl: View {
                     rectangle
                         .foregroundColor(.gray.opacity(0.2))
                 }
-                
-                
-                
-                
             }
             HStack{
                 circles

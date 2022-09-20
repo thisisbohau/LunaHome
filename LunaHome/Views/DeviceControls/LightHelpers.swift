@@ -330,3 +330,187 @@ struct ColorPicker: View {
     }
 }
 
+struct SmartToggleSwitch: View {
+    @Binding var active: Bool
+    var sliderHeight: CGFloat
+    var sliderWidth: CGFloat
+    var onColor: Color
+    var onIcon: AnyView
+    var offIcon: AnyView
+    
+    @State var sliderOffset: CGFloat = 0
+    
+    func setup(){
+        if active{
+            sliderOffset = 0
+        }else{
+            sliderOffset = sliderHeight/2
+        }
+        
+    }
+    
+    var onToggle: some View{
+        HStack{
+            Spacer()
+            VStack{
+                Spacer()
+                onIcon
+                Spacer()
+            }
+            Spacer()
+        }
+        .background(onColor)
+        .cornerRadius(36)
+        .padding()
+    }
+    var offToggle: some View{
+        HStack{
+            Spacer()
+            VStack{
+                Spacer()
+                offIcon
+                Spacer()
+            }
+            Spacer()
+        }
+        .background(Color.gray)
+        .cornerRadius(36)
+        .padding()
+    }
+    
+    var body: some View {
+        GeometryReader{proxy in
+            VStack{
+                HStack{
+                    Spacer()
+                }
+                Spacer()
+            }
+            .frame(height: sliderHeight)
+            .background(.regularMaterial)
+            .cornerRadius(50)
+            
+            VStack{
+                if active{
+                    onToggle
+                }else{
+                    offToggle
+                }
+            }
+            .animation(.linear(duration: 0.1), value: active)
+            .frame(height: (sliderHeight/2))
+            
+            .offset(y: sliderOffset)
+            .gesture(DragGesture(minimumDistance: 5)
+                .onChanged({location in
+                    let calcOffset = location.location.y
+                    let tresh = sliderHeight/2
+                    if calcOffset > tresh{
+                        sliderOffset = tresh
+                    }else if calcOffset < 0{
+                        sliderOffset = 0
+                    }else{
+                        sliderOffset = calcOffset
+                    }
+                
+                if calcOffset > sliderHeight/2*0.5{
+                        active = false
+                    }else{
+                        active = true
+                    }
+                
+                })
+                .onEnded({location in
+                withAnimation(.linear(duration: 0.1)){
+                    let calcOffset = location.location.y
+                    let tresh = sliderHeight/2
+                    if calcOffset > sliderHeight/2*0.5{
+                        sliderOffset = tresh
+                        active = false
+                    }else{
+                        sliderOffset = 0
+                        active = true
+                    }
+                }
+                    
+                })
+            )
+            .onChange(of: active, perform: {_ in setup()})
+            .onAppear(perform: {
+                setup()
+            })
+        }
+        .frame(width: sliderWidth, height: sliderHeight)
+    }
+}
+
+struct VerticalSlider: View {
+    @Binding var value: Float
+    @Binding var lineColor: Color
+    @State var floatValue: Float = 0
+    
+    @State var lastValue: Float = 0
+    
+    var onChange: () -> Void
+    
+    func update(){
+        var distance = lastValue.distance(to: floatValue)
+        distance = distance < 0 ? distance * -1 : distance
+        
+        if distance > (floatValue < 10 ? 1 : 9){
+            print("distance to last value:\(distance)")
+            if floatValue < 2{
+                value = 0
+            }else{
+                value = floatValue
+            }
+            lastValue = floatValue
+            onChange()
+        }
+    }
+    func setup(){
+        floatValue = value
+    }
+    var body: some View {
+        VStack{
+            HStack{
+                GeometryReader { geometry in
+                    VStack{
+                        Spacer()
+                            ZStack(alignment: .leading) {
+                                Rectangle()
+                                    .foregroundColor(Color.gray.opacity(0.3))
+                                Rectangle()
+                                    .foregroundColor(lineColor)
+                                    .frame(width: geometry.size.width * CGFloat((floatValue != 0 ? floatValue : 1)/100))
+                            }
+                            .frame(height: 120)
+                            .cornerRadius(36)
+                            .gesture(DragGesture(minimumDistance: 0)
+                                    
+                            .onChanged({ value in
+                                
+                                let predictedLocation = min(max(0, Float(value.predictedEndLocation.x / geometry.size.width * 100)), 100)
+                                self.floatValue = min(max(0, Float(value.location.x / geometry.size.width * 100)), 100)
+                                print("new value")
+                                
+                                if predictedLocation.distance(to: floatValue) > 15{
+                                    print("fast movement, waiting")
+                                }else{
+                                    print("updating")
+                                    update()
+                                }
+                            })
+                            .onEnded({value in
+                                update()
+                            }))
+                        Spacer()
+                    }
+                }.frame(width: 350, height: 250)
+            }
+        }.rotationEffect(.init(degrees: -90), anchor: .center).frame(width: 160, height: 370)
+            .onAppear(perform: setup)
+            .onChange(of: value, perform: {value in setup()})
+    }
+}
+
