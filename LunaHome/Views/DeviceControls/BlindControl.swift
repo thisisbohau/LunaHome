@@ -25,7 +25,6 @@ struct BlindControl: View {
     }
     
     
-    
     var rectangle: some View{
         Rectangle()
             .cornerRadius(10)
@@ -145,6 +144,38 @@ struct BlindControl: View {
                 Text("geschlossen").bold().foregroundStyle(.secondary)
             }.padding([.leading, .trailing])
             
+            VStack{
+                HStack{
+                    Text("Details")
+                    Spacer()
+                }.font(.largeTitle)
+                    .bold()
+                    .padding([.bottom], 1)
+                
+                HStack{
+                    Text("\(blind.name)")
+                    Spacer()
+                }.foregroundColor(.gray)
+                    .bold()
+                    
+                
+                if blind.closed == true{
+                    HStack{
+                        Text("closed")
+                        Spacer()
+                    }
+                }else{
+                    HStack{
+                        Text("open")
+                        Spacer()
+                    }
+                    .foregroundColor(.gray)
+                    .bold()
+                }
+                
+            }.padding()
+                .padding([.top],50)
+                
             
             
             
@@ -157,9 +188,19 @@ struct BlindControl: View {
         GeometryReader{ geometry in
         ZStack{
             
+            
             VStack{
+                HStack{
+                    Text("Rollo Schlafzimmer").foregroundColor(.gray).bold()
+                    
+                    Spacer()
+                }.padding()
+                
                 control
                     .padding(.top, 50)
+                
+                
+              
                 Spacer()
             }
             
