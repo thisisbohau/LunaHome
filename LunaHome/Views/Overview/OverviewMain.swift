@@ -117,7 +117,7 @@ struct OverviewMain: View {
 //                                .padding(.bottom, DeviceItemCalculator().spacer)
                             LightShadeTile(proxy: proxy.size)
                             NukiTile(proxy: proxy.size)
-                            DoorbellTile(proxy: proxy.size)
+                            DoorbellTile(proxy: proxy.size, camera: Fetcher().data.cameras.first!)
 
                             Spacer()
                         }

@@ -514,3 +514,84 @@ struct VerticalSlider: View {
     }
 }
 
+struct ColorPreset: Identifiable, Codable{
+    var id: Int
+    var hue: CGFloat
+    var saturation: CGFloat
+    var brightness: CGFloat
+}
+
+class Presets{
+    func getPresets() -> [ColorPreset]{
+        var presets: [ColorPreset] = [ColorPreset]()
+        
+        for id in 1...6{
+            guard let preset = fetchPreset(id: id)else{
+                let Preset = ColorPreset(id: id, hue: 0, saturation: 0, brightness: 0)
+                savePreset(preset: Preset)
+                continue
+            }
+            presets.append(preset)
+        }
+        return presets
+    }
+    func fetchPreset(id: Int) -> ColorPreset?{
+        let decoder = JSONDecoder()
+        if let object = try? decoder.decode(ColorPreset.self, from: NSUbiquitousKeyValueStore.default.data(forKey: id.description) ?? Data()) {
+            return object
+        }else{
+            return nil
+        }
+    }
+    
+    func savePreset(preset: ColorPreset){
+        let encoder = JSONEncoder()
+        if let data = try? encoder.encode(preset) {
+            NSUbiquitousKeyValueStore.default.set(data, forKey: preset.id.description)
+        }
+    }
+}
+
+//
+////    MARK: Color Presets
+//let columns: [GridItem] = Array(repeating: .init(.fixed(65)), count: 3)
+//var presetSelector: some View{
+//    LazyVGrid(columns: columns){
+//        ForEach(presets){preset in
+//            Button(action: {selectPreset(preset: preset)}){
+//                VStack{
+//                    if preset.saturation == 0 && preset.hue == 0{
+//                        Circle()
+//                            .padding(5)
+//                            .frame(width: preset.id == selectedPreset ? 55 : 70, height: preset.id == selectedPreset ? 55 : 70)
+//                            .foregroundColor(Color(UIColor.tertiarySystemBackground))
+//                            .overlay(
+//                                Circle()
+//                                    .stroke(Color(UIColor.tertiarySystemBackground), lineWidth: preset.id == selectedPreset ? 4 : 0)
+//                            )
+//                            .overlay(
+//                                Text(preset.id == selectedPreset ? "edit" : "")
+//                                    .font(.caption.bold())
+//                                    .foregroundColor(Color(UIColor.systemBackground))
+//                            )
+//
+//                    }else{
+//                        Circle()
+//                            .padding(5)
+//                            .frame(width: preset.id == selectedPreset ? 55 : 70, height: preset.id == selectedPreset ? 55 : 70)
+//                            .foregroundColor(Color(hue: preset.hue, saturation: preset.saturation, brightness: preset.brightness))
+//                            .overlay(
+//                                Circle()
+//                                    .stroke(Color(hue: preset.hue, saturation: preset.saturation, brightness: preset.brightness), lineWidth: preset.id == selectedPreset ? 4 : 0)
+//                            )
+//                            .overlay(
+//                                Text(preset.id == selectedPreset ? "edit" : "")
+//                                    .font(.caption.bold())
+//                                    .foregroundColor(Color(UIColor.systemBackground))
+//                            )
+//                    }
+//                }.foregroundColor(.primary)
+//            }
+//        }
+//    }
+//}

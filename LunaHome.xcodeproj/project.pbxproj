@@ -55,6 +55,7 @@
 		C9AC929F28CB5AB0003588CF /* Snow.sks in Resources */ = {isa = PBXBuildFile; fileRef = C9AC929C28CB5AB0003588CF /* Snow.sks */; };
 		C9AC92A028CB5AB0003588CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9AC929D28CB5AB0003588CF /* Assets.xcassets */; };
 		C9AC92A228CB5CD5003588CF /* RainEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AC92A128CB5CD5003588CF /* RainEffect.swift */; };
+		C9F00C8328E5DDA2007AA1C6 /* testStream.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C9F00C8228E5DDA2007AA1C6 /* testStream.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +128,8 @@
 		C9AC929C28CB5AB0003588CF /* Snow.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Snow.sks; sourceTree = "<group>"; };
 		C9AC929D28CB5AB0003588CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C9AC92A128CB5CD5003588CF /* RainEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainEffect.swift; sourceTree = "<group>"; };
+		C9CDE53828E6009700A424A4 /* LunaHome.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LunaHome.entitlements; sourceTree = "<group>"; };
+		C9F00C8228E5DDA2007AA1C6 /* testStream.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = testStream.mp4; path = LunaHome/Assets.xcassets/testStream.dataset/testStream.mp4; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +189,7 @@
 		C9761F8828BA251200BF9C31 /* LunaHome */ = {
 			isa = PBXGroup;
 			children = (
+				C9CDE53828E6009700A424A4 /* LunaHome.entitlements */,
 				C9AC929A28CB5A6E003588CF /* Animations */,
 				C9761FF728BA326E00BF9C31 /* Info.plist */,
 				C9761F8D28BA251300BF9C31 /* Assets.xcassets */,
@@ -282,6 +286,7 @@
 		C9761FCE28BA2DB400BF9C31 /* Overview */ = {
 			isa = PBXGroup;
 			children = (
+				C9F00C8228E5DDA2007AA1C6 /* testStream.mp4 */,
 				C9761FCF28BA2DB400BF9C31 /* OverviewMain.swift */,
 				C9761FD028BA2DB400BF9C31 /* LightShadeTile.swift */,
 				C9761FD128BA2DB400BF9C31 /* NukiTile.swift */,
@@ -429,6 +434,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9761F9128BA251300BF9C31 /* Preview Assets.xcassets in Resources */,
+				C9F00C8328E5DDA2007AA1C6 /* testStream.mp4 in Resources */,
 				C9AC929E28CB5AB0003588CF /* Rain.sks in Resources */,
 				C9761F8E28BA251300BF9C31 /* Assets.xcassets in Resources */,
 				C9AC929F28CB5AB0003588CF /* Snow.sks in Resources */,
@@ -652,6 +658,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = LunaHome/LunaHome.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LunaHome/Preview Content\"";
@@ -686,6 +693,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = LunaHome/LunaHome.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LunaHome/Preview Content\"";
