@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ABA5C0D928E9F23100F69283 /* WasherProgrammControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA5C0D828E9F23100F69283 /* WasherProgrammControl.swift */; };
+		ABB687A828E74AFD00C7F2F6 /* DeviceTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB687A728E74AFD00C7F2F6 /* DeviceTester.swift */; };
 		C963ADF928D06FF0000647D1 /* DoorbellTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C963ADF828D06FF0000647D1 /* DoorbellTile.swift */; };
 		C963ADFC28D2F9C3000647D1 /* RoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C963ADFB28D2F9C3000647D1 /* RoomView.swift */; };
 		C963ADFE28D2FA17000647D1 /* RoomHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C963ADFD28D2FA17000647D1 /* RoomHelpers.swift */; };
@@ -55,7 +57,6 @@
 		C9AC929F28CB5AB0003588CF /* Snow.sks in Resources */ = {isa = PBXBuildFile; fileRef = C9AC929C28CB5AB0003588CF /* Snow.sks */; };
 		C9AC92A028CB5AB0003588CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9AC929D28CB5AB0003588CF /* Assets.xcassets */; };
 		C9AC92A228CB5CD5003588CF /* RainEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AC92A128CB5CD5003588CF /* RainEffect.swift */; };
-		C9F00C8328E5DDA2007AA1C6 /* testStream.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C9F00C8228E5DDA2007AA1C6 /* testStream.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		ABA5C0D828E9F23100F69283 /* WasherProgrammControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasherProgrammControl.swift; sourceTree = "<group>"; };
+		ABB687A728E74AFD00C7F2F6 /* DeviceTester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceTester.swift; sourceTree = "<group>"; };
 		C963ADF828D06FF0000647D1 /* DoorbellTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorbellTile.swift; sourceTree = "<group>"; };
 		C963ADFB28D2F9C3000647D1 /* RoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomView.swift; sourceTree = "<group>"; };
 		C963ADFD28D2FA17000647D1 /* RoomHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomHelpers.swift; sourceTree = "<group>"; };
@@ -129,7 +132,6 @@
 		C9AC929D28CB5AB0003588CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C9AC92A128CB5CD5003588CF /* RainEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainEffect.swift; sourceTree = "<group>"; };
 		C9CDE53828E6009700A424A4 /* LunaHome.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LunaHome.entitlements; sourceTree = "<group>"; };
-		C9F00C8228E5DDA2007AA1C6 /* testStream.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = testStream.mp4; path = LunaHome/Assets.xcassets/testStream.dataset/testStream.mp4; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,6 +268,7 @@
 				C9761FBE28BA2DB400BF9C31 /* DoorLockControl.swift */,
 				C9761FBF28BA2DB400BF9C31 /* BlindControl.swift */,
 				C9761FC028BA2DB400BF9C31 /* WasherControl.swift */,
+				ABA5C0D828E9F23100F69283 /* WasherProgrammControl.swift */,
 				C9761FC228BA2DB400BF9C31 /* MicrowaveControl.swift */,
 				C9761FC328BA2DB400BF9C31 /* RobotControl.swift */,
 				C9761FC428BA2DB400BF9C31 /* DryerControl.swift */,
@@ -286,12 +289,12 @@
 		C9761FCE28BA2DB400BF9C31 /* Overview */ = {
 			isa = PBXGroup;
 			children = (
-				C9F00C8228E5DDA2007AA1C6 /* testStream.mp4 */,
 				C9761FCF28BA2DB400BF9C31 /* OverviewMain.swift */,
 				C9761FD028BA2DB400BF9C31 /* LightShadeTile.swift */,
 				C9761FD128BA2DB400BF9C31 /* NukiTile.swift */,
 				C9761FD228BA2DB400BF9C31 /* WeatherTile.swift */,
 				C963ADF828D06FF0000647D1 /* DoorbellTile.swift */,
+				ABB687A728E74AFD00C7F2F6 /* DeviceTester.swift */,
 			);
 			path = Overview;
 			sourceTree = "<group>";
@@ -434,7 +437,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9761F9128BA251300BF9C31 /* Preview Assets.xcassets in Resources */,
-				C9F00C8328E5DDA2007AA1C6 /* testStream.mp4 in Resources */,
 				C9AC929E28CB5AB0003588CF /* Rain.sks in Resources */,
 				C9761F8E28BA251300BF9C31 /* Assets.xcassets in Resources */,
 				C9AC929F28CB5AB0003588CF /* Snow.sks in Resources */,
@@ -476,6 +478,7 @@
 				C9761FF428BA2E4B00BF9C31 /* Fetcher.swift in Sources */,
 				C9761FE228BA2DB400BF9C31 /* DryerControl.swift in Sources */,
 				C9761F8A28BA251200BF9C31 /* LunaHomeApp.swift in Sources */,
+				ABB687A828E74AFD00C7F2F6 /* DeviceTester.swift in Sources */,
 				C976202628CA2DF700BF9C31 /* LunaPrivacy.swift in Sources */,
 				C9761FDD28BA2DB400BF9C31 /* BlindControl.swift in Sources */,
 				C9761FEF28BA2DB400BF9C31 /* WeatherTile.swift in Sources */,
@@ -501,6 +504,7 @@
 				C9761FEE28BA2DB400BF9C31 /* NukiTile.swift in Sources */,
 				C9761FE928BA2DB400BF9C31 /* CameraControl.swift in Sources */,
 				C9761FFC28BA345100BF9C31 /* LunaMain.swift in Sources */,
+				ABA5C0D928E9F23100F69283 /* WasherProgrammControl.swift in Sources */,
 				C9761FFE28BA5AC800BF9C31 /* LunaTips.swift in Sources */,
 				C9761FDC28BA2DB400BF9C31 /* DoorLockControl.swift in Sources */,
 			);

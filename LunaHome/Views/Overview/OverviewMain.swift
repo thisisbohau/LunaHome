@@ -117,14 +117,17 @@ struct OverviewMain: View {
 //                                .padding(.bottom, DeviceItemCalculator().spacer)
                             LightShadeTile(proxy: proxy.size)
                             NukiTile(proxy: proxy.size)
-                            DoorbellTile(proxy: proxy.size, camera: Fetcher().data.cameras.first!)
+//                            DoorbellTile(proxy: proxy.size, camera: Fetcher().data.cameras.first!)
 
                             Spacer()
                         }
                         .padding(.trailing, DeviceItemCalculator().spacer)
+                        
+                        
 
                         VStack(spacing: 0){
                             WeatherTile(proxy: proxy.size, animate: false)
+                            DeviceTester(proxy: proxy.size)
                             
 //                            SmallTemplate(proxy: proxy.size, type: .overlay, device: Blind(id: "", name: "", position: 0, closed: false))
 //                                .padding(.bottom, DeviceItemCalculator().spacer)

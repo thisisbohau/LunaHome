@@ -140,37 +140,46 @@ struct BlindControl: View {
                 Text("geschlossen").bold().foregroundStyle(.secondary)
             }.padding([.leading, .trailing])
             
-            VStack{
-                HStack{
-                    Text("Details")
-                    Spacer()
-                }.font(.largeTitle)
-                    .bold()
-                    .padding([.bottom], 1)
-                
-                HStack{
-                    Text("\(blind.name)")
-                    Spacer()
-                }.foregroundColor(.gray)
-                    .bold()
+            HStack{
+                Rectangle().foregroundColor(.teal)
+                    .frame(width: 10)
+                    .cornerRadius(12)
+
                     
-                
-                if blind.closed == true{
+                VStack{
                     HStack{
-                        Text("closed")
+                        Text("Details")
                         Spacer()
-                    }
-                }else{
+                    }.font(.largeTitle)
+                        .bold()
+                        .padding([.bottom], 1)
+                    
                     HStack{
-                        Text("open")
+                        Text("\(blind.name)")
                         Spacer()
+                    }.foregroundColor(.gray)
+                        .bold()
+                        
+                    
+                    if blind.closed == true{
+                        HStack{
+                            Text("closed")
+                            Spacer()
+                        }
+                    }else{
+                        HStack{
+                            Text("open")
+                            Spacer()
+                        }
+                        .foregroundColor(.gray)
+                        .bold()
                     }
-                    .foregroundColor(.gray)
-                    .bold()
+                    
                 }
-                
-            }.padding()
-                .padding([.top],50)
+            }.frame(height: 100)
+                .padding()
+                    .padding([.top],50)
+            
                 
             
             
