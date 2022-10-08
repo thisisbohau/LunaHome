@@ -57,6 +57,9 @@ struct Washer: Codable{
     var runTime: Int
     var programm: String
     var health: [String]
+    var beschmutzung: String
+    var temperatur: String
+    var schleudern: String
 }
 
 struct Dryer: Codable{

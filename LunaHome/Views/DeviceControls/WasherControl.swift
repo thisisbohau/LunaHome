@@ -8,8 +8,22 @@
 import SwiftUI
 
 struct WasherControl: View {
-    @Binding var washer: Washer
+    @EnvironmentObject var fetcher: Fetcher
+    
     @State var showProgramm: Bool = false
+    @State var animate: Bool = false
+    
+    
+   
+    
+    
+//    washer: Washer(state: false, runTime: 0, programm: "", health: [String](), beschmutzung: "", temperatur: "", schleudern: "")
+    
+    func setupOnAppear(){
+        withAnimation(.linear(duration: 1).repeatForever()){
+            animate.toggle()
+        }
+    }
     
     var body: some View {
         VStack{
@@ -33,7 +47,14 @@ struct WasherControl: View {
                 VStack{
                     Circle()
                         .frame(width: 100)
-                        .foregroundColor(.teal)
+                        .foregroundStyle(.tertiary)
+                }.offset(y:20)
+                VStack{
+                    LinearGradient(colors: [fetcher.data.washer.state ? .blue : .teal, .teal], startPoint: .top, endPoint: .bottom)
+                        .frame(width: 80, height: 80)
+                        
+                        .clipShape(Circle())
+                        .rotationEffect(Angle(degrees: animate ? 360 : 0))
                 }.offset(y:20)
                 
                 HStack{
@@ -57,21 +78,39 @@ struct WasherControl: View {
             }.padding([.bottom])
             
 //            einschalten/auschalten Button
-            Button(action:{showProgramm = true}){
-                HStack{
-                    ZStack{
-                        Rectangle().foregroundColor(.teal)
-                            .frame(width: 110, height: 40)
-                            .cornerRadius(19)
-                        
-                        Text("start").bold().foregroundColor(.white)
-                    }
+            
+            
+            if fetcher.data.washer.state == false{
+                Button(action:{showProgramm = true}){
+                    HStack{
+                        ZStack{
+                            Rectangle().foregroundColor(.teal)
+                                .frame(width: 110, height: 40)
+                                .cornerRadius(19)
+                            
+                            Text("start").bold().foregroundColor(.white)
+                        }
 
-                }
-            }.padding([.bottom], 40)
-                .sheet(isPresented: $showProgramm){
-                    WasherProgrammControl()
-                }
+                    }
+                }.padding([.bottom], 40)
+                    .sheet(isPresented: $showProgramm){
+                        WasherProgrammControl()
+                    }
+            }else{
+                Button(action:{fetcher.data.washer.state = false}){
+                    HStack{
+                        ZStack{
+                            Rectangle().foregroundColor(.teal)
+                                .frame(width: 110, height: 40)
+                                .cornerRadius(19)
+                            
+                            Text("beenden").bold().foregroundColor(.white)
+                        }
+
+                    }
+                }.padding([.bottom], 40)
+            }
+            
             
             HStack{
                 
@@ -97,16 +136,98 @@ struct WasherControl: View {
                 
                 HStack{
                         
-//                            .foregroundColor(Color(uiColor: UIColor(red: rgb.r, green: rgb.g, blue: rgb.b, alpha: 1)))
-                    Text("läuft gerade")
-                    Spacer()
+                    if fetcher.data.washer.state == true{
+                        Text("läuft gerade")
+                        Spacer()
+                    }else{
+                        Text("aus")
+                        Spacer()
+                    }
+                    
                 }
                 
+                
+                
             }
+                
             }.frame(height: 100)
                 .padding()
+            
+            
+//            Statusanzeigen
+            
+            if fetcher.data.washer.state == true{
+                VStack{
+                VStack{
+                    HStack{
+                        ZStack{
+                            Circle().foregroundColor(.teal).frame(width: 60)
+                            Image(systemName: "washer.fill").font(.title)
+                        }.padding([.trailing])
+                        VStack(alignment: .leading){
+                            Text(fetcher.data.washer.programm).font(.title).bold()
+                            Text("Waschprogramm").foregroundColor(.gray)
+                        }
+                        
+                        Spacer()
+                    }
+                    
+                }.padding([.bottom])
+                
+                VStack{
+                    HStack{
+                        ZStack{
+                            Circle().foregroundColor(.teal).frame(width: 60)
+                            Image(systemName: "timer").font(.title)
+                        }.padding([.trailing])
+                        VStack(alignment: .leading){
+                            Text("20 min").font(.title).bold()
+                            Text("Läuft seit").foregroundColor(.gray)
+                        }
+                        
+                        Spacer()
+                    }
+                    
+                }.padding([.bottom])
+                
+                VStack{
+                    HStack{
+                        ZStack{
+                            Circle().foregroundColor(.teal).frame(width: 60)
+                            Image(systemName: "waveform.path.ecg").font(.title)
+                        }.padding([.trailing])
+                        VStack(alignment: .leading){
+                            Text("Bitte Reinigen").font(.title).bold()
+                            Text("Zustand").foregroundColor(.gray)
+                        }
+                        
+                        Spacer()
+                    }
+                    
+                }
+                }.padding()
+            }else{
+                VStack{
+                    HStack{
+                        ZStack{
+                            Circle().foregroundColor(.teal).frame(width: 60)
+                            Image(systemName: "waveform.path.ecg").font(.title)
+                        }.padding([.trailing])
+                        VStack(alignment: .leading){
+                            Text("Bitte Reinigen").font(.title).bold()
+                            Text("Zustand").foregroundColor(.gray)
+                        }
+                        
+                        Spacer()
+                    }
+                    
+                }.padding()
+            }
+            
+            
+            Spacer()
         }
-        Spacer()
+        .onAppear(perform: setupOnAppear)
         
     }
 }

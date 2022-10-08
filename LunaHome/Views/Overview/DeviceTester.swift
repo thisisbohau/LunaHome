@@ -29,7 +29,7 @@ struct DeviceTester: View {
             )
             .padding(.bottom, DeviceItemCalculator().spacer)
             .sheet(isPresented: $show){
-                WasherControl(washer: $fetcher.data.washer)
+                WasherControl()
             }
     }
 }

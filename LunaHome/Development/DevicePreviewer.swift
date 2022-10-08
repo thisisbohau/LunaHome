@@ -17,10 +17,13 @@ struct DevicePreviewer: View {
             showDetail.toggle()
         }){
             Text("toggle")
-        }.sheet(isPresented: $showDetail)
+        }.sheet(isPresented: $showDetail){
+            WasherControl()
+            
+        }
+        
         //        {LightControl(light: $fetcher.data.rooms.first!.lights.first!)}
         //        {BlindControl(blind: $fetcher.data.rooms.first!.blinds.first!)}
-        {WasherControl(washer: $fetcher.data.washer)}
 //        DryerControl(dryer: $fetcher.data.dryer)
 //        DishwasherControl(dishwasher: $fetcher.data.dishwasher)
 //        OvenControl(oven: $fetcher.data.oven)
@@ -42,5 +45,6 @@ struct DevicePreviewer: View {
 struct DevicePreviewer_Previews: PreviewProvider {
     static var previews: some View {
         DevicePreviewer()
+            .environmentObject(Fetcher())
     }
 }
