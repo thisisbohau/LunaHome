@@ -33,15 +33,15 @@ struct LightControl: View {
     @State var wheelBri: CGFloat = 1
     @State var date: String = ""
     @State private var isEditing = false
-    @State var brightness: Double = 1
+    @State var brightness: Float = 1
     @State var presets: [ColorPreset] = [ColorPreset]()
     @State var selectedPreset: Int = 0
     @State var status: Bool = false
-    
+    @State var lineColor: Color = .red
     
     func setup(){
         status = light.state
-        brightness = Double(light.brightness)
+        brightness = status ? Float(light.brightness) : 0
         let colorConvert = UIColor(hue: CGFloat(light.hue)/360, saturation: CGFloat(light.saturation)/255, brightness: 1, alpha: 1)
         
         rgb = RGB(r: colorConvert.rgba.red, g: colorConvert.rgba.green, b: colorConvert.rgba.blue)
@@ -51,12 +51,14 @@ struct LightControl: View {
     }
     
     func updateBrightness(){
-        light.brightness = Int(Double(brightness))
+        light.brightness = Int(Float(brightness))
         
         if brightness == 0{
             status = false
+            light.state = false
         }else{
             status = true
+            light.state = true
         }
     }
     
@@ -71,6 +73,7 @@ struct LightControl: View {
         
         Presets().savePreset(preset: ColorPreset(id: Int(convert.hsba.h*360), hue: convert.hsba.h*Double(360), saturation: convert.hsba.s*255, brightness: 1))
         presets = Presets().getPresets()
+        lineColor = Color(uiColor: convert)
     }
     
 
@@ -102,122 +105,126 @@ var presetSelector: some View{
 
     
     var body: some View {
-        VStack{
-            HStack{
-                Image(systemName: "lightbulb.fill").foregroundColor(.gray).bold()
-                Text("Küchenlicht").foregroundColor(.gray).bold()
-
-                Spacer()
-            }.padding(20)
-            .padding([.bottom], 40)
-            
-
-            ColorPicker(radius: 300, rgbColour: $rgb, brightness: $wheelBri, modified: $date)
-            HStack{
-                Spacer()
-
-                ZStack{
-                    Rectangle()
-                        .foregroundColor(.secondary)
+        GeometryReader{proxy in
+            ScrollView{
+                VStack{
+                    HStack{
+                        Image(systemName: "lightbulb.fill").foregroundColor(.gray).bold()
+                        Text("Lichtsteuerung").foregroundColor(.gray).bold()
+                        
+                        Spacer()
+                    }.padding(20)
+                        .padding([.bottom], 40)
+                    
+                    
+                    ColorPicker(radius: 300, rgbColour: $rgb, brightness: $wheelBri, modified: $date)
+                    HStack{
+                        Spacer()
+                        VStack{
+                            if light.state{
+                                Text("\(light.brightness)% Helligkeit")
+                            }else{
+                                Text("ausgeschaltet")
+                            }
+                        }
+                        .padding(10)
+                        .background(.regularMaterial)
                         .cornerRadius(12)
-                        .frame(width: 55, height: 30)
-                        .padding()
-                    Text("\(Int(brightness))%")
-                        .foregroundColor(Color.white)
-
-                }.padding([.bottom], -10)
-                
-                
-                
-                
-            }
-            VStack{
-                
-                Slider(
-                    value: $brightness,
-                    in: 0...100,
-                    onEditingChanged: { editing in
-                        isEditing = editing
-                        updateBrightness()
-                        updateState()
-                    }
-                ).tint(Color(uiColor: UIColor(red: rgb.r, green: rgb.g, blue: rgb.b, alpha: 1)))
-                
-            }.padding()
-
-            
-            
-//            Rectangle()
-//                .foregroundColor(Color(uiColor: UIColor(red: rgb.r, green: rgb.g, blue: rgb.b, alpha: 1)))
-//                .frame(width: 20, height: 20)
-        }.onAppear(perform: setup)
-            .onChange(of: date, perform: {_ in
-                updateColor()
-            })
-        
-        HStack{
-            Rectangle().foregroundColor(.teal)
-                .frame(width: 10)
-                .cornerRadius(12)
-
-                
-            VStack{
-                HStack{
-//                    Image(systemName: "lightbulb.fill")
-                    Text("Details")
-                    Spacer()
-                }.font(.largeTitle)
-                    .bold()
-                    .padding([.bottom], 1)
-                
-                HStack{
-                    Text("\(light.name)")
-                    Spacer()
-                }.foregroundColor(.gray)
-                    .bold()
+                        .padding([.bottom], -10)
+                    }.padding(.trailing)
+                    VStack{
+                        
+                        VerticalSlider(size: CGSize(width: proxy.size.width*0.92, height: 20), value: $brightness, lineColor: $lineColor, onChange: updateBrightness)
+                            .cornerRadius(8)
+                        
+//                        .padding([.leading, .trailing])
+                        
+//                        Slider(
+//                            value: $brightness,
+//                            in: 0...100,
+//                            onEditingChanged: { editing in
+//                                isEditing = editing
+//                                updateBrightness()
+//                                updateState()
+//                            }
+//                        ).tint(Color(uiColor: UIColor(red: rgb.r, green: rgb.g, blue: rgb.b, alpha: 1)))
+                        
+                    }.padding()
                     
+                    
+                    
+                    //            Rectangle()
+                    //                .foregroundColor(Color(uiColor: UIColor(red: rgb.r, green: rgb.g, blue: rgb.b, alpha: 1)))
+                    //                .frame(width: 20, height: 20)
+                }.onAppear(perform: setup)
+                    .onChange(of: date, perform: {_ in
+                        updateColor()
+                    })
                 
-                if status == true{
-                    HStack{
-                        Image(systemName: "lightbulb.fill")
+                HStack{
+                    Rectangle().foregroundColor(.accentColor)
+                        .frame(width: 10)
+                        .cornerRadius(12)
+                    
+                    
+                    VStack{
+                        HStack{
+                            Text(light.name)
+                            Spacer()
+                        }.font(.largeTitle)
+                            .bold()
+                            .padding([.bottom], 1)
+                        
+                        HStack{
+                            Text("Status")
+                                .bold()
+                            Spacer()
+                        }.foregroundStyle(.secondary)
+                        
+                        
+                        
+                        if status == true{
+                            HStack{
+                                Image(systemName: "lightbulb.fill")
+                                
+                                //                            .foregroundColor(Color(uiColor: UIColor(red: rgb.r, green: rgb.g, blue: rgb.b, alpha: 1)))
+                                Text("eingeschaltet | \(light.brightness)%")
+                                Spacer()
+                            }
+                        }else{
+                            HStack{
+                                Image(systemName: "lightbulb.slash.fill")
+                                Text("ausgeschaltet")
+                                Spacer()
+                            }
+                            .foregroundStyle(.secondary)
                             
-//                            .foregroundColor(Color(uiColor: UIColor(red: rgb.r, green: rgb.g, blue: rgb.b, alpha: 1)))
-                        Text("on")
-                        Spacer()
+                        }
+                        
                     }
-                }else{
-                    HStack{
-                        Image(systemName: "lightbulb.slash.fill")
-                        Text("off")
-                        Spacer()
-                    }
+                    .padding([.leading], 5)
                     
-                }
+                    
+                    
+                }.frame(height: 100)
+                    .padding()
+                //                .padding([.top],10)
+                    .padding([.bottom], 15)
+                
+                HStack{
+                    Text("Last used")
+                        .foregroundColor(.gray)
+                        .bold()
+                    Spacer()
+                }.padding([.leading])
+                
+                presetSelector
+                    .padding([.leading, .trailing])
+                
+                
                 
             }
-            .padding([.leading], 5)
-            
-            
-            
-        }.frame(height: 100)
-            .padding()
-//                .padding([.top],10)
-                .padding([.bottom], 15)
-        
-        HStack{
-            Text("Last used")
-                .foregroundColor(.gray)
-                    .bold()
-            Spacer()
-        }.padding([.leading])
-        
-        presetSelector
-            .padding([.leading, .trailing])
-       
-        
-
-        
+        }.accentColor(.orange)
     }
-    
 }
 

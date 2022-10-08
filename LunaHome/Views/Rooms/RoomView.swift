@@ -48,7 +48,7 @@ struct RoomView: View {
     @State var settingColor: Bool = false
     @State var settingLights: Bool = false
     
-    
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     func setup(){
         DispatchQueue.main.async {
@@ -179,7 +179,7 @@ struct RoomView: View {
 //            Image(room.id.description)
         Image("IMG_0170")
             .resizable()
-            .scaledToFit()
+            .scaledToFill()
 //                .overlay(
 //                    VStack{
 //                        Spacer()
@@ -190,6 +190,7 @@ struct RoomView: View {
 //                        .background(.regularMaterial)
 //                )
                 .ignoresSafeArea()
+        
     
     }
     
@@ -397,10 +398,12 @@ struct RoomView: View {
                 DeviceList(items: $items)
                 
             }
+//            .padding()
             .onChange(of: selectedNav?.id, perform: {_ in setup()})
             .transition(.asymmetric(insertion: .scale, removal: .opacity))
             .animation(.linear, value: selectedNav?.id)
         }
+//        .ignoresSafeArea()
         .onAppear(perform: {
             setup()
         })
@@ -417,6 +420,34 @@ struct RoomView: View {
                     settingBrightness = false
                 }
             }
+        })
+        .sheet(isPresented: $states.showEdit){
+            if states.editType == .blind{
+                BlindControl(blind: $states.selectedBlind)
+                
+            }else if states.editType == .light{
+                LightControl(light: $states.selectedLight)
+            }else{
+                ThermostatControl(thermostat: $states.selectedThermostat)
+            }
+        }
+        .onReceive(timer, perform: {_ in
+            if let room = fetcher.data.rooms.firstIndex(where: {$0.lights.contains(where: {$0.id == states.selectedLight.id})}){
+                fetcher.data.rooms[room].lights.removeAll(where: {$0.id == states.selectedLight.id})
+                fetcher.data.rooms[room].lights.append(states.selectedLight)
+            }
+            
+            if let room = fetcher.data.rooms.firstIndex(where: {$0.blinds.contains(where: {$0.id == states.selectedBlind.id})}){
+                fetcher.data.rooms[room].blinds.removeAll(where: {$0.id == states.selectedBlind.id})
+                fetcher.data.rooms[room].blinds.append(states.selectedBlind)
+            }
+            
+            if let room = fetcher.data.rooms.firstIndex(where: {$0.thermostats.contains(where: {$0.id == states.selectedThermostat.id})}){
+                fetcher.data.rooms[room].thermostats.removeAll(where: {$0.id == states.selectedThermostat.id})
+                fetcher.data.rooms[room].thermostats.append(states.selectedThermostat)
+            }
+            
+            setup()
         })
         
 //        .sheet(isPresented: $showGroupColorSelector){

@@ -9,19 +9,24 @@ import SwiftUI
 
 struct BlindControl: View {
     @Binding var blind: Blind
-    @State var blindPosition: Double = 0
+    @State var blindPosition: Float = 0
     @State private var isEditing = false
     @State var numbersInput: Double = 1
- 
+    @State var sliderColor: Color = .teal
     
     func setup(){
-        blindPosition = Double(blind.position)
+        blindPosition = Float(100-blind.position)
     }
     
 //    Update beim Ändern der Position
     
     func updatePosition(){
-        blind.position = Int(blindPosition)
+        blind.position = Int(100-blindPosition)
+        if blind.position == 0{
+            blind.closed = true
+        }else{
+            blind.closed = false
+        }
     }
     
     
@@ -35,22 +40,24 @@ struct BlindControl: View {
         VStack{
             Circle()
                 .foregroundColor(Color.secondary)
-                .frame(width: 15)
+                .frame(width: 15, height: 15)
             Circle()
                 .foregroundColor(Color.secondary)
-                .frame(width: 15)
+                .frame(width: 15, height: 15)
         }
     }
     var control: some View{
         VStack{
+            
             Rectangle()
                 .foregroundColor(.secondary)
                 .cornerRadius(20)
                 .frame(width: 220, height: 22)
             
+           
             HStack{
                 circles
-                if blind.position > 0{
+                if blind.position < 100{
                     rectangle
                         .foregroundColor(.teal)
                 }else{
@@ -60,7 +67,8 @@ struct BlindControl: View {
             }
             HStack{
                 circles
-                if blind.position > 25{
+                
+                if blind.position < 50{
                     rectangle
                         .foregroundColor(.teal)
                 }else{
@@ -72,7 +80,7 @@ struct BlindControl: View {
             HStack{
                 circles
                 
-                if blind.position > 50{
+                if blind.position < 25{
                     rectangle
                         .foregroundColor(.teal)
                 }else{
@@ -90,7 +98,7 @@ struct BlindControl: View {
                 }
                 
                 
-                if blind.position > 75{
+                if blind.position < 5{
                     rectangle
                         .foregroundColor(.teal)
                 }else{
@@ -106,81 +114,42 @@ struct BlindControl: View {
             HStack{
                 Spacer()
                 ZStack{
-                    Rectangle()
-                        .foregroundColor(.secondary)
-                        .cornerRadius(12)
-                        .frame(width: 55, height: 30)
-                        .padding()
-                    Text("\(Int(blindPosition))%")
-                        .foregroundColor(Color.white)
-                }.padding([.bottom], -10)
-                
-                
-                
-                
-            }
-            VStack{
-                Slider(
-                    value: $blindPosition,
-                    in: 0...100,
-                    onEditingChanged: { editing in
-                        isEditing = editing
-                        updatePosition()
-                    }
-                )
-                
-            }
-            
-            .padding([.leading, .trailing])
-            
-            
-            HStack{
-                Text("offen").bold().foregroundStyle(.secondary)
-                Spacer()
-                Text("geschlossen").bold().foregroundStyle(.secondary)
-            }.padding([.leading, .trailing])
-            
-            HStack{
-                Rectangle().foregroundColor(.teal)
-                    .frame(width: 10)
-                    .cornerRadius(12)
-
-                    
-                VStack{
-                    HStack{
-                        Text("Details")
-                        Spacer()
-                    }.font(.largeTitle)
-                        .bold()
-                        .padding([.bottom], 1)
-                    
-                    HStack{
-                        Text("\(blind.name)")
-                        Spacer()
-                    }.foregroundColor(.gray)
-                        .bold()
-                        
-                    
-                    if blind.closed == true{
-                        HStack{
-                            Text("closed")
-                            Spacer()
-                        }
+//                    Rectangle()
+//                        .foregroundStyle(.regularMaterial)
+//                        .cornerRadius(12)
+//                        .frame(width: 55, height: 30)
+//                        .padding()
+                    if blind.closed{
+                        Text("geschlossen")
+                    }else if blind.position == 100{
+                        Text("geöffnet")
                     }else{
-                        HStack{
-                            Text("open")
-                            Spacer()
-                        }
-                        .foregroundColor(.gray)
-                        .bold()
+                        Text("\(Int(100-blindPosition))%")
                     }
-                    
+                        
                 }
-            }.frame(height: 100)
-                .padding()
-                    .padding([.top],50)
-            
+                .padding(10)
+                .background(.regularMaterial)
+                .cornerRadius(12)
+                .padding([.bottom], -10)
                 
+                
+                
+                
+                
+            }
+//            VStack{
+//                Slider(
+//                    value: $blindPosition,
+//                    in: 0...100,
+//                    onEditingChanged: { editing in
+//                        isEditing = editing
+//                        updatePosition()
+//                    }
+//                )
+//
+//            }
+     
             
             
             
@@ -189,48 +158,107 @@ struct BlindControl: View {
     }
     
     var body: some View {
-    
+//        ScrollView{
         GeometryReader{ geometry in
-        ZStack{
-            
-            
-            VStack{
-                HStack{
-                    Text("Rollo Schlafzimmer").foregroundColor(.gray).bold()
+            ZStack{
+                
+                
+                VStack{
+                    HStack{
+                        Text("Rollo Steuerung").foregroundColor(.gray).bold()
+                        
+                        Spacer()
+                    }.padding()
+                    
+                    control
+                        .padding(.top, 50)
+                    
+                    VerticalSlider(size: CGSize(width: geometry.size.width*0.92, height: 20), value: $blindPosition, lineColor: $sliderColor, onChange: updatePosition)
+                        
+                      
+                        .cornerRadius(8)
+                    
+                    .padding([.leading, .trailing])
+                    
+                    
+                    HStack{
+                        Text("offen").bold().foregroundStyle(.secondary)
+                        Spacer()
+                        Text("geschlossen").bold().foregroundStyle(.secondary)
+                    }.padding([.leading, .trailing])
+                    
+                    HStack{
+                        Rectangle().foregroundColor(.teal)
+                            .frame(width: 10)
+                            .cornerRadius(12)
+
+                            
+                        VStack{
+                            HStack{
+                                Text(blind.name)
+                                Spacer()
+                            }.font(.largeTitle)
+                                .bold()
+                                .padding([.bottom], 1)
+                            
+                            HStack{
+                                Text("Status")
+                                Spacer()
+                            }.foregroundColor(.gray)
+                                .bold()
+                                
+                            
+                            if blind.closed == true{
+                                HStack{
+                                    Text("geschlossen")
+                                    Spacer()
+                                }
+                                .foregroundColor(.gray)
+                                .bold()
+                            }else{
+                                HStack{
+                                    Text("\(blind.position)% offen")
+                                    Spacer()
+                                }
+                               
+                            }
+                            
+                        }
+                    }.frame(height: 100)
+                        .padding()
+                            .padding([.top],50)
+                    
+                        
+                    
+                    
                     
                     Spacer()
-                }.padding()
+                }
+                .onAppear(perform: setup)
                 
-                control
-                    .padding(.top, 50)
+                //            .padding([.bottom], geometry.size.height )
+                //            VStack{
+                //                Spacer()
+                //                if blind.closed{
+                //                    Text("geschlossen")
+                //                }else{
+                //                    Text("offen")
+                //                }
+                //
+                //            }
                 
                 
-              
-                Spacer()
+                
+                
+                
             }
             
-
-//            .padding([.bottom], geometry.size.height )
-//            VStack{
-//                Spacer()
-//                if blind.closed{
-//                    Text("geschlossen")
-//                }else{
-//                    Text("offen")
-//                }
-//
-//            }
             
             
             
-            
-            
-        }.background(.regularMaterial)
-        
-    
-        
-        
-    }
+        }
         .accentColor(Color.teal)
+//        .background(.regularMaterial)
+//    }
     }
 }

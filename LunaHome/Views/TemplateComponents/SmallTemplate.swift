@@ -55,7 +55,7 @@ struct SmallTemplate: View {
                 return Color(hue: Double(light.hue)/360, saturation: Double(light.saturation/255), brightness: 1)
             }
         }else{
-            return .yellow
+            return Color(hue: Double(light.hue)/360, saturation: Double(light.saturation/255), brightness: 1)
         }
     }
 

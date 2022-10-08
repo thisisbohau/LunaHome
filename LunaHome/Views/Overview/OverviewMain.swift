@@ -116,9 +116,8 @@ struct OverviewMain: View {
 //                                )
 //                                .padding(.bottom, DeviceItemCalculator().spacer)
                             LightShadeTile(proxy: proxy.size)
-                            NukiTile(proxy: proxy.size)
-//                            DoorbellTile(proxy: proxy.size, camera: Fetcher().data.cameras.first!)
-
+                            DoorbellTile(proxy: proxy.size, camera: Fetcher().data.cameras.first!)
+                            OvenTile(proxy: proxy.size)
                             Spacer()
                         }
                         .padding(.trailing, DeviceItemCalculator().spacer)
@@ -127,8 +126,11 @@ struct OverviewMain: View {
 
                         VStack(spacing: 0){
                             WeatherTile(proxy: proxy.size, animate: false)
-                            DeviceTester(proxy: proxy.size)
-                            
+                            NukiTile(proxy: proxy.size)
+                            if !data.data.recommendations.isEmpty{
+                                LunaTile(proxy: proxy.size)
+                            }
+                            FoodplanerTile(proxy: proxy.size)
 //                            SmallTemplate(proxy: proxy.size, type: .overlay, device: Blind(id: "", name: "", position: 0, closed: false))
 //                                .padding(.bottom, DeviceItemCalculator().spacer)
 
@@ -165,5 +167,6 @@ struct OverviewMain: View {
 struct Overview_Previews: PreviewProvider {
     static var previews: some View {
         OverviewMain()
+            .environmentObject(Fetcher())
     }
 }

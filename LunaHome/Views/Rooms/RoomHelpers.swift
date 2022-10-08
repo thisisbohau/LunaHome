@@ -100,7 +100,7 @@ struct DeviceList: View{
                                 performAction(item: item)
                             }){
                                 if item.size ?? .small == .large{
-                                    LargeTemplate(proxy: proxy.size, type: item.type, device: item.device)
+                                    MediumTemplate(proxy: proxy.size, type: item.type, device: item.device)
                                         .padding([.bottom, .trailing], spacer)
                                 }else{
                                     SmallTemplate(proxy: proxy.size, type: item.type, device: item.device)
@@ -118,7 +118,7 @@ struct DeviceList: View{
                                 performAction(item: item)
                             }){
                                 if item.size ?? .small == .large{
-                                    LargeTemplate(proxy: proxy.size, type: item.type, device: item.device)
+                                    MediumTemplate(proxy: proxy.size, type: item.type, device: item.device)
                                         .padding([.bottom, .trailing], spacer)
                                 }else{
                                     SmallTemplate(proxy: proxy.size, type: item.type, device: item.device)
@@ -132,6 +132,7 @@ struct DeviceList: View{
             .onAppear(perform: {
                 getBoxSizes(proxy: proxy.size)
             })
+            
         }.padding()
     }
 }

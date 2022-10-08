@@ -99,6 +99,7 @@ struct DoorbellTile: View {
                                 )
                     }
                 )
+                .padding(.bottom, DeviceItemCalculator().spacer)
                 
     
     }

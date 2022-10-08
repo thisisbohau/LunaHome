@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		ABA5C0D928E9F23100F69283 /* WasherProgrammControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA5C0D828E9F23100F69283 /* WasherProgrammControl.swift */; };
 		ABB687A828E74AFD00C7F2F6 /* DeviceTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB687A728E74AFD00C7F2F6 /* DeviceTester.swift */; };
+		C91E0E2428F0233900F18481 /* testStream.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C9CDE53F28EB143700A424A4 /* testStream.mp4 */; };
+		C91E0E2628F036D600F18481 /* LunaTipDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91E0E2528F036D600F18481 /* LunaTipDetail.swift */; };
 		C963ADF928D06FF0000647D1 /* DoorbellTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C963ADF828D06FF0000647D1 /* DoorbellTile.swift */; };
 		C963ADFC28D2F9C3000647D1 /* RoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C963ADFB28D2F9C3000647D1 /* RoomView.swift */; };
 		C963ADFE28D2FA17000647D1 /* RoomHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C963ADFD28D2FA17000647D1 /* RoomHelpers.swift */; };
@@ -57,6 +59,9 @@
 		C9AC929F28CB5AB0003588CF /* Snow.sks in Resources */ = {isa = PBXBuildFile; fileRef = C9AC929C28CB5AB0003588CF /* Snow.sks */; };
 		C9AC92A028CB5AB0003588CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9AC929D28CB5AB0003588CF /* Assets.xcassets */; };
 		C9AC92A228CB5CD5003588CF /* RainEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AC92A128CB5CD5003588CF /* RainEffect.swift */; };
+		C9CDE53A28E7242000A424A4 /* LunaTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CDE53928E7242000A424A4 /* LunaTile.swift */; };
+		C9CDE53C28E738F000A424A4 /* OvenTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CDE53B28E738F000A424A4 /* OvenTile.swift */; };
+		C9CDE53E28E9ED8D00A424A4 /* FoodplanerTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CDE53D28E9ED8D00A424A4 /* FoodplanerTile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +84,7 @@
 /* Begin PBXFileReference section */
 		ABA5C0D828E9F23100F69283 /* WasherProgrammControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasherProgrammControl.swift; sourceTree = "<group>"; };
 		ABB687A728E74AFD00C7F2F6 /* DeviceTester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceTester.swift; sourceTree = "<group>"; };
+		C91E0E2528F036D600F18481 /* LunaTipDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunaTipDetail.swift; sourceTree = "<group>"; };
 		C963ADF828D06FF0000647D1 /* DoorbellTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorbellTile.swift; sourceTree = "<group>"; };
 		C963ADFB28D2F9C3000647D1 /* RoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomView.swift; sourceTree = "<group>"; };
 		C963ADFD28D2FA17000647D1 /* RoomHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomHelpers.swift; sourceTree = "<group>"; };
@@ -132,6 +138,10 @@
 		C9AC929D28CB5AB0003588CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C9AC92A128CB5CD5003588CF /* RainEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainEffect.swift; sourceTree = "<group>"; };
 		C9CDE53828E6009700A424A4 /* LunaHome.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LunaHome.entitlements; sourceTree = "<group>"; };
+		C9CDE53928E7242000A424A4 /* LunaTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunaTile.swift; sourceTree = "<group>"; };
+		C9CDE53B28E738F000A424A4 /* OvenTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvenTile.swift; sourceTree = "<group>"; };
+		C9CDE53D28E9ED8D00A424A4 /* FoodplanerTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodplanerTile.swift; sourceTree = "<group>"; };
+		C9CDE53F28EB143700A424A4 /* testStream.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = testStream.mp4; path = LunaHome/Resources/testStream.mp4; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -294,6 +304,9 @@
 				C9761FD128BA2DB400BF9C31 /* NukiTile.swift */,
 				C9761FD228BA2DB400BF9C31 /* WeatherTile.swift */,
 				C963ADF828D06FF0000647D1 /* DoorbellTile.swift */,
+				C9CDE53928E7242000A424A4 /* LunaTile.swift */,
+				C9CDE53B28E738F000A424A4 /* OvenTile.swift */,
+				C9CDE53D28E9ED8D00A424A4 /* FoodplanerTile.swift */,
 				ABB687A728E74AFD00C7F2F6 /* DeviceTester.swift */,
 			);
 			path = Overview;
@@ -302,6 +315,7 @@
 		C9761FD428BA2DB400BF9C31 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C9CDE53F28EB143700A424A4 /* testStream.mp4 */,
 				C976200128BA6F5800BF9C31 /* Home.json */,
 				C9761FD528BA2DB400BF9C31 /* Home.swift */,
 				C9761FD628BA2DB400BF9C31 /* DeviceTemplates.swift */,
@@ -317,6 +331,7 @@
 				C9761FFD28BA5AC800BF9C31 /* LunaTips.swift */,
 				C9761FFF28BA5ADF00BF9C31 /* LunaPredictions.swift */,
 				C976202528CA2DF700BF9C31 /* LunaPrivacy.swift */,
+				C91E0E2528F036D600F18481 /* LunaTipDetail.swift */,
 			);
 			path = Luna;
 			sourceTree = "<group>";
@@ -436,6 +451,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C91E0E2428F0233900F18481 /* testStream.mp4 in Resources */,
 				C9761F9128BA251300BF9C31 /* Preview Assets.xcassets in Resources */,
 				C9AC929E28CB5AB0003588CF /* Rain.sks in Resources */,
 				C9761F8E28BA251300BF9C31 /* Assets.xcassets in Resources */,
@@ -478,6 +494,7 @@
 				C9761FF428BA2E4B00BF9C31 /* Fetcher.swift in Sources */,
 				C9761FE228BA2DB400BF9C31 /* DryerControl.swift in Sources */,
 				C9761F8A28BA251200BF9C31 /* LunaHomeApp.swift in Sources */,
+				C91E0E2628F036D600F18481 /* LunaTipDetail.swift in Sources */,
 				ABB687A828E74AFD00C7F2F6 /* DeviceTester.swift in Sources */,
 				C976202628CA2DF700BF9C31 /* LunaPrivacy.swift in Sources */,
 				C9761FDD28BA2DB400BF9C31 /* BlindControl.swift in Sources */,
@@ -490,10 +507,13 @@
 				C9761FF228BA2DB400BF9C31 /* DeviceTemplates.swift in Sources */,
 				C9761FDE28BA2DB400BF9C31 /* WasherControl.swift in Sources */,
 				C963ADFE28D2FA17000647D1 /* RoomHelpers.swift in Sources */,
+				C9CDE53E28E9ED8D00A424A4 /* FoodplanerTile.swift in Sources */,
+				C9CDE53A28E7242000A424A4 /* LunaTile.swift in Sources */,
 				C9AC92A228CB5CD5003588CF /* RainEffect.swift in Sources */,
 				C9761FE328BA2DB400BF9C31 /* SensorControl.swift in Sources */,
 				C9761FE128BA2DB400BF9C31 /* RobotControl.swift in Sources */,
 				C963AE0028D30044000647D1 /* LightHelpers.swift in Sources */,
+				C9CDE53C28E738F000A424A4 /* OvenTile.swift in Sources */,
 				C9761FF128BA2DB400BF9C31 /* Home.swift in Sources */,
 				C963ADF928D06FF0000647D1 /* DoorbellTile.swift in Sources */,
 				C9761FDB28BA2DB400BF9C31 /* MediumTemplate.swift in Sources */,

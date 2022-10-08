@@ -37,6 +37,14 @@ struct Root: View {
         .onAppear(perform: {
             fetcher.load()
             fetcher.logTemplate()
+            if let room = fetcher.data.rooms.first{
+                states.activeRoom = room
+            }else{
+                return
+            }
+            
+                
+            
             
         })
     }

@@ -28,7 +28,8 @@ struct LightShadeTile: View {
     }
     
     var body: some View {
-        Button(action: {show.toggle()}){
+        VStack{
+//        Button(action: {show.toggle()}){
             if lightsActive().0 && blindsActive().0{
                 MediumTemplate(proxy: proxy, type: .overlay, device: "")
                     .overlay(
