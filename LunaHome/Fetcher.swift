@@ -45,6 +45,8 @@ class Fetcher: ObservableObject{
     @Published var startedAt: Date = Date()
     @Published var timerStartedAt: Date = Date()
     
+    @Published var washerStartedAt: Date = Date()
+    
     func logTemplate(){
         let jjson = data.convertToString ?? ""
         print("\n\nCurrent Home Template: \n\n\n\(jjson)\n\n\nEnd")

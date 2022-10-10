@@ -92,7 +92,7 @@ struct WasherControl: View {
                         }
 
                     }
-                }.padding([.bottom], 40)
+                }.padding([.bottom], 20)
                     .sheet(isPresented: $showProgramm){
                         WasherProgrammControl()
                     }
@@ -108,7 +108,7 @@ struct WasherControl: View {
                         }
 
                     }
-                }.padding([.bottom], 40)
+                }.padding([.bottom], 20)
             }
             
             
@@ -162,7 +162,7 @@ struct WasherControl: View {
                     HStack{
                         ZStack{
                             Circle().foregroundColor(.teal).frame(width: 60)
-                            Image(systemName: "washer.fill").font(.title)
+                            Image(systemName: "washer.fill").font(.title).foregroundColor(.white)
                         }.padding([.trailing])
                         VStack(alignment: .leading){
                             Text(fetcher.data.washer.programm).font(.title).bold()
@@ -178,10 +178,10 @@ struct WasherControl: View {
                     HStack{
                         ZStack{
                             Circle().foregroundColor(.teal).frame(width: 60)
-                            Image(systemName: "timer").font(.title)
+                            Image(systemName: "timer").font(.title).foregroundColor(.white)
                         }.padding([.trailing])
                         VStack(alignment: .leading){
-                            Text("20 min").font(.title).bold()
+                            Text("\(Text(fetcher.washerStartedAt, style: .timer)) Minuten").font(.title).bold()
                             Text("Läuft seit").foregroundColor(.gray)
                         }
                         
@@ -194,7 +194,7 @@ struct WasherControl: View {
                     HStack{
                         ZStack{
                             Circle().foregroundColor(.teal).frame(width: 60)
-                            Image(systemName: "waveform.path.ecg").font(.title)
+                            Image(systemName: "waveform.path.ecg").font(.title).foregroundColor(.white)
                         }.padding([.trailing])
                         VStack(alignment: .leading){
                             Text("Bitte Reinigen").font(.title).bold()
