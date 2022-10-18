@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DevicePreviewer: View {
     @ObservedObject var fetcher: Fetcher = Fetcher()
+    @State var thermostat: Thermostat = Thermostat(id: "", name: "", setTemp: 0, currentTemp: 0, coolingDevice: false, performance: 0)
     
     @State var showDetail: Bool = false
     var body: some View {
@@ -18,7 +19,7 @@ struct DevicePreviewer: View {
         }){
             Text("toggle")
         }.sheet(isPresented: $showDetail){
-            WasherControl()
+            ThermostatControl(thermostat: $thermostat)
             
         }
         

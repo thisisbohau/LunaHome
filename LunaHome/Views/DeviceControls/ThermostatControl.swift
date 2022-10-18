@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ThermostatControl: View {
     @Binding var thermostat: Thermostat
+    @EnvironmentObject var fetcher: Fetcher
     
     var body: some View {
         VStack{
