@@ -230,26 +230,29 @@ struct WasherProgrammControl: View {
                 Text("Temperatur auswählen").font(.title2).bold()
                 Spacer()
             }.padding([.leading, .bottom])
-            
+            ScrollView(.horizontal, showsIndicators: false){
             HStack{
                 ForEach(temperatur, id: \.self){entry3 in
                     Button(action:{
                         selectedTemperatur = entry3
                     }){
+                        
                         HStack{
-                            ZStack{
-                                Circle().frame(width: 68).foregroundColor(selectedTemperatur == entry3 ? Color.teal : Color.secondary)
-                                Text(entry3)
-                            }
+                            Text(entry3)
+                                .padding()
+                                .background(
+                                    Circle().foregroundColor(selectedTemperatur == entry3 ? Color.teal : Color.secondary)
+                                )
+                            
                             
                         }
-
-//                        .background(selectedTemperatur == entry3 ? Color.teal : Color.secondary)
+                        
+                        //                        .background(selectedTemperatur == entry3 ? Color.teal : Color.secondary)
                         .foregroundColor(.white)
                         
                     }
                     
-                    
+                }
                     
                 }.padding([.leading, .trailing, .bottom])
             }

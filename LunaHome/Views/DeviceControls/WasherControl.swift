@@ -35,9 +35,6 @@ struct WasherControl: View {
             }.padding(20)
             .padding([.bottom], 40)
             
-            
-            
-            
             ZStack{
                 VStack{
                     Rectangle().foregroundStyle(.tertiary)
@@ -160,10 +157,16 @@ struct WasherControl: View {
                 VStack{
                 VStack{
                     HStack{
-                        ZStack{
-                            Circle().foregroundColor(.teal).frame(width: 60)
-                            Image(systemName: "washer.fill").font(.title).foregroundColor(.white)
-                        }.padding([.trailing])
+//                        ZStack{
+//                            Circle().foregroundColor(.teal).frame(width: 60)
+//                            Image(systemName: "washer.fill").font(.title).foregroundColor(.white)
+//                        }.padding([.trailing])
+                        
+                        Image(systemName: "washer.fill")
+                            .font(.title)
+                            .foregroundColor(.white)
+                            .padding(10)
+                            .background(Circle().foregroundColor(.teal))
                         VStack(alignment: .leading){
                             Text(fetcher.data.washer.programm).font(.title).bold()
                             Text("Waschprogramm").foregroundColor(.gray)
@@ -176,10 +179,16 @@ struct WasherControl: View {
                 
                 VStack{
                     HStack{
-                        ZStack{
-                            Circle().foregroundColor(.teal).frame(width: 60)
-                            Image(systemName: "timer").font(.title).foregroundColor(.white)
-                        }.padding([.trailing])
+//                        ZStack{
+//                            Circle().frame(width: 60).foregroundColor(.teal)
+//                            Image(systemName: "timer").font(.title).foregroundColor(.white)
+//                        }.padding([.trailing])
+                        
+                        Image(systemName: "timer")
+                            .font(.title)
+                            .foregroundColor(.white)
+                            .padding(10)
+                            .background(Circle().foregroundColor(.teal))
                         VStack(alignment: .leading){
                             Text("\(Text(fetcher.washerStartedAt, style: .timer)) Minuten").font(.title).bold()
                             Text("Läuft seit").foregroundColor(.gray)
@@ -192,10 +201,16 @@ struct WasherControl: View {
                 
                 VStack{
                     HStack{
-                        ZStack{
-                            Circle().foregroundColor(.teal).frame(width: 60)
-                            Image(systemName: "waveform.path.ecg").font(.title).foregroundColor(.white)
-                        }.padding([.trailing])
+//                        ZStack{
+//                            Circle().foregroundColor(.teal).frame(width: 60)
+//                            Image(systemName: "waveform.path.ecg").font(.title).foregroundColor(.white)
+//                        }.padding([.trailing])
+                        
+                        Image(systemName: "waveform.path.ecg")
+                            .font(.title)
+                            .foregroundColor(.white)
+                            .padding(10)
+                            .background(Circle().foregroundColor(.teal))
                         VStack(alignment: .leading){
                             Text("Bitte Reinigen").font(.title).bold()
                             Text("Zustand").foregroundColor(.gray)
@@ -209,10 +224,16 @@ struct WasherControl: View {
             }else{
                 VStack{
                     HStack{
-                        ZStack{
-                            Circle().foregroundColor(.teal).frame(width: 60)
-                            Image(systemName: "waveform.path.ecg").font(.title)
-                        }.padding([.trailing])
+//                        ZStack{
+//                            Circle().foregroundColor(.teal).frame(width: 60)
+//                            Image(systemName: "waveform.path.ecg").font(.title)
+//                        }.padding([.trailing])
+                        
+                        Image(systemName: "waveform.path.ecg")
+                            .font(.title)
+                            .foregroundColor(.white)
+                            .padding(10)
+                            .background(Circle().foregroundColor(.teal))
                         VStack(alignment: .leading){
                             Text("Bitte Reinigen").font(.title).bold()
                             Text("Zustand").foregroundColor(.gray)

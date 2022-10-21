@@ -63,7 +63,9 @@ struct DoorbellTile: View {
             MediumTemplate(proxy: proxy, type: .overlay, device: Blind(id: "", name: "", position: 0, closed: false))
                 .overlay(
                     GeometryReader{Cproxy in
-                        PlayerView(feedName: camera.feedName)
+//                        PlayerView(feedName: camera.feedName)
+                        Image("Doorbell")
+                            .resizable()
                                 .aspectRatio(contentMode: .fill)
                                 .frame(width: Cproxy.size.width, height: Cproxy.size.height)
                                 .clipped()
@@ -75,7 +77,7 @@ struct DoorbellTile: View {
                                         HStack{
                                             Text(camera.name)
                                                 .font(.caption.bold())
-                                                .foregroundColor(.white)
+                                                .foregroundColor(.black)
                                                 .foregroundStyle(.regularMaterial)
                                                 .padding(10)
                                             Spacer()
@@ -87,7 +89,7 @@ struct DoorbellTile: View {
                                                 
                                         }
                                         Spacer()
-                                        Button(action: {}){
+                                        Button(action: {show.toggle()}){
                                             Image(systemName: "mic.fill")
                                                 .foregroundColor(.white)
                                                 .padding(10)
@@ -95,11 +97,14 @@ struct DoorbellTile: View {
                                                 .clipShape(Circle())
                                         }
                                         .padding(.bottom, 10)
-                                    }
+                                    }.foregroundStyle(.regularMaterial)
                                 )
                     }
                 )
                 .padding(.bottom, DeviceItemCalculator().spacer)
+                .sheet(isPresented: $show){
+                    CameraControl(camera: $camera)
+                }
                 
     
     }

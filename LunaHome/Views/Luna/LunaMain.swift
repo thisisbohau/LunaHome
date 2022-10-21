@@ -54,7 +54,9 @@ struct LunaMain: View {
                 
                 HStack{
                     Spacer()
-                    Image(systemName: "moonphase.first.quarter.inverse")
+                    Image("luna")
+                        
+                        .symbolRenderingMode(.hierarchical)
                         .font(.largeTitle)
                         .padding()
                         .foregroundStyle(.thinMaterial)
@@ -65,7 +67,7 @@ struct LunaMain: View {
             .padding()
             .padding(.bottom)
             .background(
-                LinearGradient(colors: [.purple, .blue], startPoint: .topLeading, endPoint: .bottomTrailing)
+                LinearGradient(colors: [.accentColor, .accentColor, Color("GradientSecondary")], startPoint: .topLeading, endPoint: .bottomTrailing)
                     .hueRotation(.degrees(animateGradient ? 45 : 0))
 //                    .overlay(.ultraThinMaterial)
                     .ignoresSafeArea()
@@ -121,6 +123,7 @@ struct LunaMain: View {
             .sheet(isPresented: $showPrivacy){
                 LunaPrivacy()
             }
+            .background(Color("background").ignoresSafeArea())
         }
     }
 //

@@ -59,7 +59,7 @@ struct OverviewMain: View {
     
     var background: some View{
         ZStack{
-            LinearGradient(colors: [.purple, .blue], startPoint: .topLeading, endPoint: .bottomTrailing)
+            LinearGradient(colors: [.accentColor, .accentColor, Color("GradientSecondary")], startPoint: .topLeading, endPoint: .bottomTrailing)
                 .hueRotation(.degrees(animateGradient ? 45 : 0))
                 .ignoresSafeArea()
                 .onAppear {
@@ -118,6 +118,12 @@ struct OverviewMain: View {
                             LightShadeTile(proxy: proxy.size)
                             DoorbellTile(proxy: proxy.size, camera: Fetcher().data.cameras.first!)
                             OvenTile(proxy: proxy.size)
+                            
+                            Washer_Tile(proxy: proxy.size)
+                            if !data.data.recommendations.isEmpty{
+                                LunaTile(proxy: proxy.size)
+                            }
+                            
                             Spacer()
                         }
                         .padding(.trailing, DeviceItemCalculator().spacer)
@@ -127,10 +133,10 @@ struct OverviewMain: View {
                         VStack(spacing: 0){
                             WeatherTile(proxy: proxy.size, animate: false)
                             NukiTile(proxy: proxy.size)
-                            if !data.data.recommendations.isEmpty{
-                                LunaTile(proxy: proxy.size)
-                            }
+                         
                             FoodplanerTile(proxy: proxy.size)
+                            DoorbellTile(proxy: proxy.size, camera: Fetcher().data.cameras.first!)
+                           
 //                            SmallTemplate(proxy: proxy.size, type: .overlay, device: Blind(id: "", name: "", position: 0, closed: false))
 //                                .padding(.bottom, DeviceItemCalculator().spacer)
 

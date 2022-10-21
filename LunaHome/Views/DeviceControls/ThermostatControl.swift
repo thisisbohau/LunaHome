@@ -12,13 +12,15 @@ struct ThermostatControl: View {
     @EnvironmentObject var fetcher: Fetcher
     
     @State var setTemp: Float = 22
-    @State var aktuelleTemp: Float = 1
-    
     @State var color: Color = .orange
     
+    func setup(){
+        setTemp = thermostat.setTemp
+    }
     func onChange(){
-        aktuelleTemp = setTemp * 0.3
-        thermostat.setTemp = setTemp
+        let totalChange = 15 * setTemp/100
+        let newTemp = Float(Double(15.0) + Double(totalChange))
+        thermostat.setTemp = newTemp
         
     }
     
@@ -36,11 +38,11 @@ struct ThermostatControl: View {
             
             HStack{
                 Image(systemName: "flame.fill").font(.title).foregroundColor(.orange)
-                Text(String(format: "%.1f", setTemp)).font(.title).bold().foregroundColor(.gray)
+                Text(String(format: "%.1f", thermostat.setTemp)).font(.title).bold().foregroundColor(.gray)
             }
             Spacer()
             VStack{
-                VerticalSlider(size: CGSize(width: 300, height: 110), value: $setTemp, lineColor: $color, onChange: onChange )
+                VerticalSlider(size: CGSize(width: 300, height: 110), value: $setTemp, lineColor: $color, onChange: onChange)
                     .cornerRadius(14)
                     .rotationEffect(Angle(degrees: -90))
                     .fixedSize()
@@ -48,7 +50,8 @@ struct ThermostatControl: View {
 Spacer()
             HStack{
                 Text("Aktuell")
-                Text("\(String(format: "%.1f", aktuelleTemp))°").font(.title).bold()
+//                Text(setTempDisplay.description)
+                Text("\(String(format: "%.1f", thermostat.currentTemp))°").font(.title).bold()
                 Text("  ")
                 Text("Luftfeuchtigkeit")
                 Text("\(thermostat.luft)%").font(.title).bold()
@@ -153,6 +156,9 @@ Spacer()
             
 //            Spacer()
         }
+        .onAppear(perform: {
+            setup()
+        })
  
         
     }

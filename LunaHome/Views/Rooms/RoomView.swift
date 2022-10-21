@@ -33,7 +33,7 @@ struct RoomView: View {
     @State var currentRoom = Fetcher().data.rooms.first!
     @State var items: [DeviceListEntry] = [DeviceListEntry]()
     
-    @State var navItems: [SelectionMenuItem] = [SelectionMenuItem(id: "lights", name: "Lights", iconName: "lightbulb.fill", color: .yellow), SelectionMenuItem(id: "climate", name: "Climate", iconName: "fanblades.fill", color: Color("tadoCold")), SelectionMenuItem(id: "shades", name: "Shades", iconName: "blinds.horizontal.closed", color: Color("blindAccent"))]
+    @State var navItems: [SelectionMenuItem] = [SelectionMenuItem(id: "lights", name: "Lampen", iconName: "lightbulb.fill", color: .yellow), SelectionMenuItem(id: "climate", name: "Klima", iconName: "fanblades.fill", color: Color("tadoCold")), SelectionMenuItem(id: "shades", name: "Rollos", iconName: "blinds.horizontal.closed", color: Color.teal)]
     @State var selectedNav: SelectionMenuItem? = nil
     
     
@@ -66,6 +66,42 @@ struct RoomView: View {
             
             guard let updatedTado = currentRoom.thermostats.first(where: {$0.id == states.selectedThermostat.id})else{return}
             states.selectedThermostat = updatedTado
+        }
+    }
+    
+    func toogleBlinds(){
+        states.selectedBlind.closed = !blindDescription().1
+        states.selectedBlind.position = blindDescription().1 ? 100 : 0
+        
+        for blind in room.blinds{
+            var BLIND = blind
+            BLIND.closed = !blindDescription().1
+            BLIND.position = blindDescription().1 ? 100 : 0
+            
+            guard let index = room.blinds.firstIndex(where: {$0.id == blind.id})else{continue}
+            room.blinds[index] = BLIND
+            
+            guard let roomId = fetcher.data.rooms.firstIndex(where: {$0.id == room.id})else{return}
+            fetcher.data.rooms[roomId] = room
+            
+        }
+    }
+    
+    func toogleLights(){
+        states.selectedLight.state = !lightDescription().1
+        states.selectedLight.brightness = lightDescription().1 ? 100 : 0
+        
+        for light in room.lights{
+            var LIGHT = light
+            LIGHT.state = !lightDescription().1
+            LIGHT.brightness = lightDescription().1 ? 100 : 0
+            
+            guard let index = room.lights.firstIndex(where: {$0.id == light.id})else{continue}
+            room.lights[index] = LIGHT
+            
+            guard let roomId = fetcher.data.rooms.firstIndex(where: {$0.id == room.id})else{return}
+            fetcher.data.rooms[roomId] = room
+            
         }
     }
     
@@ -129,25 +165,17 @@ struct RoomView: View {
         guard let room = fetcher.data.rooms.first(where: {$0.id == room.id})else{return ("", false)}
         let count = room.lights.filter({$0.state}).count
        
-            return ("\(count) light(s)", count > 0 ? true : false)
+            return ("\(count) Lampe(n)", count > 0 ? true : false)
        
     }
     func blindDescription() -> (LocalizedStringKey, Bool){
         guard let room = fetcher.data.rooms.first(where: {$0.id == room.id})else{return ("", false)}
         let count = room.blinds.filter({$0.closed}).count
 
-            return ("\(count) blind(s)",  count > 0 ? true : false)
+            return ("\(count) Rollo(s)",  count > 0 ? true : false)
     
     }
-    func allOff(){
-        Task{
-            settingLights = true
-//            await SceneKit().roomOffAsync(room: room)
-            settingLights = false
-        }
-        
-        
-    }
+    
     var roomSelector: some View{
         ScrollViewReader{proxy in
             ScrollView(.horizontal, showsIndicators: false){
@@ -222,7 +250,7 @@ struct RoomView: View {
                             Text("\(String(format: "%.1f", getAvgTemp(devices: room.thermostats)))°")
                                 .font(.headline)
                                 .fontWeight(.bold)
-                            Text("Inside Avg.")
+                            Text("Ø Raumtemperatur")
                                 .font(.caption)
                         }
                         .foregroundStyle(.primary)
@@ -237,43 +265,19 @@ struct RoomView: View {
     var blindActions: some View{
         ScrollView(.horizontal, showsIndicators: false){
             HStack{
-                Button(action: {
-                    Task{
-//                        await BlindKit().toggleFloor(setTo: !blindDescription().1, blinds: room.blinds)
-                    }
-                }){
+                Button(action: toogleBlinds){
                     HStack{
                         VStack(alignment: .leading){
                             Text(blindDescription().0)
                                 .font(.headline)
                                 .fontWeight(.bold)
-                            Text(blindDescription().1 ? "Close All" : "Open All")
+                            Text(blindDescription().1 ? "Alle Öffnen" : "Alle Schließen")
                                 .font(.caption)
                         }
                         .foregroundStyle(.primary)
                         .foregroundColor(.primary)
                     }.padding(.leading)
                 }
-                
-                Button(action: {
-                    showGroupShadeSelector.toggle()
-                }){
-                    HStack{
-                        VStack(alignment: .leading){
-                            Text("Move All")
-                                .font(.headline)
-                                .fontWeight(.bold)
-                            Text("Select Position")
-                                .font(.caption)
-                        }
-                        
-                    }
-                    .padding(.leading)
-                    .foregroundStyle(.primary)
-                    .foregroundColor(.primary)
-                    
-                }
-                
                 Spacer()
             }.padding(.top)
         }
@@ -282,7 +286,7 @@ struct RoomView: View {
     var lightActions: some View{
         ScrollView(.horizontal, showsIndicators: false){
             HStack{
-                Button(action: {allOff()}){
+                Button(action: toogleLights){
                     HStack{
                         if settingLights{
                             ProgressView()
@@ -294,64 +298,16 @@ struct RoomView: View {
                             Text(lightDescription().0)
                                 .font(.headline)
                                 .fontWeight(.bold)
-                            Text("Turn Off")
+                            Text("Alle Ausschalten")
                                 .font(.caption)
                         }
                         .foregroundStyle(.primary)
                         .foregroundColor(.primary)
-                        
                         
                         
                     }.padding(.leading)
                 }
-                
-                Button(action: {showGroupBrightnessSelector.toggle()}){
-                    HStack{
-                        if settingBrightness{
-                            ProgressView()
-                                .progressViewStyle(.circular)
-                                .padding(10)
-                        }
-                        
-                        VStack(alignment: .leading){
-                            Text("Dimm All")
-                                .font(.headline)
-                                .fontWeight(.bold)
-                            Text("Select Brightness")
-                                .font(.caption)
-                        }
-                        
-                    }
-                    .padding(.leading)
-                    .foregroundStyle(.primary)
-                    .foregroundColor(.primary)
-                    
-                }
-                if room.lights.contains(where: {$0.hue != 0}){
-                    Button(action: {showGroupColorSelector.toggle()}){
-                        HStack{
-                            if settingColor{
-                                ProgressView()
-                                    .progressViewStyle(.circular)
-                                    .padding(10)
-                            }
-                            
-                            VStack(alignment: .leading){
-                                Text("Color Sync")
-                                    .font(.headline)
-                                    .fontWeight(.bold)
-                                Text("Select Color")
-                                    .font(.caption)
-                            }
-                            
-                        }
-                        .padding(.leading)
-                        .foregroundStyle(.primary)
-                        .foregroundColor(.primary)
-                        
-                    }
-                }
-                
+    
                 Spacer()
             }.padding(.top)
         }

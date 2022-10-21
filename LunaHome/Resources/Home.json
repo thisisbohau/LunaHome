@@ -20,11 +20,18 @@
     }
   ],
   "recommendations" : [
-
+    {
+      "id" : "test",
+      "title" : "Filter Reiniger",
+      "message" : "Reinige den Filter deiner Klimaanlage",
+      "priority" : 3,
+      "image" : "aqi.high",
+      "color" : "orange"
+    }
   ],
   "doorLocks" : [
     {
-      "doorOpen" : true,
+      "doorOpen" : false,
       "id" : "testLock",
       "doorAjar" : false,
       "name" : "Haustüre",
@@ -35,9 +42,7 @@
   "dryer" : {
     "state" : false,
     "runTime" : 0,
-    "health" : [
-
-    ],
+    "health" : [],
     "programm" : ""
   },
   "weatherStation" : {
@@ -47,16 +52,12 @@
     "outsideTemp" : 18.600000381469727,
     "windSpeed" : 5,
     "co2" : 600,
-    "weatherWarning" : [
-
-    ]
+    "weatherWarning" : []
   },
   "dishwasher" : {
     "state" : false,
     "runTime" : 0,
-    "health" : [
-
-    ],
+    "health" : [],
     "programm" : ""
   },
   "predictions" : [
@@ -66,54 +67,44 @@
       "data" : [
         {
           "id" : "1",
-          "value" : 3,
-          "title" : "mo"
+          "value" : 2,
+          "title" : "Mo"
         },
         {
           "id" : "2",
           "value" : 4,
-          "title" : "di"
+          "title" : "Di"
         },
         {
           "id" : "3",
-          "value" : 8,
-          "title" : "mi"
+          "value" : 5,
+          "title" : "Mi"
         },
         {
           "id" : "4",
-          "value" : 2,
-          "title" : "do"
+          "value" : 8,
+          "title" : "Do"
         },
         {
           "id" : "5",
-          "value" : 6,
-          "title" : "fr"
+          "value" : 5,
+          "title" : "Fr"
         },
         {
           "id" : "6",
-          "value" : 11,
-          "title" : "sa"
+          "value" : 10,
+          "title" : "Sa"
         },
         {
           "id" : "7",
-          "value" : 4,
-          "title" : "so"
+          "value" : 3,
+          "title" : "So"
         }
       ],
       "title" : "Haustüre",
       "averageUnit" : "Öffnungen/Tag",
-      "diagramType" : 1,
-      "description" : "Laut meinen Berechnungen sollte die Batterie am 5. Oktober ausgetauscht werden."
-    },
-    {
-      "predictable" : false,
-      "id" : "2",
-      "data" : [
-      ],
-      "title" : "Solar Produktion",
-      "averageUnit" : "Öffnungen/Tag",
-      "diagramType" : 1,
-      "description" : "Laut meinen Berechnungen sollte die Batterie am 5. Oktober ausgetauscht werden."
+      "diagramType" : 0,
+      "description" : "Laut meinen Berechnungen sollte die Batterie am 5. November ausgetauscht werden."
     }
   ],
   "oven" : {
@@ -125,12 +116,13 @@
     "recipe" : ""
   },
   "washer" : {
-    "state" : false,
+    "temperatur" : "",
+    "health" : [],
+    "schleudern" : "",
+    "programm" : "",
+    "beschmutzung" : "",
     "runTime" : 0,
-    "health" : [
-
-    ],
-    "programm" : ""
+    "state" : false
   },
   "mediaDevices" : [
     {
@@ -156,33 +148,21 @@
     {
       "lights" : [
         {
-          "id" : "testLamp",
-          "single" : true,
-          "lights" : [
-            {
-              "name" : "Ambient",
-              "id" : "testLampLamp",
-              "brightness" : 100,
-              "saturation" : 255,
-              "type" : "Stripe",
-              "hue" : 360,
-              "state" : false
-            }
-          ]
+          "name" : "Deckenlicht",
+          "id" : "testLampLamp",
+          "brightness" : 80,
+          "saturation" : 255,
+          "type" : "Stripe",
+          "hue" : 120,
+          "state" : true
         }
       ],
       "blinds" : [
         {
           "id" : "testBlind",
-          "single" : true,
-          "blinds" : [
-            {
-              "id" : "testBlind",
-              "closed" : false,
-              "name" : "Blind",
-              "position" : 78
-            }
-          ]
+          "closed" : false,
+          "name" : "Terasse",
+          "position" : 78
         }
       ],
       "floor" : 0,
@@ -197,7 +177,7 @@
           "performance" : 80
         }
       ],
-      "name" : "Test",
+      "name" : "Wohnzimmer",
       "sensors" : [
         {
           "id" : "testSensor",

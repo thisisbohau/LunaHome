@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CameraControl: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Binding var camera: Camera
     
     @State var motionDetection: Bool = true
@@ -35,7 +36,15 @@ struct CameraControl: View {
                 Text("Kamera").foregroundColor(.gray).bold()
 
                 Spacer()
-                Image(systemName: "xmark.circle.fill").font(.title).foregroundStyle(.secondary, .tertiary)
+                Button(action: {
+                    presentationMode.wrappedValue.dismiss()
+                }){
+                    Image(systemName: "xmark.circle.fill")
+                        .font(.title)
+                        .foregroundStyle(.secondary, .tertiary)
+                        .foregroundColor(.primary)
+                }
+                
             }.padding([.leading, .top, .trailing], 20)
 
 
@@ -43,7 +52,7 @@ struct CameraControl: View {
         cameraImage
         
         HStack{
-            Rectangle().foregroundColor(.teal)
+            Rectangle().foregroundColor(.accentColor)
                 .frame(width: 10)
                 .cornerRadius(12)
 
@@ -68,7 +77,7 @@ struct CameraControl: View {
                         Image(systemName: "checkmark.circle.fill").foregroundColor(.green)
                             
 //                            .foregroundColor(Color(uiColor: UIColor(red: rgb.r, green: rgb.g, blue: rgb.b, alpha: 1)))
-                        Text("armed").bold()
+                        Text("gesichert").bold()
                         Spacer()
                     }
             }.padding([.leading], 5)
@@ -76,7 +85,7 @@ struct CameraControl: View {
 //            Voice Circle
             Button(action: {}){
                 ZStack{
-                    Circle().foregroundColor(.teal)
+                    Circle().foregroundColor(.accentColor)
                         .frame(width: 60)
                     Image(systemName: "mic.fill").font(.title).foregroundColor(.primary)
                 }
@@ -93,7 +102,7 @@ struct CameraControl: View {
             VStack{
                 HStack{
                     ZStack{
-                        Circle().foregroundColor(.teal).frame(width: 60)
+                        Circle().foregroundColor(.accentColor).frame(width: 60)
                         Image(systemName: "figure.walk.motion").font(.title)
                     }.padding([.trailing])
                     VStack(alignment: .leading){
@@ -110,11 +119,11 @@ struct CameraControl: View {
             VStack{
                 HStack{
                     ZStack{
-                        Circle().foregroundColor(.teal).frame(width: 60)
+                        Circle().foregroundColor(.accentColor).frame(width: 60)
                         Image(systemName: "person.fill.viewfinder").font(.title)
                     }.padding([.trailing])
                     VStack(alignment: .leading){
-                        Text("David").font(.title).bold()
+                        Text("Postbote").font(.title).bold()
                         Text("Person erkannt").foregroundColor(.gray)
                     }
                     
@@ -130,7 +139,7 @@ struct CameraControl: View {
 
 
         }.padding()
-            .toggleStyle(SwitchToggleStyle(tint: .teal))
+            .toggleStyle(SwitchToggleStyle(tint: .accentColor))
         
         Spacer()
     }

@@ -79,6 +79,7 @@ struct OvenTile: View {
                         .padding()
                 )
                 .onReceive(timer.self, perform: {_ in checkTimer()})
+                .padding(.bottom, DeviceItemCalculator().spacer)
         }else{
             SmallTemplate(proxy: proxy, type: .overlay, device: Blind(id: "", name: "", position: 0, closed: false))
                 .overlay(

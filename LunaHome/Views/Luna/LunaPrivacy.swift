@@ -67,6 +67,7 @@ struct LunaPrivacy: View {
                 Spacer()
             }.padding()
         }
+        .background(Color("background").ignoresSafeArea())
     }
 }
 

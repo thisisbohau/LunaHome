@@ -11,10 +11,15 @@ struct Root: View {
     @EnvironmentObject var fetcher: Fetcher
     @EnvironmentObject var states: DeviceStates
     
+    init() {
+        UITabBar.appearance().tintColor = UIColor.white
+    }
+    
     var body: some View {
+        
         TabView{
             OverviewMain()
-//                .preferredColorScheme(.dark)
+            //                .preferredColorScheme(.dark)
                 .tabItem {
                     Label("Überblick", image: "homeIcon")
                 }
@@ -22,8 +27,10 @@ struct Root: View {
             
             LunaMain()
                 .tabItem {
-                    Label("Luna", systemImage: "target")
+                    Label("Luna", image: "luna")
+                       
                 }
+                
                 .tag(2)
             
             RoomView(room: $states.activeRoom)
@@ -31,9 +38,14 @@ struct Root: View {
                     Label("Räume", systemImage: "square.on.square")
                 }
                 .tag(23)
-                
+            
             
         }
+       
+        
+        
+        
+        
         .onAppear(perform: {
             fetcher.load()
             fetcher.logTemplate()
@@ -43,7 +55,7 @@ struct Root: View {
                 return
             }
             
-                
+            
             
             
         })

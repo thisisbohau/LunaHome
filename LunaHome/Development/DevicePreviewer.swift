@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DevicePreviewer: View {
     @ObservedObject var fetcher: Fetcher = Fetcher()
-    @State var thermostat: Thermostat = Thermostat(id: "", name: "Heizung", setTemp: 0, currentTemp: 20, coolingDevice: false, performance: 0, luft: 65)
+    @State var thermostat: Thermostat = Thermostat(id: "", name: "Heizung", setTemp: 22, currentTemp: 20, coolingDevice: false, performance: 0, luft: 65)
     
     @State var showDetail: Bool = false
     var body: some View {
