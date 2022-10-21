@@ -16,7 +16,7 @@ enum EditType{
 class DeviceStates: ObservableObject{
     @Published var selectedLight: Light = Light(id: "", state: false, hue: 0, saturation: 0, brightness: 0, type: "", name: "")
     @Published var selectedBlind: Blind = Blind(id: "", name: "", position: 0, closed: false)
-    @Published var selectedThermostat: Thermostat = Thermostat(id: "", name: "", setTemp: 0, currentTemp: 0, coolingDevice: false, performance: 0)
+    @Published var selectedThermostat: Thermostat = Thermostat(id: "", name: "", setTemp: 0, currentTemp: 0, coolingDevice: false, performance: 0, luft: 65)
     @Published var activeRoom: Room = Room(id: "", name: "", floor: 0, lights: [Light](), blinds: [Blind](), thermostats: [Thermostat](), sensors: [Sensor]())
     @Published var editType: EditType = .blind
     @Published var showEdit: Bool = false

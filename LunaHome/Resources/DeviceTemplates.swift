@@ -109,6 +109,7 @@ struct Thermostat: Identifiable, Codable{
     var currentTemp: Float
     var coolingDevice: Bool
     var performance: Int
+    var luft: Int
 }
 
 /// type:
