@@ -60,6 +60,7 @@
 		C9AC929F28CB5AB0003588CF /* Snow.sks in Resources */ = {isa = PBXBuildFile; fileRef = C9AC929C28CB5AB0003588CF /* Snow.sks */; };
 		C9AC92A028CB5AB0003588CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9AC929D28CB5AB0003588CF /* Assets.xcassets */; };
 		C9AC92A228CB5CD5003588CF /* RainEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AC92A128CB5CD5003588CF /* RainEffect.swift */; };
+		C9B892622902B3FD008E155A /* DoorbellFeed.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C9B892612902B32D008E155A /* DoorbellFeed.mp4 */; };
 		C9CDE53A28E7242000A424A4 /* LunaTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CDE53928E7242000A424A4 /* LunaTile.swift */; };
 		C9CDE53C28E738F000A424A4 /* OvenTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CDE53B28E738F000A424A4 /* OvenTile.swift */; };
 		C9CDE53E28E9ED8D00A424A4 /* FoodplanerTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CDE53D28E9ED8D00A424A4 /* FoodplanerTile.swift */; };
@@ -139,6 +140,7 @@
 		C9AC929C28CB5AB0003588CF /* Snow.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Snow.sks; sourceTree = "<group>"; };
 		C9AC929D28CB5AB0003588CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C9AC92A128CB5CD5003588CF /* RainEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainEffect.swift; sourceTree = "<group>"; };
+		C9B892612902B32D008E155A /* DoorbellFeed.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = DoorbellFeed.mp4; sourceTree = "<group>"; };
 		C9CDE53828E6009700A424A4 /* LunaHome.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LunaHome.entitlements; sourceTree = "<group>"; };
 		C9CDE53928E7242000A424A4 /* LunaTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunaTile.swift; sourceTree = "<group>"; };
 		C9CDE53B28E738F000A424A4 /* OvenTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvenTile.swift; sourceTree = "<group>"; };
@@ -319,6 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				C9CDE53F28EB143700A424A4 /* testStream.mp4 */,
+				C9B892612902B32D008E155A /* DoorbellFeed.mp4 */,
 				C976200128BA6F5800BF9C31 /* Home.json */,
 				C9761FD528BA2DB400BF9C31 /* Home.swift */,
 				C9761FD628BA2DB400BF9C31 /* DeviceTemplates.swift */,
@@ -460,6 +463,7 @@
 				C9761F8E28BA251300BF9C31 /* Assets.xcassets in Resources */,
 				C9AC929F28CB5AB0003588CF /* Snow.sks in Resources */,
 				C9AC92A028CB5AB0003588CF /* Assets.xcassets in Resources */,
+				C9B892622902B3FD008E155A /* DoorbellFeed.mp4 in Resources */,
 				C976200228BA6F5800BF9C31 /* Home.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

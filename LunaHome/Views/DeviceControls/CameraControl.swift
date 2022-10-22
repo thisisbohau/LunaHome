@@ -17,130 +17,134 @@ struct CameraControl: View {
     
     var cameraImage: some View{
         VStack{
-            Image("Doorbell")
-                .resizable()
+            PlayerView(feedName: camera.feedName)
+//                .resizable()
                 .aspectRatio(contentMode: .fit)
+                
+//                .frame(height: 300)
 
         }
     }
     var body: some View {
-        VStack{
-            HStack{
-                ZStack{
-                    Circle().foregroundStyle(.tertiary)
-                        .frame(width: 30)
-                    Image(systemName: "web.camera").foregroundStyle(.secondary)
-                    
-                }
-                
-                Text("Kamera").foregroundColor(.gray).bold()
-
-                Spacer()
-                Button(action: {
-                    presentationMode.wrappedValue.dismiss()
-                }){
-                    Image(systemName: "xmark.circle.fill")
-                        .font(.title)
-                        .foregroundStyle(.secondary, .tertiary)
-                        .foregroundColor(.primary)
-                }
-                
-            }.padding([.leading, .top, .trailing], 20)
-
-
-        
-        cameraImage
-        
-        HStack{
-            Rectangle().foregroundColor(.accentColor)
-                .frame(width: 10)
-                .cornerRadius(12)
-
-                
+        ScrollView{
             VStack{
                 HStack{
-//                    Image(systemName: "lightbulb.fill")
-                    Text("Einfahrt")
+                    ZStack{
+                        Circle().foregroundStyle(.tertiary)
+                            .frame(width: 30)
+                        Image(systemName: "web.camera").foregroundStyle(.secondary)
+                        
+                    }
+                    
+                    Text("Kamera").foregroundColor(.gray).bold()
+                    
                     Spacer()
-                }.font(.largeTitle)
-                    .bold()
-                    .padding([.bottom], 1)
+                    Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }){
+                        Image(systemName: "xmark.circle.fill")
+                            .font(.title)
+                            .foregroundStyle(.secondary, .tertiary)
+                            .foregroundColor(.primary)
+                    }
+                    
+                }.padding([.leading, .top, .trailing], 20)
+                
+                
+                
+                cameraImage
                 
                 HStack{
-                    Text("Garten")
-                    Spacer()
-                }.foregroundColor(.gray)
-                    .bold()
+                    Rectangle().foregroundColor(.accentColor)
+                        .frame(width: 10)
+                        .cornerRadius(12)
                     
-                
-                    HStack{
-                        Image(systemName: "checkmark.circle.fill").foregroundColor(.green)
+                    
+                    VStack{
+                        HStack{
+                            //                    Image(systemName: "lightbulb.fill")
+                            Text("Einfahrt")
+                            Spacer()
+                        }.font(.largeTitle)
+                            .bold()
+                            .padding([.bottom], 1)
+                        
+                        HStack{
+                            Text("Garten")
+                            Spacer()
+                        }.foregroundColor(.gray)
+                            .bold()
+                        
+                        
+                        HStack{
+                            Image(systemName: "checkmark.circle.fill").foregroundColor(.green)
                             
-//                            .foregroundColor(Color(uiColor: UIColor(red: rgb.r, green: rgb.g, blue: rgb.b, alpha: 1)))
-                        Text("gesichert").bold()
-                        Spacer()
+                            //                            .foregroundColor(Color(uiColor: UIColor(red: rgb.r, green: rgb.g, blue: rgb.b, alpha: 1)))
+                            Text("gesichert").bold()
+                            Spacer()
+                        }
+                    }.padding([.leading], 5)
+                    
+                    //            Voice Circle
+                    Button(action: {}){
+                        ZStack{
+                            Circle().foregroundColor(.accentColor)
+                                .frame(width: 60)
+                            Image(systemName: "mic.fill").font(.title).foregroundColor(.primary)
+                        }
                     }
-            }.padding([.leading], 5)
-              
-//            Voice Circle
-            Button(action: {}){
-                ZStack{
-                    Circle().foregroundColor(.accentColor)
-                        .frame(width: 60)
-                    Image(systemName: "mic.fill").font(.title).foregroundColor(.primary)
+                    
+                    
+                    
+                }.frame(height: 100)
+                    .padding()
+                //                .padding([.top],10)
+                    .padding([.bottom], 15)
+                
+                //            Motion Detection Info
+                VStack{
+                    HStack{
+                        ZStack{
+                            Circle().foregroundColor(.accentColor).frame(width: 60)
+                            Image(systemName: "figure.walk.motion").font(.title)
+                        }.padding([.trailing])
+                        VStack(alignment: .leading){
+                            Text("10:35").font(.title).bold()
+                            Text("Bewegung erkannt").foregroundColor(.gray)
+                        }
+                        
+                        Spacer()
+                    }.padding()
+                    
+                }
+                
+                //          Person Detection Info
+                VStack{
+                    HStack{
+                        ZStack{
+                            Circle().foregroundColor(.accentColor).frame(width: 60)
+                            Image(systemName: "person.fill.viewfinder").font(.title)
+                        }.padding([.trailing])
+                        VStack(alignment: .leading){
+                            Text("Postbote").font(.title).bold()
+                            Text("Person erkannt").foregroundColor(.gray)
+                        }
+                        
+                        Spacer()
+                    }.padding()
+                    
                 }
             }
             
-
-            
-            }.frame(height: 100)
-            .padding()
-//                .padding([.top],10)
-                .padding([.bottom], 15)
-            
-//            Motion Detection Info
-            VStack{
-                HStack{
-                    ZStack{
-                        Circle().foregroundColor(.accentColor).frame(width: 60)
-                        Image(systemName: "figure.walk.motion").font(.title)
-                    }.padding([.trailing])
-                    VStack(alignment: .leading){
-                        Text("10:35").font(.title).bold()
-                        Text("Bewegung erkannt").foregroundColor(.gray)
-                    }
-                    
-                    Spacer()
-                }.padding()
+            VStack {
+                Toggle("Bewegungserkennung", isOn: $motionDetection)
+                Toggle("Push Benachrichtigungen", isOn: $push)
                 
-            }
-            
-//          Person Detection Info
-            VStack{
-                HStack{
-                    ZStack{
-                        Circle().foregroundColor(.accentColor).frame(width: 60)
-                        Image(systemName: "person.fill.viewfinder").font(.title)
-                    }.padding([.trailing])
-                    VStack(alignment: .leading){
-                        Text("Postbote").font(.title).bold()
-                        Text("Person erkannt").foregroundColor(.gray)
-                    }
-                    
-                    Spacer()
-                }.padding()
                 
-            }
+            }.padding()
+                .toggleStyle(SwitchToggleStyle(tint: .accentColor))
+            
+            Spacer()
         }
-        
-        VStack {
-            Toggle("Bewegungserkennung", isOn: $motionDetection)
-            Toggle("Push Benachrichtigungen", isOn: $push)
-
-
-        }.padding()
-            .toggleStyle(SwitchToggleStyle(tint: .accentColor))
-        
-        Spacer()
     }
 }

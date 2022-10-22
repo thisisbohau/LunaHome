@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+
 struct WasherProgrammControl: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
@@ -169,7 +171,19 @@ struct WasherProgrammControl: View {
                         Spacer()
                     }
                     .padding()
-                    .background(selectedProgramm == entry ? Color.teal : Color.secondary)
+                    .onCondition(selectedProgramm == entry, transform: {view in
+                        view
+                            .background(
+                                Color.teal
+         
+                            )
+                    })
+                    .onCondition(selectedProgramm != entry, transform: {view in
+                        view
+                            .background(
+                                Material.regularMaterial
+                            )
+                    })
                     .cornerRadius(20)
                     .padding(.bottom, 5)
                     .foregroundColor(.white)
@@ -211,7 +225,19 @@ struct WasherProgrammControl: View {
                         Spacer()
                     }
                     .padding()
-                    .background(selectedBeschmutzung == entry2 ? Color.teal : Color.secondary)
+                    .onCondition(selectedBeschmutzung == entry2, transform: {view in
+                        view
+                            .background(
+                                Color.teal
+         
+                            )
+                    })
+                    .onCondition(selectedBeschmutzung != entry2, transform: {view in
+                        view
+                            .background(
+                                Material.regularMaterial
+                            )
+                    })
                     .cornerRadius(20)
                     .padding(.bottom, 5)
                     .foregroundColor(.white)
@@ -241,7 +267,15 @@ struct WasherProgrammControl: View {
                             Text(entry3)
                                 .padding()
                                 .background(
-                                    Circle().foregroundColor(selectedTemperatur == entry3 ? Color.teal : Color.secondary)
+                                    VStack{
+                                        if selectedTemperatur == entry3{
+                                            Circle()
+                                                .foregroundColor(Color.teal)
+                                        }else{
+                                            Circle()
+                                                .foregroundStyle(.regularMaterial)
+                                        }
+                                    }
                                 )
                             
                             
@@ -274,7 +308,19 @@ struct WasherProgrammControl: View {
                         Spacer()
                     }
                     .padding()
-                    .background(selectedSchleudern == entry4 ? Color.teal : Color.secondary)
+                    .onCondition(selectedSchleudern == entry4, transform: {view in
+                        view
+                            .background(
+                                Color.teal
+         
+                            )
+                    })
+                    .onCondition(selectedSchleudern != entry4, transform: {view in
+                        view
+                            .background(
+                                Material.regularMaterial
+                            )
+                    })
                     .cornerRadius(20)
                     .padding(.bottom, 5)
                     .foregroundColor(.white)
@@ -376,70 +422,71 @@ struct WasherProgrammControl: View {
     }
     
     var body: some View {
-        VStack{
-            HStack{
-                Text("Waschvorgang optimieren").font(.largeTitle).bold().padding()
+        ScrollView{
+            VStack{
+                HStack{
+                    Text("Waschvorgang optimieren").font(.largeTitle).bold().padding()
+                    Spacer()
+                }
+                stepBar
+                
+                
+                if selectedStep == 1{
+                    step1View
+                }else if selectedStep == 2{
+                    step2View
+                }else if selectedStep == 3{
+                    step3View
+                }else if selectedStep == 4{
+                    step4View
+                }
+                
                 Spacer()
-            }
-            stepBar
-            
-
-            if selectedStep == 1{
-                step1View
-            }else if selectedStep == 2{
-                step2View
-            }else if selectedStep == 3{
-                step3View
-            }else if selectedStep == 4{
-                step4View
-            }
-            
-            Spacer()
-        
-            if selectedStep > 3{
-                Button(action:{
-                    start()
+                
+                if selectedStep > 3{
+                    Button(action:{
+                        start()
+                        
+                        
+                    }){
+                        HStack{
+                            Spacer()
+                            Text("Waschvorgang starten")
+                            Spacer()
+                            
+                        }
+                        
+                    }
+                    .foregroundColor(.white)
                     
-
-                }){
-                    HStack{
-                        Spacer()
-                        Text("Waschvorgang starten")
-                        Spacer()
-            
-                    }
-            
-                }
-                    .foregroundColor(.white)
-            
                     .padding()
-                    .background(.orange)
+                    .background(Color.accentColor)
                     .cornerRadius(18)
                     .padding()
-            }else{
-                Button(action:{
-                    selectedStep = selectedStep + 1
-                }){
-                    HStack{
-                        Spacer()
-                        Text("Weiter")
-                        Spacer()
-            
+                }else{
+                    Button(action:{
+                        selectedStep = selectedStep + 1
+                    }){
+                        HStack{
+                            Spacer()
+                            Text("Weiter")
+                            Spacer()
+                            
+                        }
+                        
                     }
-            
-                }
                     .foregroundColor(.white)
-            
+                    
                     .padding()
-                    .background(.orange)
+                    .background(Color.accentColor)
                     .cornerRadius(18)
                     .padding()
-            }
-            
+                }
+                
             }
             
             
-            
+        }
             
         }
     }
