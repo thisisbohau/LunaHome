@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		ABA5C0D928E9F23100F69283 /* WasherProgrammControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA5C0D828E9F23100F69283 /* WasherProgrammControl.swift */; };
 		ABB687A828E74AFD00C7F2F6 /* DeviceTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB687A728E74AFD00C7F2F6 /* DeviceTester.swift */; };
+		ABF3EBCD2902AD3400E06A64 /* AirQuality.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF3EBCC2902AD3400E06A64 /* AirQuality.swift */; };
 		C91E0E2428F0233900F18481 /* testStream.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C9CDE53F28EB143700A424A4 /* testStream.mp4 */; };
 		C91E0E2628F036D600F18481 /* LunaTipDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91E0E2528F036D600F18481 /* LunaTipDetail.swift */; };
 		C91E0E2828F4102100F18481 /* Washer Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91E0E2728F4102100F18481 /* Washer Tile.swift */; };
@@ -86,6 +87,7 @@
 /* Begin PBXFileReference section */
 		ABA5C0D828E9F23100F69283 /* WasherProgrammControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasherProgrammControl.swift; sourceTree = "<group>"; };
 		ABB687A728E74AFD00C7F2F6 /* DeviceTester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceTester.swift; sourceTree = "<group>"; };
+		ABF3EBCC2902AD3400E06A64 /* AirQuality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQuality.swift; sourceTree = "<group>"; };
 		C91E0E2528F036D600F18481 /* LunaTipDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunaTipDetail.swift; sourceTree = "<group>"; };
 		C91E0E2728F4102100F18481 /* Washer Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Washer Tile.swift"; sourceTree = "<group>"; };
 		C963ADF828D06FF0000647D1 /* DoorbellTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorbellTile.swift; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 				C9761FCB28BA2DB400BF9C31 /* CameraControl.swift */,
 				C9761FCC28BA2DB400BF9C31 /* LightControl.swift */,
 				C9761FCD28BA2DB400BF9C31 /* ThermostatControl.swift */,
+				ABF3EBCC2902AD3400E06A64 /* AirQuality.swift */,
 				C963ADFF28D30044000647D1 /* LightHelpers.swift */,
 			);
 			path = DeviceControls;
@@ -532,6 +535,7 @@
 				C9761FEE28BA2DB400BF9C31 /* NukiTile.swift in Sources */,
 				C9761FE928BA2DB400BF9C31 /* CameraControl.swift in Sources */,
 				C9761FFC28BA345100BF9C31 /* LunaMain.swift in Sources */,
+				ABF3EBCD2902AD3400E06A64 /* AirQuality.swift in Sources */,
 				ABA5C0D928E9F23100F69283 /* WasherProgrammControl.swift in Sources */,
 				C9761FFE28BA5AC800BF9C31 /* LunaTips.swift in Sources */,
 				C9761FDC28BA2DB400BF9C31 /* DoorLockControl.swift in Sources */,

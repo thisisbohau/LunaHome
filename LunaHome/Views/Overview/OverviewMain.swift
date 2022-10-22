@@ -38,8 +38,10 @@ struct OverviewMain: View {
                 Image(item.name.lowercased())
                     .resizable()
                     .frame(width: item.isCurrent ?? false ? 45 : 35, height: item.isCurrent ?? false ? 45 : 35)
-                    .foregroundColor(Color("fill"))
-                    .background(Circle().foregroundColor(Color("fill")))
+                    .foregroundColor(
+                        Color("fill"))
+                    .background(
+                        Circle().foregroundColor(Color("fill")))
                     .foregroundStyle(.ultraThickMaterial)
                     .onCondition(item.isCurrent ?? false, transform: {view in
                         view
