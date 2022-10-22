@@ -454,9 +454,11 @@ struct VerticalSlider: View {
     
     func update(){
 //        if Float(value) != Float(floatValue){
-            onChange()
+            
 //        }
             value = floatValue
+        onChange()
+        print("change \(value)")
         
             
     }
