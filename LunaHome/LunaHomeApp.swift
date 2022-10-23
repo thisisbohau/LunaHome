@@ -13,6 +13,7 @@ struct LunaHomeApp: App {
     @StateObject var states = DeviceStates()
     var body: some Scene {
         WindowGroup {
+            
             Root()
 //                .preferredColorScheme(.light)
                 .environmentObject(fetcher)

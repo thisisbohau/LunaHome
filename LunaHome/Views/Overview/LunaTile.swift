@@ -47,22 +47,26 @@ struct LunaTile: View {
                     SmallTemplate(proxy: proxy, type: .overlay, device: Blind(id: "", name: "", position: 0, closed: false))
                         .overlay(
                             HStack{
-                                Image(systemName: getTip().image)
-                                    .font(.caption)
-                                    .foregroundColor(Luna().getColor(string: getTip().color))
-                                    .padding(5)
+                                Spacer()
+//                                Image(systemName: getTip().image)
+//                                    .font(.caption)
+//                                    .foregroundColor(Luna().getColor(string: getTip().color))
+//                                    .padding(5)
                                 //                                .background(.white)
                                 //                                .clipShape(Circle())
                                 VStack(alignment: .leading, spacing: 0){
                                     HStack{
-                                        HStack(spacing: 0){
+                                        HStack(alignment: .top, spacing: 0
+                                        ){
                                             Text(split(input: getTip().title)[0])
                                                 .foregroundColor(.primary)
                                             Text(split(input: getTip().title)[1])
                                                 .foregroundColor(.secondary)
                                         }
                                         .font(.body)
+                                        .minimumScaleFactor(0.7)
                                         .fontWeight(.semibold)
+//                                        .padding(.leading, 10)
                                         
                                         Spacer()
                                     }
@@ -81,6 +85,7 @@ struct LunaTile: View {
                                     
                                     
                                 }
+                                Spacer()
                             }.padding(10)
                         )
                         .padding(.bottom, DeviceItemCalculator().spacer)
@@ -131,23 +136,28 @@ struct LunaTile: View {
                                             Spacer()
                                         }
                                     }
-                                        .background(
-                                            RadialGradient(colors: [.red, .clear], center: .center, startRadius: 100, endRadius: animate ? 50 : 200)
-                                        )
-                                        .opacity(animate ? 1 : 0)
+                                        .background(animate ? .red : .clear)
+//
+//                                        .background(
+//
+////                                            RadialGradient(colors: [.red, .clear], center: .center, startRadius: 100, endRadius: animate ? 50 : 200)
+//                                        )
+//                                        .opacity(animate ? 1 : 0)
                                         .cornerRadius(DeviceItemCalculator().cornerRadius)
                                 )
+                            
                         )
+                        .onAppear(perform: {
+                            withAnimation(.easeInOut(duration: 1).repeatForever()){
+                                animate.toggle()
+                                print("action")
+                            }
+                        })
                         .padding(.bottom, DeviceItemCalculator().spacer)
                 }
             }
             
-            .onAppear(perform: {
-                withAnimation(.easeInOut(duration: 1).repeatForever()){
-                    animate.toggle()
-                    print("action")
-                }
-            })
+      
         }
         .sheet(isPresented: $showDetail){
             LunaTipDetail(tip: getTip())

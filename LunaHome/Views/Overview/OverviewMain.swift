@@ -75,7 +75,7 @@ struct OverviewMain: View {
     
     var topBar: some View{
         HStack{
-            Text("Hallo David")
+            Text("Hallo \(SettingsData().getUserName())")
                 .font(.largeTitle)
                 .bold()
             Spacer()
@@ -118,7 +118,7 @@ struct OverviewMain: View {
 //                                )
 //                                .padding(.bottom, DeviceItemCalculator().spacer)
                             LightShadeTile(proxy: proxy.size)
-                            DoorbellTile(proxy: proxy.size, camera: Fetcher().data.cameras.first!)
+                            DoorbellTile(proxy: proxy.size, camera: data.data.cameras.first ?? Fetcher().data.cameras.first!)
                             OvenTile(proxy: proxy.size)
                             
                             Washer_Tile(proxy: proxy.size)
@@ -137,7 +137,8 @@ struct OverviewMain: View {
                             NukiTile(proxy: proxy.size)
                          
                             FoodplanerTile(proxy: proxy.size)
-                            DoorbellTile(proxy: proxy.size, camera: Fetcher().data.cameras.first!)
+                            DoorbellTile(proxy: proxy.size, camera: data.data.cameras.first(where: {$0.id == "gardenCam"}) ?? Fetcher().data.cameras.first!)
+                            SettingsTile(proxy: proxy.size)
                            
 //                            SmallTemplate(proxy: proxy.size, type: .overlay, device: Blind(id: "", name: "", position: 0, closed: false))
 //                                .padding(.bottom, DeviceItemCalculator().spacer)

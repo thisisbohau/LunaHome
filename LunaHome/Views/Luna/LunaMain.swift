@@ -36,6 +36,7 @@ struct LunaMain: View {
                 Spacer()
             }
             LunaTips()
+                .animation(nil)
         }
     }
     var lunaWelcome: some View{

@@ -87,7 +87,7 @@ struct SmallTemplate: View {
                         Image(systemName: "battery.75")
                             .symbolRenderingMode(.palette)
                             .foregroundStyle(.green, .gray)
-                        Text("Battery")
+                        Text("Batterie")
                             .foregroundColor(.gray)
                             .offset(x: -3)
                     }
@@ -114,7 +114,7 @@ struct SmallTemplate: View {
         HStack{
             DeviceIcon(type: .blind, device: getBlind(device: device))
                 .font(.body)
-                .padding(13)
+                .padding(10)
             
                 .onCondition(getBlindStatus(blind: device as! Blind), transform: {view in
                     view
@@ -131,63 +131,71 @@ struct SmallTemplate: View {
                 Spacer()
                 Text((device as! Blind).name)
                     .foregroundColor(getBlindStatus(blind: device as! Blind) ? .black : .white)
-                Text(getBlindStatus(blind: device as! Blind) ? String(localized: "\(Int(getBlind(device: device).position))%") : "Shade Closed")
-                    .onCondition(getBlindStatus(blind: device as! Blind), transform: {view in
-                        view.foregroundColor(.gray)
-                    })
-                    .onCondition(!getBlindStatus(blind: device as! Blind), transform: {view in
-                        view
-                        
-                        .foregroundStyle(.secondary)
-                    })
-                    .font(.caption)
-                    .lineLimit(1)
+                    .font(.callout)
+                HStack{
+                    Text(getBlindStatus(blind: device as! Blind) ? String(localized: "\(Int(getBlind(device: device).position))%") : "Geschlossen")
+                        .onCondition(getBlindStatus(blind: device as! Blind), transform: {view in
+                            view.foregroundColor(.gray)
+                        })
+                        .onCondition(!getBlindStatus(blind: device as! Blind), transform: {view in
+                            view
+                            
+                                .foregroundStyle(.secondary)
+                        })
+                        .font(.caption)
+                        .lineLimit(1)
+                    Spacer()
+                }
                 Spacer()
             }.offset(x: -10)
-            Spacer()
         }
-        
     }
     
     var light: some View{
-        HStack{
-            DeviceIcon(type: .light, device: getLight(device: device))
-                .font(.body)
-                .padding(13)
-            
-                .onCondition(getLight(device: device).state, transform: {view in
-                    view
-                        .background(getLightAccent(light: getLight(device: device)), in: Circle())
-                })
-                .onCondition(!getLight(device: device).state, transform: {view in
-                    view
-                        .background(.thinMaterial, in: Circle())
-                })
-                .offset(x: -5)
-            
-            VStack(alignment: .leading){
-                //Device Name and short Status
-                Spacer()
-                Text((device as! Light).name)
-                    .foregroundColor(getLight(device: device).state ? .black : .white)
-                    .font(.callout)
-                    .lineLimit(1)
-                Text(getLight(device: device).state ? String(localized: "\(Int(getLight(device: device).brightness))%") : "Light Off")
+            HStack{
+                DeviceIcon(type: .light, device: getLight(device: device))
+                    .font(.body)
+                    .padding(10)
+                
                     .onCondition(getLight(device: device).state, transform: {view in
-                        view.foregroundColor(.gray)
+                        view
+                            .background(getLightAccent(light: getLight(device: device)), in: Circle())
                     })
                     .onCondition(!getLight(device: device).state, transform: {view in
                         view
-                            .foregroundStyle(.secondary)
-                            
-                            
+                            .background(.thinMaterial, in: Circle())
                     })
-                    .font(.caption)
-                    .lineLimit(1)
-                Spacer()
-            }.offset(x: -10)
-            Spacer()
+                    .offset(x: -5)
+                
+                VStack(alignment: .leading){
+                    //Device Name and short Status
+                    Spacer()
+                    Text((device as! Light).name)
+                        .foregroundColor(getLight(device: device).state ? .black : .white)
+                        .font(.callout)
+                        .lineLimit(1)
+    //                    .minimumScaleFactor(0.8)
+                    HStack{
+                        Text(getLight(device: device).state ? String(localized: "\(Int(getLight(device: device).brightness))%") : "Ausgeschaltet")
+                            .onCondition(getLight(device: device).state, transform: {view in
+                                view.foregroundColor(.gray)
+                            })
+                            .onCondition(!getLight(device: device).state, transform: {view in
+                                view
+                                    .foregroundStyle(.secondary)
+                                
+                                
+                            })
+                            .font(.caption)
+                            .lineLimit(1)
+                        Spacer()
+                    }
+                    Spacer()
+                }.offset(x: -10)
+               
+//            Spacer()
         }
+    
     }
     
     var body: some View {

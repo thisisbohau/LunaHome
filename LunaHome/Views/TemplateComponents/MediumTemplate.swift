@@ -87,7 +87,7 @@ struct MediumTemplate: View {
                 //Device Name and short Status
                 Text((device as! Thermostat).name)
                     .foregroundColor(getTado(device: device).performance > 0 ? .black : .white)
-                Text(getTado(device: device).performance > 0 ? String(localized: "\(getTado(device: device).coolingDevice ? "Cooling" : "Heating") To \(Int(getTado(device: device).setTemp))°C") : "Off")
+                Text(getTado(device: device).performance > 0 ? String(localized: "\(getTado(device: device).coolingDevice ? "Kühlen" : "Heizen") Auf \(Int(getTado(device: device).setTemp))°C") : "Aus")
                     .onCondition(getTado(device: device).performance > 0, transform: {view in
                         view.foregroundColor(.gray)
                     })
@@ -124,7 +124,7 @@ struct MediumTemplate: View {
                 //Device Name and short Status
                 Text((device as! Blind).name)
                     .foregroundColor(getBlindStatus(blind: device as! Blind) ? .black : .white)
-                Text(getBlindStatus(blind: device as! Blind) ? String(localized: "\(Int(getBlind(device: device).position))% Open") : "Shade Closed")
+                Text(getBlindStatus(blind: device as! Blind) ? String(localized: "\(Int(getBlind(device: device).position))% Geöffnet") : "Geschlossen")
                     .onCondition(getBlindStatus(blind: device as! Blind), transform: {view in
                         view.foregroundColor(.gray)
                     })
@@ -180,7 +180,7 @@ struct MediumTemplate: View {
                 //Device Name and short Status
                 Text((device as! Light).name)
                     .foregroundColor(getLight(device: device).state ? .black : .white)
-                Text(getLight(device: device).state ? String(localized: "\(Int(getLight(device: device).brightness))% Brightness") : "Light Off")
+                Text(getLight(device: device).state ? String(localized: "\(Int(getLight(device: device).brightness))% Helligkeit") : "Ausgeschaltet")
                     .onCondition(getLight(device: device).state, transform: {view in
                         view.foregroundColor(.gray)
                     })

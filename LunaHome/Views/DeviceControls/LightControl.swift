@@ -38,6 +38,7 @@ struct LightControl: View {
     @State var selectedPreset: Int = 0
     @State var status: Bool = false
     @State var lineColor: Color = .red
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     func setup(){
         status = light.state
@@ -113,11 +114,20 @@ var presetSelector: some View{
                         Text("Lichtsteuerung").foregroundColor(.gray).bold()
                         
                         Spacer()
+                        Spacer()
+                        Button(action: {
+                            presentationMode.wrappedValue.dismiss()
+                        }){
+                            Image(systemName: "xmark.circle.fill")
+                                .font(.title)
+                                .foregroundStyle(.secondary, .tertiary)
+                                .foregroundColor(.primary)
+                        }
                     }.padding(20)
-                        .padding([.bottom], 40)
+//                        .padding([.bottom], 40)
                     
                     
-                    ColorPicker(radius: 300, rgbColour: $rgb, brightness: $wheelBri, modified: $date)
+                    ColorPicker(radius: proxy.size.width*0.7, rgbColour: $rgb, brightness: $wheelBri, modified: $date)
                     HStack{
                         Spacer()
                         VStack{
@@ -209,7 +219,7 @@ var presetSelector: some View{
                 }.frame(height: 100)
                     .padding()
                 //                .padding([.top],10)
-                    .padding([.bottom], 15)
+//                    .padding([.bottom],)
                 
                 HStack{
                     Text("Last used")
@@ -220,6 +230,7 @@ var presetSelector: some View{
                 
                 presetSelector
                     .padding([.leading, .trailing])
+                    .padding(.bottom, 100)
                 
                 
                 

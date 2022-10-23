@@ -453,12 +453,15 @@ struct VerticalSlider: View {
     var onChange: () -> Void
     
     func update(){
-//        if Float(value) != Float(floatValue){
-            
-//        }
-            value = floatValue
-        onChange()
-        print("change \(value)")
+        var updateNeeded = false
+        if value.rounded().distance(to: floatValue.rounded()) > 0.3 || value.rounded().distance(to: floatValue.rounded()) < -0.3{
+            updateNeeded = true
+        }
+        value = floatValue.rounded()
+        if updateNeeded{
+            onChange()
+            print("change \(value)")
+        }
         
             
     }
@@ -484,6 +487,7 @@ struct VerticalSlider: View {
                             .onChanged({ value in
                                 
                                 self.floatValue = min(max(0, Float(value.location.x / geometry.size.width * 100)), 100)
+                                
                                 update()
                             })
                             .onEnded({value in

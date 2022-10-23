@@ -11,6 +11,8 @@ struct OvenTile: View {
     var proxy: CGSize
     @EnvironmentObject var fetcher: Fetcher
     @State var timerActive: Bool = true
+    @State var showDetail: Bool = false
+    
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     func getTimer() -> Text{
@@ -25,15 +27,17 @@ struct OvenTile: View {
     }
  
     var body: some View {
-        if fetcher.data.oven.state{
-            MediumTemplate(proxy: proxy, type: .overlay, device: Blind(id: "", name: "", position: 0, closed: false))
-                .overlay(
+        Button(action: {showDetail.toggle()}){
+            if fetcher.data.oven.state{
+                MediumTemplate(proxy: proxy, type: .overlay, device: Blind(id: "", name: "", position: 0, closed: false))
+                    .overlay(
                         VStack(alignment: .leading){
                             HStack(alignment: .top){
                                 VStack(alignment: .leading){
                                     Text("Backofen")
                                         .font(.body)
                                         .bold()
+                                        .foregroundColor(.primary)
                                     Text(fetcher.data.oven.mode)
                                         .foregroundColor(.secondary)
                                         .font(.caption)
@@ -44,7 +48,7 @@ struct OvenTile: View {
                                     .font(.headline)
                             }
                             Spacer()
-                           
+                            
                             if timerActive{
                                 Text("Eingestellt auf")
                                     .foregroundStyle(.primary)
@@ -74,33 +78,39 @@ struct OvenTile: View {
                             }
                             Spacer()
                         }
-                 
-                    
-                        .padding()
-                )
-                .onReceive(timer.self, perform: {_ in checkTimer()})
-                .padding(.bottom, DeviceItemCalculator().spacer)
-        }else{
-            SmallTemplate(proxy: proxy, type: .overlay, device: Blind(id: "", name: "", position: 0, closed: false))
-                .overlay(
-                    HStack{
-                        VStack(alignment: .leading){
-                            Text("Backofen")
-                                .font(.body)
-                                .bold()
-                            Text("Aus")
+                        
+                        
+                            .padding()
+                    )
+                    .foregroundColor(.primary)
+                    .onReceive(timer.self, perform: {_ in checkTimer()})
+                    .padding(.bottom, DeviceItemCalculator().spacer)
+            }else{
+                SmallTemplate(proxy: proxy, type: .overlay, device: Blind(id: "", name: "", position: 0, closed: false))
+                    .overlay(
+                        HStack{
+                            VStack(alignment: .leading){
+                                Text("Backofen")
+                                    .font(.body)
+                                    .bold()
+                                Text("Aus")
+                                    .foregroundColor(.secondary)
+                                    .font(.caption)
+                            }
+                            Spacer()
+                            Image(systemName: "water.waves")
                                 .foregroundColor(.secondary)
-                                .font(.caption)
+                                .font(.headline)
                         }
-                        Spacer()
-                        Image(systemName: "water.waves")
-                            .foregroundColor(.secondary)
-                            .font(.headline)
-                    }
-                    
-                        .padding()
-                )
-                .padding(.bottom, DeviceItemCalculator().spacer)
+                        
+                            .padding()
+                    )
+                    .foregroundColor(.primary)
+                    .padding(.bottom, DeviceItemCalculator().spacer)
+            }
+        }
+        .sheet(isPresented: $showDetail){
+            OvenControl()
         }
     }
 }

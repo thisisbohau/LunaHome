@@ -10,7 +10,7 @@ import SwiftUI
 struct OvenControl: View {
     @EnvironmentObject var fetcher: Fetcher
     
-    @Binding var oven: Oven
+    
     
     @State var button: Bool = false
     

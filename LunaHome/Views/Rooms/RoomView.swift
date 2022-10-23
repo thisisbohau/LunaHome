@@ -353,7 +353,7 @@ struct RoomView: View {
                 }
                 DeviceList(items: $items)
                 
-            }
+            }.padding(.top, 30)
 //            .padding()
             .onChange(of: selectedNav?.id, perform: {_ in setup()})
             .transition(.asymmetric(insertion: .scale, removal: .opacity))

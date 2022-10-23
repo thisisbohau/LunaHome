@@ -67,11 +67,7 @@ class DeviceItemCalculator{
         let availableWidth = proxy.width
         var itemWidth: CGFloat = 10
         
-        if true{
-            itemWidth = (availableWidth-5)/2
-        }else{
-            itemWidth = (availableWidth-30)/5
-        }
+        itemWidth = (availableWidth-5)/2
         
         let itemHeight = itemWidth*0.79
         
@@ -84,12 +80,8 @@ class DeviceItemCalculator{
         let availableWidth = proxy.width
         var itemWidth: CGFloat = 10
         
-        if true{
-            itemWidth = (availableWidth-5)/2
-        }else{
-            itemWidth = (availableWidth-30)/5
-        }
-        
+        itemWidth = (availableWidth-5)/2
+
         let itemHeight = itemWidth*0.79 + (itemWidth/2)*0.79 + 5
         
         return CGSize(width: itemWidth, height: itemHeight)
@@ -101,11 +93,7 @@ class DeviceItemCalculator{
         let availableWidth = proxy.width
         var itemWidth: CGFloat = 10
         
-        if true{
-            itemWidth = (availableWidth-5)/2
-        }else{
-            itemWidth = (availableWidth-30)/5
-        }
+        itemWidth = (availableWidth-5)/2
         
         let itemHeight = (itemWidth/2)*0.79-5
         

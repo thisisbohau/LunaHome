@@ -25,15 +25,19 @@ struct ThermostatControl: View {
     @Binding var thermostat: Thermostat
     @EnvironmentObject var fetcher: Fetcher
     
-    @State var setTemp: Float = 22
+    @State var setTemp: Float = 30
     @State var color: Color = .white
     @State var showSheet: Bool = false
     
     @State var pressedCooling: Bool = false
     @State var pressedHeating: Bool = false
     
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @State var heatingActive: Bool = false
+    
     func setup(){
-        setTemp = thermostat.setTemp
+        let diff = (thermostat.setTemp - 15)*10
+        setTemp = diff
     }
     func onChange(){
         let totalChange = 10 * setTemp/100
@@ -54,7 +58,16 @@ struct ThermostatControl: View {
                 Text("Klimaanlage").foregroundColor(.gray).bold()
                 
                 Spacer()
-            }.padding([.top, .leading], 20)
+                Spacer()
+                Button(action: {
+                    presentationMode.wrappedValue.dismiss()
+                }){
+                    Image(systemName: "xmark.circle.fill")
+                        .font(.title)
+                        .foregroundStyle(.secondary, .tertiary)
+                        .foregroundColor(.primary)
+                }
+            }.padding([.top, .leading, .trailing], 20)
             
             //Air Quality
             
@@ -124,34 +137,34 @@ struct ThermostatControl: View {
                         .cornerRadius(16)
                         .rotationEffect(Angle(degrees: -90))
                         .fixedSize()
-                }
+                }.padding(.top, 30)
 
                 HStack{
-                    Button(action:{thermostat.setTemp = 18
-                        pressedCooling.toggle()
+                    Button(action:{
+                        thermostat.setTemp = 18
+                        heatingActive = false
+                        setup()
                     }){
-                        if pressedCooling == true{
+                        if heatingActive{
+                            Image(systemName: "snowflake").foregroundColor(.primary)
+                        }else{
                             Image(systemName: "snowflake")
                                 .foregroundColor(.teal)
-                        }else{
-                            Image(systemName: "snowflake").foregroundColor(.primary)
                         }
-                        
-                        
                     }
                     
                     Text("")
-                    Button(action:{thermostat.setTemp = 22
-                        pressedHeating.toggle()
+                    Button(action:{
+                        thermostat.setTemp = 23
+                        heatingActive.toggle()
+                        setup()
                     }){
-                        if pressedHeating == true{
+                        if heatingActive{
                             Image(systemName: "thermometer.medium").foregroundColor(.orange)
                         }else{
                             Image(systemName: "thermometer.medium").foregroundColor(.primary)
                         }
-                        
                     }
-                    
                 }.font(.title)
                     .foregroundColor(.primary)
                     .padding([.top], 110)
@@ -228,7 +241,16 @@ struct ThermostatControl: View {
                 Text("Heizung").foregroundColor(.gray).bold()
                 
                 Spacer()
-            }.padding([.top, .leading], 20)
+                Spacer()
+                Button(action: {
+                    presentationMode.wrappedValue.dismiss()
+                }){
+                    Image(systemName: "xmark.circle.fill")
+                        .font(.title)
+                        .foregroundStyle(.secondary, .tertiary)
+                        .foregroundColor(.primary)
+                }
+            }.padding([.top, .leading, .trailing], 20)
             
             //Air Quality
             
@@ -291,7 +313,7 @@ struct ThermostatControl: View {
                         .cornerRadius(16)
                         .rotationEffect(Angle(degrees: -90))
                         .fixedSize()
-                }
+                }.padding(.top, 30)
                 Spacer()
                 HStack{
                     Text("Aktuell")
@@ -302,7 +324,7 @@ struct ThermostatControl: View {
                     Text("\(thermostat.luft)%").font(.title).bold()
                 }.foregroundColor(.primary)
                     .padding([.bottom], 30)
-                    .padding([.top], 70)
+                    .padding([.top], 110)
                 
                 HStack{
                     
@@ -355,13 +377,10 @@ struct ThermostatControl: View {
             
         }
     }
+    
     var body: some View {
-        VStack{
-            
-       
-//        Heizung Control
-        if thermostat.coolingDevice == false{
-            ZStack{
+        ZStack{
+            if thermostat.coolingDevice == false{
                 VStack{
                     if thermostat.setTemp > 15 && thermostat.setTemp <= 19{
                         Color.green
@@ -377,32 +396,76 @@ struct ThermostatControl: View {
                 }
                 .ignoresSafeArea()
                 .overlay(.thickMaterial)
-                
-                controlView
-            }
-//            Cooling Control
-        }else{
-            ZStack{
+            }else{
                 VStack{
-//                    Heizen
                     if thermostat.setTemp > thermostat.currentTemp{
                         Color.orange
-//kühlen
+                        //kühlen
                     }else{
                         Color.teal
                     }
                 }
                 .ignoresSafeArea()
                 .overlay(.thickMaterial)
-                
-                controlViewCoolingDevice
             }
             
+            ScrollView{
+                if thermostat.coolingDevice{
+                    controlViewCoolingDevice
+                }else{
+                    controlView
+                }
+            }
         }
-        
-        
-       
-        }
+//        ScrollView{
+//        VStack{
+//
+//
+//            //        Heizung Control
+//            if thermostat.coolingDevice == false{
+//                ZStack{
+//                    VStack{
+//                        if thermostat.setTemp > 15 && thermostat.setTemp <= 19{
+//                            Color.green
+//                        }else if thermostat.setTemp >= 19 && thermostat.setTemp < 22{
+//                            Color.yellow
+//                        }else if thermostat.setTemp >= 22 && thermostat.setTemp < 24{
+//                            Color.orange
+//                        }else if thermostat.setTemp >= 24{
+//                            Color.red
+//                        }else{
+//                            Color.black
+//                        }
+//                    }
+//                    .ignoresSafeArea()
+//                    .overlay(.thickMaterial)
+//
+//                    controlView
+//                }
+//                //            Cooling Control
+//            }else{
+//                ZStack{
+//                    VStack{
+//                        //                    Heizen
+//                        if thermostat.setTemp > thermostat.currentTemp{
+//                            Color.orange
+//                            //kühlen
+//                        }else{
+//                            Color.teal
+//                        }
+//                    }
+//                    .ignoresSafeArea()
+//                    .overlay(.thickMaterial)
+//
+//                    controlViewCoolingDevice
+//                }
+//
+//            }
+//
+//
+//
+//        }
+    
         
             
             

@@ -14,6 +14,7 @@ struct BlindControl: View {
     @State var numbersInput: Double = 1
     @State var sliderColor: Color = .teal
     
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     func setup(){
         blindPosition = Float(100-blind.position)
     }
@@ -158,107 +159,113 @@ struct BlindControl: View {
     }
     
     var body: some View {
-//        ScrollView{
-        GeometryReader{ geometry in
-            ZStack{
-                
-                
-                VStack{
-                    HStack{
-                        Text("Rollo Steuerung").foregroundColor(.gray).bold()
-                        
-                        Spacer()
-                    }.padding()
-                    
-                    control
-                        .padding(.top, 50)
-                    
-                    VerticalSlider(size: CGSize(width: geometry.size.width*0.92, height: 20), value: $blindPosition, lineColor: $sliderColor, onChange: updatePosition)
-                        
-                      
-                        .cornerRadius(8)
-                    
-                    .padding([.leading, .trailing])
-                    
-                    
-                    HStack{
-                        Text("offen").bold().foregroundStyle(.secondary)
-                        Spacer()
-                        Text("geschlossen").bold().foregroundStyle(.secondary)
-                    }.padding([.leading, .trailing])
-                    
-                    HStack{
-                        Rectangle().foregroundColor(.teal)
-                            .frame(width: 10)
-                            .cornerRadius(12)
-
-                            
+        ScrollView{
+                GeometryReader{ geometry in
+                    ZStack{
                         VStack{
                             HStack{
-                                Text(blind.name)
+                                Text("Rollo Steuerung").foregroundColor(.gray).bold()
+                                
                                 Spacer()
-                            }.font(.largeTitle)
-                                .bold()
-                                .padding([.bottom], 1)
+                                Spacer()
+                                Button(action: {
+                                    presentationMode.wrappedValue.dismiss()
+                                }){
+                                    Image(systemName: "xmark.circle.fill")
+                                        .font(.title)
+                                        .foregroundStyle(.secondary, .tertiary)
+                                        .foregroundColor(.primary)
+                                }
+                            }.padding(20)
+                            
+                            control
+                                .padding(.top, 50)
+                            
+                            VerticalSlider(size: CGSize(width: geometry.size.width*0.92, height: 20), value: $blindPosition, lineColor: $sliderColor, onChange: updatePosition)
+                                .cornerRadius(8)
+                                .padding([.leading, .trailing])
                             
                             HStack{
-                                Text("Status")
+                                Text("offen").bold().foregroundStyle(.secondary)
                                 Spacer()
-                            }.foregroundColor(.gray)
-                                .bold()
+                                Text("geschlossen").bold().foregroundStyle(.secondary)
+                            }.padding([.leading, .trailing])
+                            
+                            HStack{
+                                Rectangle().foregroundColor(.teal)
+                                    .frame(width: 10)
+                                    .cornerRadius(12)
                                 
-                            
-                            if blind.closed == true{
-                                HStack{
-                                    Text("geschlossen")
-                                    Spacer()
+                                
+                                VStack{
+                                    HStack{
+                                        Text(blind.name)
+                                        Spacer()
+                                    }.font(.largeTitle)
+                                        .bold()
+                                        .padding([.bottom], 1)
+                                    
+                                    HStack{
+                                        Text("Status")
+                                        Spacer()
+                                    }.foregroundColor(.gray)
+                                        .bold()
+                                    
+                                    
+                                    if blind.closed == true{
+                                        HStack{
+                                            Text("geschlossen")
+                                            Spacer()
+                                        }
+                                        .foregroundColor(.gray)
+                                        .bold()
+                                    }else{
+                                        HStack{
+                                            Text("\(blind.position)% offen")
+                                            Spacer()
+                                        }
+                                        
+                                    }
+                                    
                                 }
-                                .foregroundColor(.gray)
-                                .bold()
-                            }else{
-                                HStack{
-                                    Text("\(blind.position)% offen")
-                                    Spacer()
-                                }
-                               
-                            }
+                            }.frame(height: 100)
+                                .padding()
+//                                .padding([.top])
                             
+                            
+                            
+                            
+                            
+                            Spacer()
                         }
-                    }.frame(height: 100)
-                        .padding()
-                            .padding([.top],50)
-                    
+                       
+                        .onAppear(perform: setup)
                         
+                        //            .padding([.bottom], geometry.size.height )
+                        //            VStack{
+                        //                Spacer()
+                        //                if blind.closed{
+                        //                    Text("geschlossen")
+                        //                }else{
+                        //                    Text("offen")
+                        //                }
+                        //
+                        //            }
+                        
+                        
+                        
+                        
+                        
+                    }
                     
                     
                     
-                    Spacer()
+                    
                 }
-                .onAppear(perform: setup)
+                .accentColor(Color.teal)
+                //        .background(.regularMaterial)
                 
-                //            .padding([.bottom], geometry.size.height )
-                //            VStack{
-                //                Spacer()
-                //                if blind.closed{
-                //                    Text("geschlossen")
-                //                }else{
-                //                    Text("offen")
-                //                }
-                //
-                //            }
-                
-                
-                
-                
-                
-            }
-            
-            
-            
-            
-        }
-        .accentColor(Color.teal)
-//        .background(.regularMaterial)
-//    }
+           
+    }
     }
 }

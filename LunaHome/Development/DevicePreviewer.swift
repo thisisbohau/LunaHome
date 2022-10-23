@@ -21,7 +21,7 @@ struct DevicePreviewer: View {
             Text("toggle")
         }.sheet(isPresented: $showDetail){
 //            ThermostatControl(thermostat: $thermostat)
-            OvenControl(oven: $fetcher.data.oven)
+            OvenControl()
             
             
         }

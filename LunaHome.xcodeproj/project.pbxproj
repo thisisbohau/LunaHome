@@ -10,7 +10,6 @@
 		ABA5C0D928E9F23100F69283 /* WasherProgrammControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA5C0D828E9F23100F69283 /* WasherProgrammControl.swift */; };
 		ABB687A828E74AFD00C7F2F6 /* DeviceTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB687A728E74AFD00C7F2F6 /* DeviceTester.swift */; };
 		ABF3EBCD2902AD3400E06A64 /* AirQuality.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF3EBCC2902AD3400E06A64 /* AirQuality.swift */; };
-		C91E0E2428F0233900F18481 /* testStream.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C9CDE53F28EB143700A424A4 /* testStream.mp4 */; };
 		C91E0E2628F036D600F18481 /* LunaTipDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91E0E2528F036D600F18481 /* LunaTipDetail.swift */; };
 		C91E0E2828F4102100F18481 /* Washer Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91E0E2728F4102100F18481 /* Washer Tile.swift */; };
 		C963ADF928D06FF0000647D1 /* DoorbellTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C963ADF828D06FF0000647D1 /* DoorbellTile.swift */; };
@@ -48,7 +47,6 @@
 		C9761FED28BA2DB400BF9C31 /* LightShadeTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9761FD028BA2DB400BF9C31 /* LightShadeTile.swift */; };
 		C9761FEE28BA2DB400BF9C31 /* NukiTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9761FD128BA2DB400BF9C31 /* NukiTile.swift */; };
 		C9761FEF28BA2DB400BF9C31 /* WeatherTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9761FD228BA2DB400BF9C31 /* WeatherTile.swift */; };
-		C9761FF128BA2DB400BF9C31 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9761FD528BA2DB400BF9C31 /* Home.swift */; };
 		C9761FF228BA2DB400BF9C31 /* DeviceTemplates.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9761FD628BA2DB400BF9C31 /* DeviceTemplates.swift */; };
 		C9761FF428BA2E4B00BF9C31 /* Fetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9761FF328BA2E4B00BF9C31 /* Fetcher.swift */; };
 		C9761FFA28BA32EB00BF9C31 /* LunaHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9761FF928BA32EB00BF9C31 /* LunaHelpers.swift */; };
@@ -62,6 +60,10 @@
 		C9AC92A028CB5AB0003588CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9AC929D28CB5AB0003588CF /* Assets.xcassets */; };
 		C9AC92A228CB5CD5003588CF /* RainEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AC92A128CB5CD5003588CF /* RainEffect.swift */; };
 		C9B892622902B3FD008E155A /* DoorbellFeed.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C9B892612902B32D008E155A /* DoorbellFeed.mp4 */; };
+		C9B89264290460CD008E155A /* SettingsTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B89263290460CD008E155A /* SettingsTile.swift */; };
+		C9B892662904620B008E155A /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B892652904620B008E155A /* WelcomeView.swift */; };
+		C9B89268290463AB008E155A /* SettingsSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B89267290463AB008E155A /* SettingsSaver.swift */; };
+		C9B8926A29054841008E155A /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9B8926929054841008E155A /* Launch Screen.storyboard */; };
 		C9CDE53A28E7242000A424A4 /* LunaTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CDE53928E7242000A424A4 /* LunaTile.swift */; };
 		C9CDE53C28E738F000A424A4 /* OvenTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CDE53B28E738F000A424A4 /* OvenTile.swift */; };
 		C9CDE53E28E9ED8D00A424A4 /* FoodplanerTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CDE53D28E9ED8D00A424A4 /* FoodplanerTile.swift */; };
@@ -128,7 +130,6 @@
 		C9761FD028BA2DB400BF9C31 /* LightShadeTile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightShadeTile.swift; sourceTree = "<group>"; };
 		C9761FD128BA2DB400BF9C31 /* NukiTile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NukiTile.swift; sourceTree = "<group>"; };
 		C9761FD228BA2DB400BF9C31 /* WeatherTile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherTile.swift; sourceTree = "<group>"; };
-		C9761FD528BA2DB400BF9C31 /* Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		C9761FD628BA2DB400BF9C31 /* DeviceTemplates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceTemplates.swift; sourceTree = "<group>"; };
 		C9761FF328BA2E4B00BF9C31 /* Fetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fetcher.swift; sourceTree = "<group>"; };
 		C9761FF728BA326E00BF9C31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -143,11 +144,14 @@
 		C9AC929D28CB5AB0003588CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C9AC92A128CB5CD5003588CF /* RainEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainEffect.swift; sourceTree = "<group>"; };
 		C9B892612902B32D008E155A /* DoorbellFeed.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = DoorbellFeed.mp4; sourceTree = "<group>"; };
+		C9B89263290460CD008E155A /* SettingsTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTile.swift; sourceTree = "<group>"; };
+		C9B892652904620B008E155A /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		C9B89267290463AB008E155A /* SettingsSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSaver.swift; sourceTree = "<group>"; };
+		C9B8926929054841008E155A /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		C9CDE53828E6009700A424A4 /* LunaHome.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LunaHome.entitlements; sourceTree = "<group>"; };
 		C9CDE53928E7242000A424A4 /* LunaTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunaTile.swift; sourceTree = "<group>"; };
 		C9CDE53B28E738F000A424A4 /* OvenTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvenTile.swift; sourceTree = "<group>"; };
 		C9CDE53D28E9ED8D00A424A4 /* FoodplanerTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodplanerTile.swift; sourceTree = "<group>"; };
-		C9CDE53F28EB143700A424A4 /* testStream.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = testStream.mp4; path = LunaHome/Resources/testStream.mp4; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +191,7 @@
 		C9761F7D28BA251200BF9C31 = {
 			isa = PBXGroup;
 			children = (
+				C9B8926929054841008E155A /* Launch Screen.storyboard */,
 				C9761F8828BA251200BF9C31 /* LunaHome */,
 				C9761F9928BA251300BF9C31 /* LunaHomeTests */,
 				C9761FA328BA251300BF9C31 /* LunaHomeUITests */,
@@ -316,6 +321,8 @@
 				C9CDE53D28E9ED8D00A424A4 /* FoodplanerTile.swift */,
 				ABB687A728E74AFD00C7F2F6 /* DeviceTester.swift */,
 				C91E0E2728F4102100F18481 /* Washer Tile.swift */,
+				C9B89263290460CD008E155A /* SettingsTile.swift */,
+				C9B892652904620B008E155A /* WelcomeView.swift */,
 			);
 			path = Overview;
 			sourceTree = "<group>";
@@ -323,11 +330,10 @@
 		C9761FD428BA2DB400BF9C31 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				C9CDE53F28EB143700A424A4 /* testStream.mp4 */,
 				C9B892612902B32D008E155A /* DoorbellFeed.mp4 */,
 				C976200128BA6F5800BF9C31 /* Home.json */,
-				C9761FD528BA2DB400BF9C31 /* Home.swift */,
 				C9761FD628BA2DB400BF9C31 /* DeviceTemplates.swift */,
+				C9B89267290463AB008E155A /* SettingsSaver.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -460,9 +466,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C91E0E2428F0233900F18481 /* testStream.mp4 in Resources */,
 				C9761F9128BA251300BF9C31 /* Preview Assets.xcassets in Resources */,
 				C9AC929E28CB5AB0003588CF /* Rain.sks in Resources */,
+				C9B8926A29054841008E155A /* Launch Screen.storyboard in Resources */,
 				C9761F8E28BA251300BF9C31 /* Assets.xcassets in Resources */,
 				C9AC929F28CB5AB0003588CF /* Snow.sks in Resources */,
 				C9AC92A028CB5AB0003588CF /* Assets.xcassets in Resources */,
@@ -511,6 +517,7 @@
 				C9761FEF28BA2DB400BF9C31 /* WeatherTile.swift in Sources */,
 				C9761FB528BA2D9800BF9C31 /* DevicePreviewer.swift in Sources */,
 				C9761FFA28BA32EB00BF9C31 /* LunaHelpers.swift in Sources */,
+				C9B892662904620B008E155A /* WelcomeView.swift in Sources */,
 				C9761FE628BA2DB400BF9C31 /* DoorbellControl.swift in Sources */,
 				C9761FEB28BA2DB400BF9C31 /* ThermostatControl.swift in Sources */,
 				C9761FEC28BA2DB400BF9C31 /* OverviewMain.swift in Sources */,
@@ -524,9 +531,10 @@
 				C9761FE128BA2DB400BF9C31 /* RobotControl.swift in Sources */,
 				C963AE0028D30044000647D1 /* LightHelpers.swift in Sources */,
 				C9CDE53C28E738F000A424A4 /* OvenTile.swift in Sources */,
-				C9761FF128BA2DB400BF9C31 /* Home.swift in Sources */,
+				C9B89268290463AB008E155A /* SettingsSaver.swift in Sources */,
 				C963ADF928D06FF0000647D1 /* DoorbellTile.swift in Sources */,
 				C91E0E2828F4102100F18481 /* Washer Tile.swift in Sources */,
+				C9B89264290460CD008E155A /* SettingsTile.swift in Sources */,
 				C9761FDB28BA2DB400BF9C31 /* MediumTemplate.swift in Sources */,
 				C9761FD828BA2DB400BF9C31 /* SmallTemplate.swift in Sources */,
 				C963ADFC28D2F9C3000647D1 /* RoomView.swift in Sources */,
@@ -706,6 +714,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -741,6 +751,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (

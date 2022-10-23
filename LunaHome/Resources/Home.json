@@ -21,22 +21,46 @@
   ],
   "recommendations" : [
     {
-      "id" : "test",
-      "title" : "Filter Reiniger",
-      "message" : "Reinige den Filter deiner Klimaanlage",
-      "priority" : 3,
-      "image" : "aqi.high",
+      "id" : "lowBattery",
+      "title" : "Batterie Schwach",
+      "message" : "Bitte tausche die Batterien im Türschloss Hintereingang. Bis dahin arbeitet das Schloss im Stromsparmodus. \r\n\nZum Tauschen gehe folgendermaßen vor:\r\n\n- Öffne das Batteriefach des Schlosses und entferne die Batterien.\r\n\n- Setzte zwei idente AA-Batterien ein. Achte auf die +/- Markierungen im Gehäuse.\r\n\n- Schließe die Abdeckung – Fertig. \r\n",
+      "priority" : 2,
+      "image" : "battery.25",
       "color" : "orange"
+    },
+    {
+      "id" : "water",
+      "title" : "Wasser erkannt",
+      "message" : "Ich habe Wasser im Raum Schlafzimmer erkannt. \nBitte prüfe, ob ein Problem besteht und kontaktiere im Notfall die Feuerwehr. \r\nZu deiner Sicherheit habe ich den Strom in diesem Raum deaktiviert. \r\n",
+      "priority" : 5,
+      "image" : "exclamationmark.shield",
+      "color" : "pink"
+    },
+    {
+      "id" : "cleaning",
+      "title" : "Reinigung empfohlen",
+      "message" : "Ich habe erkannt, dass deine Waschmaschine in letzter Zeit viel gearbeitet hat. Wie wäre es, wenn du sie in nächster Zeit mit einem Maschinenreiniger verwöhnst? ",
+      "priority" : 1,
+      "image" : "washer",
+      "color" : "teal"
     }
   ],
   "doorLocks" : [
     {
-      "doorOpen" : false,
-      "id" : "testLock",
+      "doorOpen" : true,
+      "id" : "EntryDoor",
       "doorAjar" : false,
       "name" : "Haustüre",
-      "battery" : 98,
+      "battery" : 97,
       "doorError" : false
+    },
+    {
+      "doorOpen" : true,
+      "id" : "backdoor",
+      "doorAjar" : true,
+      "name" : "Hintereingang",
+      "battery" : 30,
+      "doorError" : true
     }
   ],
   "dryer" : {
@@ -46,11 +70,11 @@
     "programm" : ""
   },
   "weatherStation" : {
-    "humidity" : 35,
+    "humidity" : 87,
     "rain" : true,
     "rainAmount" : 4,
-    "outsideTemp" : 18.600000381469727,
-    "windSpeed" : 5,
+    "outsideTemp" : 17,
+    "windSpeed" : 11,
     "co2" : 600,
     "weatherWarning" : []
   },
@@ -67,7 +91,7 @@
       "data" : [
         {
           "id" : "1",
-          "value" : 2,
+          "value" : 10,
           "title" : "Mo"
         },
         {
@@ -77,34 +101,113 @@
         },
         {
           "id" : "3",
-          "value" : 5,
+          "value" : 3,
           "title" : "Mi"
         },
         {
           "id" : "4",
-          "value" : 8,
+          "value" : 7,
           "title" : "Do"
         },
         {
           "id" : "5",
-          "value" : 5,
+          "value" : 13,
           "title" : "Fr"
         },
         {
           "id" : "6",
-          "value" : 10,
+          "value" : 4,
           "title" : "Sa"
         },
         {
           "id" : "7",
-          "value" : 3,
+          "value" : 2,
           "title" : "So"
         }
       ],
       "title" : "Haustüre",
       "averageUnit" : "Öffnungen/Tag",
+      "diagramType" : 1,
+      "description" : "Laut meinen Berechnungen sollte die Batterie am 05. Dezember ausgetauscht werden."
+    },
+    {
+      "predictable" : false,
+      "id" : "2",
+      "data" : [],
+      "title" : "Wartung Heizung",
+      "averageUnit" : "h/Tag",
       "diagramType" : 0,
-      "description" : "Laut meinen Berechnungen sollte die Batterie am 5. November ausgetauscht werden."
+      "description" : ""
+    },
+    {
+      "predictable" : true,
+      "id" : "3",
+      "data" : [
+        {
+          "id" : "1",
+          "value" : 3,
+          "title" : "Jan"
+        },
+        {
+          "id" : "2",
+          "value" : 9,
+          "title" : "Feb"
+        },
+        {
+          "id" : "3",
+          "value" : 10,
+          "title" : "Mär"
+        },
+        {
+          "id" : "4",
+          "value" : 13,
+          "title" : "Apr"
+        },
+        {
+          "id" : "5",
+          "value" : 8,
+          "title" : "Mai"
+        },
+        {
+          "id" : "6",
+          "value" : 5,
+          "title" : "Jun"
+        },
+        {
+          "id" : "7",
+          "value" : 14,
+          "title" : "Jul"
+        },
+        {
+          "id" : "6",
+          "value" : 9,
+          "title" : "Aug"
+        },
+        {
+          "id" : "6",
+          "value" : 10,
+          "title" : "Sep"
+        },
+        {
+          "id" : "6",
+          "value" : 8,
+          "title" : "Okt"
+        },
+        {
+          "id" : "6",
+          "value" : 6,
+          "title" : "Nov"
+        },
+        {
+          "id" : "6",
+          "value" : 3,
+          "title" : "Dez"
+        }
+      ],
+      "title" : "Solarproduktion",
+      "averageUnit" : "kW/h",
+      "diagramType" : 0,
+      "description" : "Im Vergleich zum letzten Jahr hast du um etwa 6% mehr Solarstrom produziert."
     }
   ],
   "oven" : {
@@ -116,13 +219,13 @@
     "recipe" : ""
   },
   "washer" : {
-    "temperatur" : "",
+    "temperatur" : "40",
     "health" : [],
-    "schleudern" : "",
-    "programm" : "",
-    "beschmutzung" : "",
-    "runTime" : 0,
-    "state" : false
+    "schleudern" : "900",
+    "programm" : "Jeans",
+    "beschmutzung" : "Normal",
+    "runTime" : 25,
+    "state" : true
   },
   "mediaDevices" : [
     {
@@ -135,49 +238,339 @@
   ],
   "cameras" : [
     {
-      "id" : "testCam",
-      "feedName" : "feed",
+      "id" : "Doorbell",
+      "feedName" : "DoorbellFeed",
       "name" : "Haustüre",
       "detectedObjects" : [
         "David",
         "Paket"
       ]
+    },
+    {
+      "id" : "gardenCam",
+      "feedName" : "DoorbellFeed",
+      "name" : "Garten",
+      "detectedObjects" : []
     }
   ],
   "rooms" : [
     {
       "lights" : [
         {
-          "name" : "Deckenlicht",
-          "id" : "testLampLamp",
+          "name" : "Deckenlampe",
+          "id" : "livingCeiling",
           "brightness" : 80,
-          "saturation" : 255,
-          "type" : "Stripe",
-          "hue" : 120,
+          "saturation" : 35,
+          "type" : "Bulb",
+          "hue" : 33,
+          "state" : true
+        },
+        {
+          "name" : "Sofa",
+          "id" : "livingSofa",
+          "brightness" : 100,
+          "saturation" : 35,
+          "type" : "Bulb",
+          "hue" : 33,
+          "state" : false
+        },
+        {
+          "name" : "Esstisch",
+          "id" : "livingTable",
+          "brightness" : 100,
+          "saturation" : 35,
+          "type" : "Bulb",
+          "hue" : 33,
+          "state" : true
+        },
+        {
+          "name" : "Akzent",
+          "id" : "livingAccent",
+          "brightness" : 50,
+          "saturation" : 65,
+          "type" : "Bulb",
+          "hue" : 240,
           "state" : true
         }
       ],
       "blinds" : [
         {
-          "id" : "testBlind",
+          "id" : "livingTerasse",
           "closed" : false,
           "name" : "Terasse",
-          "position" : 78
+          "position" : 100
+        },
+        {
+          "id" : "livingSun",
+          "closed" : true,
+          "name" : "Sonnenschutz",
+          "position" : 0
         }
       ],
       "floor" : 0,
-      "id" : "test",
+      "id" : "wohnzimmer",
       "thermostats" : [
         {
-          "id" : "testThermo",
           "setTemp" : 22.5,
-          "currentTemp" : 20,
-          "name" : "Tado",
+          "id" : "livingHeat",
           "coolingDevice" : false,
-          "performance" : 80
+          "performance" : 80,
+          "currentTemp" : 22,
+          "name" : "Heizung",
+          "luft" : 55
+        },
+        {
+          "setTemp" : 19,
+          "id" : "testThermo",
+          "coolingDevice" : true,
+          "performance" : 0,
+          "currentTemp" : 22,
+          "name" : "Klima",
+          "luft" : 55
         }
       ],
       "name" : "Wohnzimmer",
+      "sensors" : [
+        {
+          "id" : "testSensor",
+          "triggeredAt" : "123456",
+          "name" : "Türsensor",
+          "type" : 2,
+          "triggered" : true
+        }
+      ]
+    },
+    {
+      "lights" : [
+        {
+          "name" : "Deckenlampe",
+          "id" : "kitchenCeiling",
+          "brightness" : 80,
+          "saturation" : 35,
+          "type" : "Bulb",
+          "hue" : 33,
+          "state" : true
+        },
+        {
+          "name" : "Arbeitsfläche",
+          "id" : "kitchenWorktop",
+          "brightness" : 100,
+          "saturation" : 35,
+          "type" : "Bulb",
+          "hue" : 33,
+          "state" : true
+        },
+        {
+          "name" : "Insel",
+          "id" : "kitchenIland",
+          "brightness" : 50,
+          "saturation" : 35,
+          "type" : "Bulb",
+          "hue" : 33,
+          "state" : false
+        }
+      ],
+      "blinds" : [
+        {
+          "id" : "kitchenBlind",
+          "closed" : false,
+          "name" : "Fenster",
+          "position" : 80
+        }
+      ],
+      "floor" : 0,
+      "id" : "kueche",
+      "thermostats" : [
+        {
+          "setTemp" : 20,
+          "id" : "kitchenHeat",
+          "coolingDevice" : false,
+          "performance" : 80,
+          "currentTemp" : 22,
+          "name" : "Heizung",
+          "luft" : 60
+        }
+      ],
+      "name" : "Küche",
+      "sensors" : [
+        {
+          "id" : "testSensor",
+          "triggeredAt" : "123456",
+          "name" : "Türsensor",
+          "type" : 2,
+          "triggered" : true
+        }
+      ]
+    },
+    {
+      "lights" : [
+        {
+          "name" : "Deckenlampe",
+          "id" : "bedroomCeiling",
+          "brightness" : 80,
+          "saturation" : 35,
+          "type" : "Bulb",
+          "hue" : 33,
+          "state" : false
+        },
+        {
+          "name" : "Nachtisch",
+          "id" : "bedroomBedside",
+          "brightness" : 70,
+          "saturation" : 65,
+          "type" : "Bulb",
+          "hue" : 200,
+          "state" : true
+        },
+        {
+          "name" : "Kleiderschrank",
+          "id" : "bedroomCloset",
+          "brightness" : 80,
+          "saturation" : 35,
+          "type" : "Bulb",
+          "hue" : 33,
+          "state" : false
+        }
+      ],
+      "blinds" : [
+        {
+          "id" : "bedroomWindow",
+          "closed" : false,
+          "name" : "Fenster",
+          "position" : 100
+        }
+      ],
+      "floor" : 1,
+      "id" : "schlafzimmer",
+      "thermostats" : [
+        {
+          "setTemp" : 22.5,
+          "id" : "bedroom",
+          "coolingDevice" : false,
+          "performance" : 0,
+          "currentTemp" : 20,
+          "name" : "Heizung",
+          "luft" : 55
+        },
+        {
+          "setTemp" : 19,
+          "id" : "bedroomAC",
+          "coolingDevice" : true,
+          "performance" : 100,
+          "currentTemp" : 20,
+          "name" : "Klima",
+          "luft" : 55
+        }
+      ],
+      "name" : "Schlafzimmer",
+      "sensors" : [
+        {
+          "id" : "testSensor",
+          "triggeredAt" : "123456",
+          "name" : "Türsensor",
+          "type" : 2,
+          "triggered" : true
+        }
+      ]
+    },
+    {
+      "lights" : [
+        {
+          "name" : "Deckenlampe",
+          "id" : "officeCeiling",
+          "brightness" : 80,
+          "saturation" : 35,
+          "type" : "Bulb",
+          "hue" : 33,
+          "state" : false
+        },
+        {
+          "name" : "Schreibtisch",
+          "id" : "officeTable",
+          "brightness" : 100,
+          "saturation" : 5,
+          "type" : "Bulb",
+          "hue" : 33,
+          "state" : true
+        }
+      ],
+      "blinds" : [
+        {
+          "id" : "officeWindowLeft",
+          "closed" : false,
+          "name" : "Fenster",
+          "position" : 100
+        }
+      ],
+      "floor" : 0,
+      "id" : "office",
+      "thermostats" : [
+        {
+          "setTemp" : 22.5,
+          "id" : "officeHeat",
+          "coolingDevice" : false,
+          "performance" : 0,
+          "currentTemp" : 22,
+          "name" : "Heizung",
+          "luft" : 55
+        },
+        {
+          "setTemp" : 19,
+          "id" : "officeAC",
+          "coolingDevice" : true,
+          "performance" : 100,
+          "currentTemp" : 22,
+          "name" : "Klima",
+          "luft" : 55
+        }
+      ],
+      "name" : "Büro",
+      "sensors" : [
+        {
+          "id" : "testSensor",
+          "triggeredAt" : "123456",
+          "name" : "Türsensor",
+          "type" : 2,
+          "triggered" : true
+        }
+      ]
+    },
+    {
+      "lights" : [
+        {
+          "name" : "Deckenlampe",
+          "id" : "entryCeiling",
+          "brightness" : 80,
+          "saturation" : 35,
+          "type" : "Bulb",
+          "hue" : 33,
+          "state" : true
+        },
+        {
+          "name" : "Haustüre",
+          "id" : "entryDoor",
+          "brightness" : 100,
+          "saturation" : 200,
+          "type" : "Bulb",
+          "hue" : 120,
+          "state" : true
+        }
+      ],
+      "blinds" : [],
+      "floor" : 0,
+      "id" : "entry",
+      "thermostats" : [
+        {
+          "setTemp" : 19,
+          "id" : "entryHeat",
+          "coolingDevice" : false,
+          "performance" : 0,
+          "currentTemp" : 22,
+          "name" : "Heizung",
+          "luft" : 65
+        }
+      ],
+      "name" : "Eingang",
       "sensors" : [
         {
           "id" : "testSensor",
