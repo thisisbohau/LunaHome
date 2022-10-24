@@ -32,8 +32,8 @@ struct WasherControl: View {
                 
                 VStack{
                     HStack{
-                        Image(systemName: "washer.fill").foregroundColor(.gray).bold()
-                        Text("Waschmaschine").foregroundColor(.gray).bold()
+                        Image(systemName: "washer.fill").foregroundColor(.gray)
+                        Text("Waschmaschine").bold().foregroundColor(.gray)
                         
                         Spacer()
                     }.padding(20)
@@ -124,15 +124,16 @@ struct WasherControl: View {
                                 //                    Image(systemName: "lightbulb.fill")
                                 Text("Waschmaschine")
                                 Spacer()
-                            }.font(.largeTitle)
-                                .bold()
+                            }.font(.largeTitle.bold())
+                                
                                 .padding([.bottom], 1)
                             
                             HStack{
                                 Text("Waschraum")
+                                    .bold()
                                 Spacer()
                             }.foregroundColor(.gray)
-                                .bold()
+                                
                             
                             
                             HStack{

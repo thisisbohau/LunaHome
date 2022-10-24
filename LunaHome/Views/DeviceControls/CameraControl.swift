@@ -65,15 +65,16 @@ struct CameraControl: View {
                             //                    Image(systemName: "lightbulb.fill")
                             Text("Einfahrt")
                             Spacer()
-                        }.font(.largeTitle)
-                            .bold()
+                        }.font(.largeTitle.bold())
+                           
                             .padding([.bottom], 1)
                         
                         HStack{
                             Text("Garten")
+                                .bold()
                             Spacer()
                         }.foregroundColor(.gray)
-                            .bold()
+                            
                         
                         
                         HStack{

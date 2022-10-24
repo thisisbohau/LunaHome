@@ -29,23 +29,27 @@ struct LunaPredictions: View {
                 }
                 .padding(.bottom, 10)
                 
-                Chart {
-                    ForEach(prediction.data) { point in
-                        if prediction.diagramType == 1{
-                            BarMark(x: .value("", point.title),
-                                    y: .value("", point.value),
-                                    width: 20
-                            )
-                            .cornerRadius(18)
-                        }else{
-                            LineMark(x: .value("", point.title),
-                                    y: .value("", point.value)
-                            )
-                            .cornerRadius(18)
+                if #available(iOS 16.0, *) {
+                    Chart {
+                        ForEach(prediction.data) { point in
+                            if prediction.diagramType == 1{
+                                BarMark(x: .value("", point.title),
+                                        y: .value("", point.value),
+                                        width: 20
+                                )
+                                .cornerRadius(18)
+                            }else{
+                                LineMark(x: .value("", point.title),
+                                         y: .value("", point.value)
+                                )
+                                .cornerRadius(18)
+                            }
+                            
                         }
-                        
-                    }
-                }.frame(width: 300, height: 300)
+                    }.frame(width: 300, height: 300)
+                } else {
+                    // Fallback on earlier versions
+                }
                 
                 Text(String(format: "ø%.1f", Double(getAvg())))
                     .font(.title.bold())

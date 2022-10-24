@@ -45,8 +45,8 @@ struct LunaMain: View {
             VStack{
                 Text("Hallo ich bin\nluna.")
                     .multilineTextAlignment(.center)
-                    .font(.system(size: 45))
-                    .fontWeight(.semibold)
+                    .font(.system(size: 45).bold())
+                    
                     .padding()
                 Text("Ich habe stets ein Auge auf dein Zuhause, stehe dir bei Problemen zur Seite und achte darauf, dass du immer ein komfortables Zuhause hast.")
                     .font(.callout)

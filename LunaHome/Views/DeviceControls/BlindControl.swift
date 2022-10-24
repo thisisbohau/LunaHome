@@ -201,24 +201,26 @@ struct BlindControl: View {
                                     HStack{
                                         Text(blind.name)
                                         Spacer()
-                                    }.font(.largeTitle)
-                                        .bold()
+                                    }.font(.largeTitle.bold())
+                                        
                                         .padding([.bottom], 1)
                                     
                                     HStack{
                                         Text("Status")
+                                            .bold()
                                         Spacer()
                                     }.foregroundColor(.gray)
-                                        .bold()
+                                       
                                     
                                     
                                     if blind.closed == true{
                                         HStack{
                                             Text("geschlossen")
+                                                .bold()
                                             Spacer()
                                         }
                                         .foregroundColor(.gray)
-                                        .bold()
+                                        
                                     }else{
                                         HStack{
                                             Text("\(blind.position)% offen")

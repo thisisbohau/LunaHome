@@ -22,8 +22,8 @@ struct OvenControl: View {
             
             VStack{
                 HStack{
-                    Image(systemName: "oven.fill").foregroundColor(.gray).bold()
-                    Text("Ofen").foregroundColor(.gray).bold()
+                    Image(systemName: "oven.fill").foregroundColor(.gray)
+                    Text("Ofen").bold().foregroundColor(.gray)
                     
                     Spacer()
                 }.padding()
@@ -109,15 +109,16 @@ struct OvenControl: View {
                             //                    Image(systemName: "lightbulb.fill")
                             Text("Ofen")
                             Spacer()
-                        }.font(.largeTitle)
-                            .bold()
+                        }.font(.largeTitle.bold())
+                            
                             .padding([.bottom], 1)
                         
                         HStack{
                             Text("Küche")
+                                .bold()
                             Spacer()
                         }.foregroundColor(.gray)
-                            .bold()
+                            
                         
                         
                         HStack{

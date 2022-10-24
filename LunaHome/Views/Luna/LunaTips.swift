@@ -50,8 +50,8 @@ struct LunaTips: View {
                                 Text(split(input: entry.title)[1])
                                     .foregroundColor(.secondary)
                             }
-                            .font(.title2)
-                            .fontWeight(.semibold)
+                            .font(.title2.bold())
+                            
                             
                             Spacer()
                             

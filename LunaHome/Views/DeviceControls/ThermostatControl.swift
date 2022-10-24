@@ -54,8 +54,8 @@ struct ThermostatControl: View {
     var controlViewCoolingDevice: some View{
         VStack{
             HStack{
-                Image(systemName: "thermometer.snowflake").foregroundColor(.gray).bold()
-                Text("Klimaanlage").foregroundColor(.gray).bold()
+                Image(systemName: "thermometer.snowflake").foregroundColor(.gray)
+                Text("Klimaanlage").bold().foregroundColor(.gray)
                 
                 Spacer()
                 Spacer()
@@ -192,15 +192,16 @@ struct ThermostatControl: View {
                             //                    Image(systemName: "lightbulb.fill")
                             Text(thermostat.name)
                             Spacer()
-                        }.font(.largeTitle)
-                            .bold()
+                        }.font(.largeTitle.bold())
+                            
                             .padding([.bottom], 1)
                         
                         HStack{
                             Text("Schlafzimmer")
+                                .bold()
                             Spacer()
                         }.foregroundColor(.gray)
-                            .bold()
+                            
                         
                         
                         HStack{
@@ -237,8 +238,8 @@ struct ThermostatControl: View {
     var controlView: some View{
         VStack{
             HStack{
-                Image(systemName: "flame.fill").foregroundColor(.gray).bold()
-                Text("Heizung").foregroundColor(.gray).bold()
+                Image(systemName: "flame.fill").foregroundColor(.gray)
+                Text("Heizung").bold().foregroundColor(.gray)
                 
                 Spacer()
                 Spacer()
@@ -337,15 +338,16 @@ struct ThermostatControl: View {
                             //                    Image(systemName: "lightbulb.fill")
                             Text(thermostat.name)
                             Spacer()
-                        }.font(.largeTitle)
-                            .bold()
+                        }.font(.largeTitle.bold())
+                            
                             .padding([.bottom], 1)
                         
                         HStack{
                             Text("Schlafzimmer")
+                                .bold()
                             Spacer()
                         }.foregroundColor(.gray)
-                            .bold()
+                            
                         
                         
                         HStack{

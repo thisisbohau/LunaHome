@@ -63,9 +63,9 @@ struct LunaTile: View {
                                             Text(split(input: getTip().title)[1])
                                                 .foregroundColor(.secondary)
                                         }
-                                        .font(.body)
+                                        .font(.body.bold())
                                         .minimumScaleFactor(0.7)
-                                        .fontWeight(.semibold)
+                                        
 //                                        .padding(.leading, 10)
                                         
                                         Spacer()
@@ -111,8 +111,8 @@ struct LunaTile: View {
                                         Text(split(input: getTip().title)[1])
                                             .foregroundColor(.secondary)
                                     }
-                                    .font(.headline)
-                                    .fontWeight(.semibold)
+                                    .font(.headline.bold())
+                                    
                                     Spacer()
                                 }
                                 HStack{

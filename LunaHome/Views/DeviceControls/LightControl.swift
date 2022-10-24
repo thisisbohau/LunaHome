@@ -110,7 +110,7 @@ var presetSelector: some View{
             ScrollView{
                 VStack{
                     HStack{
-                        Image(systemName: "lightbulb.fill").foregroundColor(.gray).bold()
+                        Image(systemName: "lightbulb.fill").foregroundColor(.gray)
                         Text("Lichtsteuerung").foregroundColor(.gray).bold()
                         
                         Spacer()
@@ -181,8 +181,8 @@ var presetSelector: some View{
                         HStack{
                             Text(light.name)
                             Spacer()
-                        }.font(.largeTitle)
-                            .bold()
+                        }.font(.largeTitle.bold())
+                          
                             .padding([.bottom], 1)
                         
                         HStack{

@@ -72,8 +72,9 @@ struct OvenTile: View {
                                         Image(systemName: "checkmark.circle")
                                             .foregroundColor(.green)
                                         Text("Fertig")
+                                            .bold()
                                         Spacer()
-                                    }.bold()
+                                    }
                                 }
                             }
                             Spacer()

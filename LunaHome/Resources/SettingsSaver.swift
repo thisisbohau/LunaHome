@@ -9,10 +9,10 @@ import Foundation
 
 class SettingsData{
     func getUserName() -> String{
-        return UserDefaults.standard.string(forKey: "userName") ?? ""
+        return UserDefaults.standard.string(forKey: "UserName") ?? ""
     }
     
     func saveName(name: String){
-        UserDefaults.standard.set(name, forKey: "userName")
+        UserDefaults.standard.set(name, forKey: "UserName")
     }
 }

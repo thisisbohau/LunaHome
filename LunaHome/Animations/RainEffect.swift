@@ -17,6 +17,7 @@ class RainLightningScene: SKScene {
     override func didMove(to view: SKView) {
         
         self.view?.allowsTransparency = true
+        rainEmitter.removeFromParent()
         self.addChild(rainEmitter)
 
         rainEmitter.position.y = self.frame.maxY
