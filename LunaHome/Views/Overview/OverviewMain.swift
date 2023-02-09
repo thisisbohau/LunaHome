@@ -70,6 +70,16 @@ struct OverviewMain: View {
                     }
                 }
         }
+//        ZStack{
+//            LinearGradient(colors: [.red, .red, .pink], startPoint: .topLeading, endPoint: .bottomTrailing)
+////                .hueRotation(.degrees(animateGradient ? 45 : 0))
+////                .ignoresSafeArea()
+////                .onAppear {
+////                    withAnimation(.easeInOut(duration: 3).repeatForever(autoreverses: true)) {
+////                        animateGradient.toggle()
+////                    }
+////                }
+//        }
     }
 
     

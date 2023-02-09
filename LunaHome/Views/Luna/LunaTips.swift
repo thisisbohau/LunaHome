@@ -62,7 +62,6 @@ struct LunaTips: View {
                                 .clipShape(Circle())
                         }
                         HStack{
-                            
                             Text("Priorität")
                                 .font(.caption.bold())
                                 .foregroundColor(.secondary)

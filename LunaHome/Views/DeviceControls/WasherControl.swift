@@ -15,7 +15,9 @@ struct WasherControl: View {
     
     
    
-    
+    func start(){
+//        fetcher.start()
+    }
     
 //    washer: Washer(state: false, runTime: 0, programm: "", health: [String](), beschmutzung: "", temperatur: "", schleudern: "")
     

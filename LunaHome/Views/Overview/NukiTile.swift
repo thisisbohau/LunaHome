@@ -45,8 +45,4 @@ struct NukiTile: View {
     }
 }
 
-//struct NukiTile_Previews: PreviewProvider {
-//    static var previews: some View {
-//        NukiTile()
-//    }
-//}
+
